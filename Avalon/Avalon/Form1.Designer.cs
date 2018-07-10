@@ -1526,6 +1526,7 @@
             this.ParsifalChoiceImg.TabIndex = 164;
             this.ParsifalChoiceImg.TabStop = false;
             this.ParsifalChoiceImg.Visible = false;
+            this.ParsifalChoiceImg.Click += new System.EventHandler(this.ParsifalChoiceImg_Click);
             // 
             // LadyChoiceImg
             // 
@@ -1537,6 +1538,7 @@
             this.LadyChoiceImg.TabIndex = 163;
             this.LadyChoiceImg.TabStop = false;
             this.LadyChoiceImg.Visible = false;
+            this.LadyChoiceImg.Click += new System.EventHandler(this.LadyChoiceImg_Click);
             // 
             // OberonChoiceImg
             // 
@@ -1548,6 +1550,7 @@
             this.OberonChoiceImg.TabIndex = 162;
             this.OberonChoiceImg.TabStop = false;
             this.OberonChoiceImg.Visible = false;
+            this.OberonChoiceImg.Click += new System.EventHandler(this.OberonChoiceImg_Click);
             // 
             // MorganaChoiceImg
             // 
@@ -1559,6 +1562,7 @@
             this.MorganaChoiceImg.TabIndex = 161;
             this.MorganaChoiceImg.TabStop = false;
             this.MorganaChoiceImg.Visible = false;
+            this.MorganaChoiceImg.Click += new System.EventHandler(this.MorganaChoiceImg_Click);
             // 
             // MordredChoiceImg
             // 
@@ -1570,6 +1574,7 @@
             this.MordredChoiceImg.TabIndex = 160;
             this.MordredChoiceImg.TabStop = false;
             this.MordredChoiceImg.Visible = false;
+            this.MordredChoiceImg.Click += new System.EventHandler(this.MordredChoiceImg_Click);
             // 
             // InTeamIcon10
             // 

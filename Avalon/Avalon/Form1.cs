@@ -121,7 +121,17 @@ namespace Avalon
                             CanStartGame(false);
                             break;
                         case "chooseStarted":
-                            ChooseStarted(Convert.ToInt16(br.ReadString()));
+                            info[0] = Convert.ToInt16(br.ReadString());
+                            info[1] = Convert.ToInt16(br.ReadString());
+                            info[2] = Convert.ToInt16(br.ReadString());
+                            info[3] = Convert.ToInt16(br.ReadString());
+                            info[4] = Convert.ToInt16(br.ReadString());
+                            info[5] = Convert.ToInt16(br.ReadString());
+                            info[6] = Convert.ToInt16(br.ReadString());
+                            ChooseStarted();
+                            break;
+                        case "addChosen":
+                            AddSelected(br.ReadString(), br.ReadString());
                             break;
                         default:
                             break;
@@ -148,38 +158,84 @@ namespace Avalon
             }
         }
 
-        delegate void ChooseStartedDelegate(int noPlayers);
+        delegate void AddSelectedDelegate(string name, string chosen);
 
-        private void ChooseStarted(int noPlayers)
+        private void AddSelected(string name, string chosen)
+        {
+            if (LadyChoiceImg.InvokeRequired || MordredChoiceImg.InvokeRequired || MorganaChoiceImg.InvokeRequired || OberonChoiceImg.InvokeRequired || ParsifalChoiceImg.InvokeRequired)
+            {
+                AddSelectedDelegate f = new AddSelectedDelegate(AddSelected);
+                this.Invoke(f, new object[] { name, chosen });
+            }
+            else
+            {
+                switch (name)
+                {
+                    case "lady":
+                        if (chosen == "true")
+                        {
+                            LadyChoiceImg.Image = Avalon.Properties.Resources.HighlightedCard;
+                        }
+                        else
+                        {
+                            LadyChoiceImg.Image = null;
+                        }
+                        break;
+                    case "persifal":
+                        if (chosen == "true")
+                        {
+                            ParsifalChoiceImg.Image = Avalon.Properties.Resources.HighlightedCard;
+                        }
+                        else
+                        {
+                            ParsifalChoiceImg.Image = null;
+                        }
+                        break;
+                    case "mordred":
+                        if (chosen == "true")
+                        {
+                            MordredChoiceImg.Image = Avalon.Properties.Resources.HighlightedCard;
+                        }
+                        else
+                        {
+                            MordredChoiceImg.Image = null;
+                        }
+                        break;
+                    case "morgana":
+                        if (chosen == "true")
+                        {
+                            MorganaChoiceImg.Image = Avalon.Properties.Resources.HighlightedCard;
+                        }
+                        else
+                        {
+                            MorganaChoiceImg.Image = null;
+                        }
+                        break;
+                    case "oberon":
+                        if (chosen == "true")
+                        {
+                            OberonChoiceImg.Image = Avalon.Properties.Resources.HighlightedCard;
+                        }
+                        else
+                        {
+                            OberonChoiceImg.Image = null;
+                        }
+                        break;
+                }
+            }
+        }
+
+        delegate void ChooseStartedDelegate();
+
+        private void ChooseStarted()
         {
             if (AwayButton1.InvokeRequired || AwayButton2.InvokeRequired || AwayButton3.InvokeRequired || AwayButton4.InvokeRequired || AwayButton5.InvokeRequired || AwayButton6.InvokeRequired || AwayButton7.InvokeRequired || AwayButton8.InvokeRequired || AwayButton9.InvokeRequired || AwayButton10.InvokeRequired || SitButton1.InvokeRequired || SitButton2.InvokeRequired || SitButton3.InvokeRequired || SitButton4.InvokeRequired || SitButton5.InvokeRequired || SitButton6.InvokeRequired || SitButton7.InvokeRequired || SitButton8.InvokeRequired || SitButton9.InvokeRequired || SitButton10.InvokeRequired || NumberForMission1.InvokeRequired || NumberForMission2.InvokeRequired || NumberForMission3.InvokeRequired || NumberForMission4.InvokeRequired || NumberForMission5.InvokeRequired || PlayersInfoLabel.InvokeRequired || MaxSpecialEvilLabel.InvokeRequired || LadyChoiceImg.InvokeRequired || MordredChoiceImg.InvokeRequired || MorganaChoiceImg.InvokeRequired || OberonChoiceImg.InvokeRequired || ParsifalChoiceImg.InvokeRequired)
             {
                 ChooseStartedDelegate f = new ChooseStartedDelegate(ChooseStarted);
-                this.Invoke(f, new object[] { noPlayers });
+                this.Invoke(f, new object[] { });
             }
             else
             {
-                switch (noPlayers)
-                {
-                    case 5:
-                        info = new int[] { 2, 3, 2, 3, 3, 3, 2 };
-                        break;
-                    case 6:
-                        info = new int[] { 2, 3, 4, 3, 4, 4, 2 };
-                        break;
-                    case 7:
-                        info = new int[] { 2, 3, 3, 4, 4, 4, 3 };
-                        break;
-                    case 8:
-                        info = new int[] { 3, 4, 4, 5, 5, 5, 3 };
-                        break;
-                    case 9:
-                        info = new int[] { 3, 4, 4, 5, 5, 6, 3 };
-                        break;
-                    case 10:
-                        info = new int[] { 3, 4, 4, 5, 5, 6, 4 };
-                        break;
-                }
                 NumberForMission1.Text = "Skład : " + info[0];
                 NumberForMission2.Text = "Skład : " + info[1];
                 NumberForMission3.Text = "Skład : " + info[2];
@@ -976,13 +1032,39 @@ namespace Avalon
                     StartGameButton.Text = "Next";
                     break;
                 case 1:
-
+                    bw.Write("startGame");
+                    StartGameButton.Visible = false;
                     break;
                 case 2:
 
                     break;
             }
             stage++;
+        }
+
+        private void MordredChoiceImg_Click(object sender, EventArgs e)
+        {
+            bw.Write("mordredChosen");
+        }
+
+        private void MorganaChoiceImg_Click(object sender, EventArgs e)
+        {
+            bw.Write("morganaChosen");
+        }
+
+        private void OberonChoiceImg_Click(object sender, EventArgs e)
+        {
+            bw.Write("oberonChosen");
+        }
+
+        private void LadyChoiceImg_Click(object sender, EventArgs e)
+        {
+            bw.Write("ladyChosen");
+        }
+
+        private void ParsifalChoiceImg_Click(object sender, EventArgs e)
+        {
+            bw.Write("persifalChosen");
         }
     }
 }
