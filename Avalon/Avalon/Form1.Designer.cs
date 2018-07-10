@@ -129,7 +129,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.PlayersInfoLabel = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -442,6 +442,7 @@
             this.SitButton1.Text = "Usiądź";
             this.SitButton1.UseVisualStyleBackColor = true;
             this.SitButton1.Visible = false;
+            this.SitButton1.Click += new System.EventHandler(this.SitButton1_Click);
             // 
             // AwayButton1
             // 
@@ -452,6 +453,7 @@
             this.AwayButton1.Text = "Zejdź";
             this.AwayButton1.UseVisualStyleBackColor = true;
             this.AwayButton1.Visible = false;
+            this.AwayButton1.Click += new System.EventHandler(this.AwayButtons);
             // 
             // AwayButton2
             // 
@@ -462,6 +464,7 @@
             this.AwayButton2.Text = "Zejdź";
             this.AwayButton2.UseVisualStyleBackColor = true;
             this.AwayButton2.Visible = false;
+            this.AwayButton2.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton2
             // 
@@ -472,6 +475,7 @@
             this.SitButton2.Text = "Usiądź";
             this.SitButton2.UseVisualStyleBackColor = true;
             this.SitButton2.Visible = false;
+            this.SitButton2.Click += new System.EventHandler(this.SitButton2_Click);
             // 
             // ChoiceAgainstButton2
             // 
@@ -549,6 +553,7 @@
             this.AwayButton3.Text = "Zejdź";
             this.AwayButton3.UseVisualStyleBackColor = true;
             this.AwayButton3.Visible = false;
+            this.AwayButton3.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton3
             // 
@@ -559,6 +564,7 @@
             this.SitButton3.Text = "Usiądź";
             this.SitButton3.UseVisualStyleBackColor = true;
             this.SitButton3.Visible = false;
+            this.SitButton3.Click += new System.EventHandler(this.SitButton3_Click);
             // 
             // ChoiceAgainstButton3
             // 
@@ -636,6 +642,7 @@
             this.AwayButton4.Text = "Zejdź";
             this.AwayButton4.UseVisualStyleBackColor = true;
             this.AwayButton4.Visible = false;
+            this.AwayButton4.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton4
             // 
@@ -646,6 +653,7 @@
             this.SitButton4.Text = "Usiądź";
             this.SitButton4.UseVisualStyleBackColor = true;
             this.SitButton4.Visible = false;
+            this.SitButton4.Click += new System.EventHandler(this.SitButton4_Click);
             // 
             // ChoiceAgainstButton4
             // 
@@ -723,6 +731,7 @@
             this.AwayButton5.Text = "Zejdź";
             this.AwayButton5.UseVisualStyleBackColor = true;
             this.AwayButton5.Visible = false;
+            this.AwayButton5.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton5
             // 
@@ -733,6 +742,7 @@
             this.SitButton5.Text = "Usiądź";
             this.SitButton5.UseVisualStyleBackColor = true;
             this.SitButton5.Visible = false;
+            this.SitButton5.Click += new System.EventHandler(this.SitButton5_Click);
             // 
             // ChoiceAgainstButton5
             // 
@@ -810,6 +820,7 @@
             this.AwayButton6.Text = "Zejdź";
             this.AwayButton6.UseVisualStyleBackColor = true;
             this.AwayButton6.Visible = false;
+            this.AwayButton6.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton6
             // 
@@ -820,6 +831,7 @@
             this.SitButton6.Text = "Usiądź";
             this.SitButton6.UseVisualStyleBackColor = true;
             this.SitButton6.Visible = false;
+            this.SitButton6.Click += new System.EventHandler(this.SitButton6_Click);
             // 
             // ChoiceAgainstButton6
             // 
@@ -897,6 +909,7 @@
             this.AwayButton7.Text = "Zejdź";
             this.AwayButton7.UseVisualStyleBackColor = true;
             this.AwayButton7.Visible = false;
+            this.AwayButton7.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton7
             // 
@@ -907,6 +920,7 @@
             this.SitButton7.Text = "Usiądź";
             this.SitButton7.UseVisualStyleBackColor = true;
             this.SitButton7.Visible = false;
+            this.SitButton7.Click += new System.EventHandler(this.SitButton7_Click);
             // 
             // ChoiceAgainstButton7
             // 
@@ -984,6 +998,7 @@
             this.AwayButton8.Text = "Zejdź";
             this.AwayButton8.UseVisualStyleBackColor = true;
             this.AwayButton8.Visible = false;
+            this.AwayButton8.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton8
             // 
@@ -994,6 +1009,7 @@
             this.SitButton8.Text = "Usiądź";
             this.SitButton8.UseVisualStyleBackColor = true;
             this.SitButton8.Visible = false;
+            this.SitButton8.Click += new System.EventHandler(this.SitButton8_Click);
             // 
             // ChoiceAgainstButton8
             // 
@@ -1071,6 +1087,7 @@
             this.AwayButton9.Text = "Zejdź";
             this.AwayButton9.UseVisualStyleBackColor = true;
             this.AwayButton9.Visible = false;
+            this.AwayButton9.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton9
             // 
@@ -1081,6 +1098,7 @@
             this.SitButton9.Text = "Usiądź";
             this.SitButton9.UseVisualStyleBackColor = true;
             this.SitButton9.Visible = false;
+            this.SitButton9.Click += new System.EventHandler(this.SitButton9_Click);
             // 
             // ChoiceAgainstButton9
             // 
@@ -1158,6 +1176,7 @@
             this.AwayButton10.Text = "Zejdź";
             this.AwayButton10.UseVisualStyleBackColor = true;
             this.AwayButton10.Visible = false;
+            this.AwayButton10.Click += new System.EventHandler(this.AwayButtons);
             // 
             // SitButton10
             // 
@@ -1168,6 +1187,7 @@
             this.SitButton10.Text = "Usiądź";
             this.SitButton10.UseVisualStyleBackColor = true;
             this.SitButton10.Visible = false;
+            this.SitButton10.Click += new System.EventHandler(this.SitButton10_Click);
             // 
             // ChoiceAgainstButton10
             // 
@@ -1245,6 +1265,7 @@
             this.StartGameButton.Text = "Start";
             this.StartGameButton.UseVisualStyleBackColor = true;
             this.StartGameButton.Visible = false;
+            this.StartGameButton.Click += new System.EventHandler(this.StartGameButton_Click);
             // 
             // MaxSpecialEvilLabel
             // 
@@ -1414,20 +1435,20 @@
             this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label11.Visible = false;
             // 
-            // label12
+            // PlayersInfoLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.ForeColor = System.Drawing.Color.Cyan;
-            this.label12.Location = new System.Drawing.Point(1070, 223);
-            this.label12.Name = "label12";
-            this.label12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label12.Size = new System.Drawing.Size(72, 39);
-            this.label12.TabIndex = 182;
-            this.label12.Text = "Graczy : 10\r\nDobrzy : 6\r\nŹli : 4";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.label12.Visible = false;
+            this.PlayersInfoLabel.AutoSize = true;
+            this.PlayersInfoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayersInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PlayersInfoLabel.ForeColor = System.Drawing.Color.Cyan;
+            this.PlayersInfoLabel.Location = new System.Drawing.Point(1070, 223);
+            this.PlayersInfoLabel.Name = "PlayersInfoLabel";
+            this.PlayersInfoLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PlayersInfoLabel.Size = new System.Drawing.Size(72, 39);
+            this.PlayersInfoLabel.TabIndex = 182;
+            this.PlayersInfoLabel.Text = "Graczy : 10\r\nDobrzy : 6\r\nŹli : 4";
+            this.PlayersInfoLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.PlayersInfoLabel.Visible = false;
             // 
             // pictureBox6
             // 
@@ -2197,9 +2218,9 @@
             this.MinimizeButton.Size = new System.Drawing.Size(67, 56);
             this.MinimizeButton.TabIndex = 1;
             this.MinimizeButton.TabStop = false;
-            this.MinimizeButton.Click += new System.EventHandler(this.pictureBox2_Click);
-            this.MinimizeButton.MouseEnter += new System.EventHandler(this.pictureBox2_MouseEnter);
-            this.MinimizeButton.MouseLeave += new System.EventHandler(this.pictureBox2_MouseLeave);
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
+            this.MinimizeButton.MouseEnter += new System.EventHandler(this.MinimizeButton_MouseEnter);
+            this.MinimizeButton.MouseLeave += new System.EventHandler(this.MinimizeButton_MouseLeave);
             // 
             // ExitButton
             // 
@@ -2209,9 +2230,9 @@
             this.ExitButton.Size = new System.Drawing.Size(67, 56);
             this.ExitButton.TabIndex = 0;
             this.ExitButton.TabStop = false;
-            this.ExitButton.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.ExitButton.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            this.ExitButton.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            this.ExitButton.MouseEnter += new System.EventHandler(this.ExitButton_MouseEnter);
+            this.ExitButton.MouseLeave += new System.EventHandler(this.ExitButton_MouseLeave);
             // 
             // PlayerAreaPicture1
             // 
@@ -2237,11 +2258,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Avalon.Properties.Resources.bckg;
             this.ClientSize = new System.Drawing.Size(1408, 792);
             this.ControlBox = false;
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.PlayersInfoLabel);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -2415,6 +2434,7 @@
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PlayerAreaPicture1);
             this.Controls.Add(this.PlayerAreaPicture2);
+            this.Controls.Add(this.pictureBox6);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
@@ -2673,7 +2693,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label PlayersInfoLabel;
         private System.Windows.Forms.PictureBox pictureBox6;
     }
 }

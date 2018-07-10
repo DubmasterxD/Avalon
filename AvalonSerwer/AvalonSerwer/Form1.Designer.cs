@@ -69,6 +69,7 @@
             this.ServerStopButton.TabIndex = 3;
             this.ServerStopButton.Text = "Zatrzymaj Serwer";
             this.ServerStopButton.UseVisualStyleBackColor = true;
+            this.ServerStopButton.Visible = false;
             this.ServerStopButton.Click += new System.EventHandler(this.ServerStopButton_Click);
             // 
             // Serwer
@@ -82,6 +83,7 @@
             this.Controls.Add(this.PortTextBox);
             this.Name = "Serwer";
             this.Text = "Avalon Serwer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Serwer_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
