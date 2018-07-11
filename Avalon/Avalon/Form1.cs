@@ -30,7 +30,7 @@ namespace Avalon
         public Game()
         {
             InitializeComponent();
-            mySeat = 0;
+            mySeat = -1;
             stage = 0;
             info = new int[7];
         }
@@ -82,7 +82,7 @@ namespace Avalon
                     switch(cmd)
                     {
                         case "seatstaken":
-                            mySeat = 0;
+                            mySeat = -1;
                             Seat1Taken(false, "");
                             Seat2Taken(false, "");
                             Seat3Taken(false, "");
@@ -109,7 +109,7 @@ namespace Avalon
                         case "seatfree":
                             int freedSeat = Convert.ToInt16(br.ReadString());
                             SeatTaken(freedSeat, false, "");
-                            if(mySeat!=0)
+                            if(mySeat!=-1)
                             {
                                 MySeatChanged(mySeat);
                             }
@@ -132,6 +132,18 @@ namespace Avalon
                             break;
                         case "addChosen":
                             AddSelected(br.ReadString(), br.ReadString());
+                            break;
+                        case "gameStarted":
+                            ChangeLeader(Convert.ToInt16(br.ReadString()));
+                            if(br.ReadString()=="true")
+                            {
+                                ChangeLady(Convert.ToInt16(br.ReadString()));
+                            }
+                            ChooseSeatToSetRole(br.ReadString());
+                            while(br.ReadString()!="end")
+                            {
+                                HighlightCharacter(Convert.ToInt16(br.ReadString()));
+                            }
                             break;
                         default:
                             break;
@@ -156,6 +168,407 @@ namespace Avalon
                 }
                 Application.Exit();
             }
+        }
+
+        delegate void ChangeLadyDelegate(int seat);
+
+        private void ChangeLady(int seat)
+        {
+            if(LadyPicture1.InvokeRequired || LadyPicture2.InvokeRequired || LadyPicture3.InvokeRequired || LadyPicture4.InvokeRequired || LadyPicture5.InvokeRequired || LadyPicture6.InvokeRequired || LadyPicture7.InvokeRequired || LadyPicture8.InvokeRequired || LadyPicture9.InvokeRequired || LadyPicture10.InvokeRequired)
+            {
+                ChangeLadyDelegate f = new ChangeLadyDelegate(ChangeLady);
+                this.Invoke(f, new object[] { seat });
+            }
+            else
+            {
+                switch(seat)
+                {
+                    case 0:
+                        LadyPicture1.Visible = true;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 1:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = true;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 2:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = true;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 3:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = true;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 4:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = true;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 5:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = true;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 6:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = true;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 7:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = true;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 8:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = true;
+                        LadyPicture10.Visible = false;
+                        break;
+                    case 9:
+                        LadyPicture1.Visible = false;
+                        LadyPicture2.Visible = false;
+                        LadyPicture3.Visible = false;
+                        LadyPicture4.Visible = false;
+                        LadyPicture5.Visible = false;
+                        LadyPicture6.Visible = false;
+                        LadyPicture7.Visible = false;
+                        LadyPicture8.Visible = false;
+                        LadyPicture9.Visible = false;
+                        LadyPicture10.Visible = true;
+                        break;
+                }
+            }
+        }
+
+        delegate void ChangeLeaderDelegate(int seat);
+
+        private void ChangeLeader(int seat)
+        {
+            if (LeaderIcon1.InvokeRequired || LeaderIcon2.InvokeRequired || LeaderIcon3.InvokeRequired || LeaderIcon4.InvokeRequired || LeaderIcon5.InvokeRequired || LeaderIcon6.InvokeRequired || LeaderIcon7.InvokeRequired || LeaderIcon8.InvokeRequired || LeaderIcon9.InvokeRequired || LeaderIcon10.InvokeRequired)
+            {
+                ChangeLeaderDelegate f = new ChangeLeaderDelegate(ChangeLeader);
+                this.Invoke(f, new object[] { seat });
+            }
+            else
+            {
+                switch (seat)
+                {
+                    case 0:
+                        LeaderIcon1.Visible = true;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 1:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = true;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 2:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = true;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 3:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = true;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 4:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = true;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 5:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = true;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 6:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = true;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 7:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = true;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 8:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = true;
+                        LeaderIcon10.Visible = false;
+                        break;
+                    case 9:
+                        LeaderIcon1.Visible = false;
+                        LeaderIcon2.Visible = false;
+                        LeaderIcon3.Visible = false;
+                        LeaderIcon4.Visible = false;
+                        LeaderIcon5.Visible = false;
+                        LeaderIcon6.Visible = false;
+                        LeaderIcon7.Visible = false;
+                        LeaderIcon8.Visible = false;
+                        LeaderIcon9.Visible = false;
+                        LeaderIcon10.Visible = true;
+                        break;
+                }
+            }
+        }
+
+        delegate void HighlightCharacterDelegate(int seat);
+
+        private void HighlightCharacter(int seat)
+        {
+            if (CharacterPicture1.InvokeRequired || CharacterPicture2.InvokeRequired || CharacterPicture3.InvokeRequired || CharacterPicture4.InvokeRequired || CharacterPicture5.InvokeRequired || CharacterPicture6.InvokeRequired || CharacterPicture7.InvokeRequired || CharacterPicture8.InvokeRequired || CharacterPicture9.InvokeRequired || CharacterPicture10.InvokeRequired)
+            {
+                HighlightCharacterDelegate f = new HighlightCharacterDelegate(HighlightCharacter);
+                this.Invoke(f, new object[] { seat });
+            }
+            else
+            {
+                switch (seat)
+                {
+                    case 0:
+                        CharacterPicture1.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 1:
+                        CharacterPicture2.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 2:
+                        CharacterPicture3.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 3:
+                        CharacterPicture4.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 4:
+                        CharacterPicture5.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 5:
+                        CharacterPicture6.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 6:
+                        CharacterPicture7.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 7:
+                        CharacterPicture8.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 8:
+                        CharacterPicture9.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 9:
+                        CharacterPicture10.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                }
+            }
+        }
+
+        delegate void SetRoleDelegate(string name);
+
+        private void ChooseSeatToSetRole(string name)
+        {
+            if (CharacterPicture1.InvokeRequired || CharacterPicture2.InvokeRequired || CharacterPicture3.InvokeRequired || CharacterPicture4.InvokeRequired || CharacterPicture5.InvokeRequired || CharacterPicture6.InvokeRequired || CharacterPicture7.InvokeRequired || CharacterPicture8.InvokeRequired || CharacterPicture9.InvokeRequired || CharacterPicture10.InvokeRequired)
+            {
+                SetRoleDelegate f = new SetRoleDelegate(ChooseSeatToSetRole);
+                this.Invoke(f, new object[] { name });
+            }
+            else
+            {
+                switch (mySeat)
+                {
+                    case 0:
+                        CharacterPicture1.BackgroundImage = SetRole(name);
+                        break;
+                    case 1:
+                        CharacterPicture2.BackgroundImage = SetRole(name);
+                        break;
+                    case 2:
+                        CharacterPicture3.BackgroundImage = SetRole(name);
+                        break;
+                    case 3:
+                        CharacterPicture4.BackgroundImage = SetRole(name);
+                        break;
+                    case 4:
+                        CharacterPicture5.BackgroundImage = SetRole(name);
+                        break;
+                    case 5:
+                        CharacterPicture6.BackgroundImage = SetRole(name);
+                        break;
+                    case 6:
+                        CharacterPicture7.BackgroundImage = SetRole(name);
+                        break;
+                    case 7:
+                        CharacterPicture8.BackgroundImage = SetRole(name);
+                        break;
+                    case 8:
+                        CharacterPicture9.BackgroundImage = SetRole(name);
+                        break;
+                    case 9:
+                        CharacterPicture10.BackgroundImage = SetRole(name);
+                        break;
+                }
+            }
+        }
+
+        private Image SetRole(string name)
+        {
+            Image role = null;
+            switch(name)
+            {
+                case "Merlin":
+                    role = Avalon.Properties.Resources.Merlin;
+                    break;
+                case "Persifal":
+                    role = Avalon.Properties.Resources.Parsifal;
+                    break;
+                case "Morgana":
+                    role = Avalon.Properties.Resources.Morgana;
+                    break;
+                case "Oberon":
+                    role = Avalon.Properties.Resources.Oberon;
+                    break;
+                case "Skrytobójca":
+                    role = Avalon.Properties.Resources.Skrytobojca;
+                    break;
+                case "Evil":
+                    role = Avalon.Properties.Resources.PoplecznikMordreda3;
+                    break;
+                case "Good":
+                    role = Avalon.Properties.Resources.PoddanyArtura5;
+                    break;
+                case "Mordred":
+                    role = Avalon.Properties.Resources.Mordred;
+                    break;
+            }
+            return role;
         }
 
         delegate void AddSelectedDelegate(string name, string chosen);
@@ -295,13 +708,13 @@ namespace Avalon
             }
         }
 
-        delegate void SeatChangedDelegate(int number);
+        delegate void MySeatChangedDelegate(int number);
 
         private void MySeatChanged(int number)
         {
             if (AwayButton1.InvokeRequired || AwayButton2.InvokeRequired || AwayButton3.InvokeRequired || AwayButton4.InvokeRequired || AwayButton5.InvokeRequired || AwayButton6.InvokeRequired || AwayButton7.InvokeRequired || AwayButton8.InvokeRequired || AwayButton9.InvokeRequired || AwayButton10.InvokeRequired || SitButton1.InvokeRequired || SitButton2.InvokeRequired || SitButton3.InvokeRequired || SitButton4.InvokeRequired || SitButton5.InvokeRequired || SitButton6.InvokeRequired || SitButton7.InvokeRequired || SitButton8.InvokeRequired || SitButton9.InvokeRequired || SitButton10.InvokeRequired)
             {
-                SeatChangedDelegate f = new SeatChangedDelegate(MySeatChanged);
+                MySeatChangedDelegate f = new MySeatChangedDelegate(MySeatChanged);
                 this.Invoke(f, new object[] { number});
             }
             else
@@ -309,7 +722,7 @@ namespace Avalon
                 mySeat = number;
                 switch (mySeat)
                 {
-                    case 1:
+                    case 0:
                         AwayButton1.Visible = true;
                         SitButton2.Visible = false;
                         SitButton3.Visible = false;
@@ -321,7 +734,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 2:
+                    case 1:
                         AwayButton2.Visible = true;
                         SitButton1.Visible = false;
                         SitButton3.Visible = false;
@@ -333,7 +746,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 3:
+                    case 2:
                         AwayButton3.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -345,7 +758,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 4:
+                    case 3:
                         AwayButton4.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -357,7 +770,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 5:
+                    case 4:
                         AwayButton5.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -369,7 +782,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 6:
+                    case 5:
                         AwayButton6.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -381,7 +794,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 7:
+                    case 6:
                         AwayButton7.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -393,7 +806,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 8:
+                    case 7:
                         AwayButton8.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -405,7 +818,7 @@ namespace Avalon
                         SitButton9.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 9:
+                    case 8:
                         AwayButton9.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -417,7 +830,7 @@ namespace Avalon
                         SitButton8.Visible = false;
                         SitButton10.Visible = false;
                         break;
-                    case 10:
+                    case 9:
                         AwayButton10.Visible = true;
                         SitButton1.Visible = false;
                         SitButton2.Visible = false;
@@ -437,46 +850,46 @@ namespace Avalon
         {
             switch(number)
             {
-                case 1:
+                case 0:
                     Seat1Taken(taken, nick);
                     break;
-                case 2:
+                case 1:
                     Seat2Taken(taken, nick);
                     break;
-                case 3:
+                case 2:
                     Seat3Taken(taken, nick);
                     break;
-                case 4:
+                case 3:
                     Seat4Taken(taken, nick);
                     break;
-                case 5:
+                case 4:
                     Seat5Taken(taken, nick);
                     break;
-                case 6:
+                case 5:
                     Seat6Taken(taken, nick);
                     break;
-                case 7:
+                case 6:
                     Seat7Taken(taken, nick);
                     break;
-                case 8:
+                case 7:
                     Seat8Taken(taken, nick);
                     break;
-                case 9:
+                case 8:
                     Seat9Taken(taken, nick);
                     break;
-                case 10:
+                case 9:
                     Seat10Taken(taken, nick);
                     break;
             }
         }
 
-        delegate void SitTakenDelegate(bool taken, string nick);
+        delegate void SeatTakenDelegate(bool taken, string nick);
 
         private void Seat1Taken(bool taken, string nick)
         {
             if (RemoveFromTeamButton1.InvokeRequired || ChoiceAgainstButton1.InvokeRequired || ChoiceAcceptButton1.InvokeRequired || CharacterPicture1.InvokeRequired || LadyCheckButton1.InvokeRequired || AddToTeamButton1.InvokeRequired || ChoicePicture1.InvokeRequired || NicknameLabel1.InvokeRequired || LadyPicture1.InvokeRequired || LeaderIcon1.InvokeRequired || AwayButton1.InvokeRequired || InTeamIcon1.InvokeRequired || SitButton1.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat1Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat1Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -521,7 +934,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton2.InvokeRequired || ChoiceAgainstButton2.InvokeRequired || ChoiceAcceptButton2.InvokeRequired || CharacterPicture2.InvokeRequired || LadyCheckButton2.InvokeRequired || AddToTeamButton2.InvokeRequired || ChoicePicture2.InvokeRequired || NicknameLabel2.InvokeRequired || LadyPicture2.InvokeRequired || LeaderIcon2.InvokeRequired || AwayButton2.InvokeRequired || InTeamIcon2.InvokeRequired || SitButton2.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat2Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat2Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -566,7 +979,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton3.InvokeRequired || ChoiceAgainstButton3.InvokeRequired || ChoiceAcceptButton3.InvokeRequired || CharacterPicture3.InvokeRequired || LadyCheckButton3.InvokeRequired || AddToTeamButton3.InvokeRequired || ChoicePicture3.InvokeRequired || NicknameLabel3.InvokeRequired || LadyPicture3.InvokeRequired || LeaderIcon3.InvokeRequired || AwayButton3.InvokeRequired || InTeamIcon3.InvokeRequired || SitButton3.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat3Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat3Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -611,7 +1024,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton4.InvokeRequired || ChoiceAgainstButton4.InvokeRequired || ChoiceAcceptButton4.InvokeRequired || CharacterPicture4.InvokeRequired || LadyCheckButton4.InvokeRequired || AddToTeamButton4.InvokeRequired || ChoicePicture4.InvokeRequired || NicknameLabel4.InvokeRequired || LadyPicture4.InvokeRequired || LeaderIcon4.InvokeRequired || AwayButton4.InvokeRequired || InTeamIcon4.InvokeRequired || SitButton4.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat4Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat4Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -656,7 +1069,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton5.InvokeRequired || ChoiceAgainstButton5.InvokeRequired || ChoiceAcceptButton5.InvokeRequired || CharacterPicture5.InvokeRequired || LadyCheckButton5.InvokeRequired || AddToTeamButton5.InvokeRequired || ChoicePicture5.InvokeRequired || NicknameLabel5.InvokeRequired || LadyPicture5.InvokeRequired || LeaderIcon5.InvokeRequired || AwayButton5.InvokeRequired || InTeamIcon5.InvokeRequired || SitButton5.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat5Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat5Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -701,7 +1114,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton6.InvokeRequired || ChoiceAgainstButton6.InvokeRequired || ChoiceAcceptButton6.InvokeRequired || CharacterPicture6.InvokeRequired || LadyCheckButton6.InvokeRequired || AddToTeamButton6.InvokeRequired || ChoicePicture6.InvokeRequired || NicknameLabel6.InvokeRequired || LadyPicture6.InvokeRequired || LeaderIcon6.InvokeRequired || AwayButton6.InvokeRequired || InTeamIcon6.InvokeRequired || SitButton6.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat6Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat6Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -746,7 +1159,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton7.InvokeRequired || ChoiceAgainstButton7.InvokeRequired || ChoiceAcceptButton7.InvokeRequired || CharacterPicture7.InvokeRequired || LadyCheckButton7.InvokeRequired || AddToTeamButton7.InvokeRequired || ChoicePicture7.InvokeRequired || NicknameLabel7.InvokeRequired || LadyPicture7.InvokeRequired || LeaderIcon7.InvokeRequired || AwayButton7.InvokeRequired || InTeamIcon7.InvokeRequired || SitButton7.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat7Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat7Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -791,7 +1204,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton8.InvokeRequired || ChoiceAgainstButton8.InvokeRequired || ChoiceAcceptButton8.InvokeRequired || CharacterPicture8.InvokeRequired || LadyCheckButton8.InvokeRequired || AddToTeamButton8.InvokeRequired || ChoicePicture8.InvokeRequired || NicknameLabel8.InvokeRequired || LadyPicture8.InvokeRequired || LeaderIcon8.InvokeRequired || AwayButton8.InvokeRequired || InTeamIcon8.InvokeRequired || SitButton8.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat8Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat8Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -836,7 +1249,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton9.InvokeRequired || ChoiceAgainstButton9.InvokeRequired || ChoiceAcceptButton9.InvokeRequired || CharacterPicture9.InvokeRequired || LadyCheckButton9.InvokeRequired || AddToTeamButton9.InvokeRequired || ChoicePicture9.InvokeRequired || NicknameLabel9.InvokeRequired || LadyPicture9.InvokeRequired || LeaderIcon9.InvokeRequired || AwayButton9.InvokeRequired || InTeamIcon9.InvokeRequired || SitButton9.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat9Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat9Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -881,7 +1294,7 @@ namespace Avalon
         {
             if (RemoveFromTeamButton10.InvokeRequired || ChoiceAgainstButton10.InvokeRequired || ChoiceAcceptButton10.InvokeRequired || CharacterPicture10.InvokeRequired || LadyCheckButton10.InvokeRequired || AddToTeamButton10.InvokeRequired || ChoicePicture10.InvokeRequired || NicknameLabel10.InvokeRequired || LadyPicture10.InvokeRequired || LeaderIcon10.InvokeRequired || AwayButton10.InvokeRequired || InTeamIcon10.InvokeRequired || SitButton10.InvokeRequired)
             {
-                SitTakenDelegate f = new SitTakenDelegate(Seat10Taken);
+                SeatTakenDelegate f = new SeatTakenDelegate(Seat10Taken);
                 this.Invoke(f, new object[] { taken, nick });
             }
             else
@@ -961,61 +1374,61 @@ namespace Avalon
         private void SitButton1_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("1");
+            bw.Write("0");
         }
 
         private void SitButton2_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("2");
+            bw.Write("1");
         }
 
         private void SitButton3_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("3");
+            bw.Write("2");
         }
 
         private void SitButton4_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("4");
+            bw.Write("3");
         }
 
         private void SitButton5_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("5");
+            bw.Write("4");
         }
 
         private void SitButton6_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("6");
+            bw.Write("5");
         }
 
         private void SitButton7_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("7");
+            bw.Write("6");
         }
 
         private void SitButton8_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("8");
+            bw.Write("7");
         }
 
         private void SitButton9_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("9");
+            bw.Write("8");
         }
 
         private void SitButton10_Click(object sender, EventArgs e)
         {
             bw.Write("takeseat");
-            bw.Write("10");
+            bw.Write("9");
         }
 
         private void AwayButtons(object sender, EventArgs e)

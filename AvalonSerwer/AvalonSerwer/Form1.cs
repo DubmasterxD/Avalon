@@ -23,11 +23,9 @@ namespace AvalonSerwer
         ArrayList threadList;
         ArrayList clientList;
         TcpClient newClient;
-        TcpClient leader;
         TcpClient[] players;
         string[] nicks;
         int numberOfPlayers;
-        bool gameRunning;
         bool withLady;
         bool withPersifal;
         bool withMordred;
@@ -35,6 +33,13 @@ namespace AvalonSerwer
         bool withOberon;
         int numberOfEvilAdds;
         int[] info;
+        bool gameRunning;
+        int[] seatsTaken;
+        Random rnd = new Random();
+        Random rnd2 = new Random();
+        int leader;
+        string[] roles;
+        int lady;
 
         public Serwer()
         {
@@ -85,7 +90,7 @@ namespace AvalonSerwer
             BinaryReader br = new BinaryReader(ns);
             BinaryWriter bw = new BinaryWriter(ns);
             string nick = "";
-            int seat = 0;
+            int seat = -1;
             string cmd = "";
             try
             {
@@ -100,7 +105,7 @@ namespace AvalonSerwer
                             {
                                 if (nicks[i] != "" && nicks[i] != null)
                                 {
-                                    bw.Write((i + 1).ToString());
+                                    bw.Write((i).ToString());
                                     bw.Write(nicks[i]);
                                 }
                             }
@@ -108,68 +113,55 @@ namespace AvalonSerwer
                             break;
                         case "takeseat":
                             int askingSeat = Convert.ToInt16(br.ReadString());
-                            if (nicks[askingSeat - 1] == "" || nicks[askingSeat - 1] == null)
+                            if (nicks[askingSeat] == "" || nicks[askingSeat] == null)
                             {
-                                nicks[askingSeat - 1] = nick;
-                                players[askingSeat - 1] = Player;
+                                nicks[askingSeat] = nick;
+                                players[askingSeat] = Player;
                                 numberOfPlayers++;
                                 SendToAll("seattaken");
                                 SendToAll(askingSeat.ToString());
-                                SendToAll(nicks[askingSeat - 1]);
+                                SendToAll(nicks[askingSeat]);
                                 bw.Write("seataccepted");
                                 bw.Write(askingSeat.ToString());
                                 seat = askingSeat;
-                                if(askingSeat==1)
-                                {
-                                    leader = Player;
-                                }
                                 if(numberOfPlayers>=5)
                                 {
-                                    if (leader != null && leader.Connected)
-                                    {
-                                        NetworkStream leaderStream = leader.GetStream();
-                                        BinaryWriter leaderWriter = new BinaryWriter(leaderStream);
-                                        leaderWriter.Write("ableToStart");
-                                    }
+
+                                    SendToPlayer("ableToStart", 0);
                                 }
                             }
                             break;
                         case "stand":
-                            if (seat != 0)
+                            if (seat != -1)
                             {
                                 SendToAll("seatfree");
                                 SendToAll(seat.ToString());
-                                players[seat - 1] = null;
-                                nicks[seat - 1] = null;
+                                players[seat] = null;
+                                nicks[seat] = null;
                                 numberOfPlayers--;
                             }
-                            if (seat == 1)
+                            if (seat == 0)
                             {
-                                leader = null;
                                 bw.Write("unableToStart");
                             }
-                            seat = 0;
+                            seat = -1;
                             bw.Write("seatstaken");
                             for (int i = 0; i < nicks.Length; i++)
                             {
                                 if (nicks[i] != "" && nicks[i] != null)
                                 {
-                                    bw.Write((i + 1).ToString());
+                                    bw.Write((i).ToString());
                                     bw.Write(nicks[i]);
                                 }
                             }
                             bw.Write("end");
                             if(numberOfPlayers<5)
                             {
-                                if (leader != null && leader.Connected)
-                                {
-                                    NetworkStream leaderStream = leader.GetStream();
-                                    BinaryWriter leaderWriter = new BinaryWriter(leaderStream);
-                                    leaderWriter.Write("unableToStart");
-                                }
+                                SendToPlayer("unableToStart", 0);
                             }
                             break;
                         case "startChoose":
+                            rnd2 = new Random();
                             SendToAll("chooseStarted");
                             switch (numberOfPlayers)
                             {
@@ -202,7 +194,7 @@ namespace AvalonSerwer
                             gameRunning = true;
                             break;
                         case "ladyChosen":
-                            if(seat==1)
+                            if(seat==0)
                             {
                                 if(withLady)
                                 {
@@ -221,7 +213,7 @@ namespace AvalonSerwer
                             }
                             break;
                         case "persifalChosen":
-                            if (seat == 1)
+                            if (seat == 0)
                             {
                                 if (withPersifal)
                                 {
@@ -240,7 +232,7 @@ namespace AvalonSerwer
                             }
                             break;
                         case "mordredChosen":
-                            if (seat == 1)
+                            if (seat == 0)
                             {
                                 if (withMordred)
                                 {
@@ -264,7 +256,7 @@ namespace AvalonSerwer
                             }
                             break;
                         case "morganaChosen":
-                            if (seat == 1)
+                            if (seat == 0)
                             {
                                 if (withMorgana)
                                 {
@@ -288,7 +280,7 @@ namespace AvalonSerwer
                             }
                             break;
                         case "oberonChosen":
-                            if (seat == 1)
+                            if (seat == 0)
                             {
                                 if (withOberon)
                                 {
@@ -312,7 +304,163 @@ namespace AvalonSerwer
                             }
                             break;
                         case "startGame":
-
+                            SendToAll("gameStarted");
+                            seatsTaken = new int[numberOfPlayers];
+                            int h = 0;
+                            for(int i=0; i<nicks.Length;i++)
+                            {
+                                if(nicks[i]!=null&&nicks[i]!="")
+                                {
+                                    seatsTaken[h] = i;
+                                    h++;
+                                }
+                            }
+                            leader = rnd.Next(numberOfPlayers);
+                            SendToAll(seatsTaken[leader].ToString());
+                            if(withLady)
+                            {
+                                SendToAll("true");
+                                lady = leader - 1;
+                                if(lady==-1)
+                                {
+                                    lady = numberOfPlayers - 1;
+                                }
+                                SendToAll(seatsTaken[lady].ToString());
+                            }
+                            else
+                            {
+                                SendToAll("false");
+                            }
+                            roles = new string[numberOfPlayers];
+                            for (int i=0; i<numberOfPlayers;i++)
+                            {
+                                roles[i] = "";
+                            }
+                            string[] freeRoles = new string[numberOfPlayers];
+                            freeRoles[0] = "Merlin";
+                            freeRoles[1] = "Skrytobójca";
+                            if(withPersifal)
+                            {
+                                freeRoles[2] = "Persifal";
+                            }
+                            else
+                            {
+                                freeRoles[2] = "Good";
+                            }
+                            for(int i=3;i<=info[5];i++)
+                            {
+                                freeRoles[i] = "Good";
+                            }
+                            for(int i=numberOfPlayers-1;i>numberOfPlayers-info[6];i--)
+                            {
+                                if(withMordred)
+                                {
+                                    freeRoles[i] = "Mordred";
+                                    withMordred = false;
+                                }
+                                else if(withMorgana)
+                                {
+                                    freeRoles[i] = "Morgana";
+                                    withMorgana = false;
+                                }
+                                else if(withOberon)
+                                {
+                                    freeRoles[i] = "Oberon";
+                                    withOberon = false;
+                                }
+                                else
+                                {
+                                    freeRoles[i] = "Evil";
+                                }
+                            }
+                            int k = 0;
+                            int l;
+                            while(k<numberOfPlayers)
+                            {
+                                l = rnd2.Next(numberOfPlayers);
+                                if(roles[l]=="")
+                                {
+                                    roles[l] = freeRoles[k];
+                                    k++;
+                                }
+                            }
+                            for(int i=0; i<numberOfPlayers;i++)
+                            {
+                                SendToPlayer(roles[i], seatsTaken[i]);
+                                if(roles[i]=="Merlin")
+                                {
+                                    for(int j=0; j<numberOfPlayers;j++)
+                                    {
+                                        if(roles[j] == "Skrytobójca"|| roles[j] == "Oberon"|| roles[j] == "Morgana"|| roles[j] == "Evil")
+                                        {
+                                            SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                        }
+                                    }
+                                    SendToPlayer("end", seatsTaken[i]);
+                                }
+                                else if(roles[i]=="Persifal")
+                                {
+                                    for (int j = 0; j < numberOfPlayers; j++)
+                                    {
+                                        if (roles[j] == "Merlin" || roles[j] == "Morgana")
+                                        {
+                                            SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                        }
+                                    }
+                                    SendToPlayer("end", seatsTaken[i]);
+                                }
+                                else if (roles[i]=="Skrytobójca")
+                                {
+                                    for (int j = 0; j < numberOfPlayers; j++)
+                                    {
+                                        if (roles[j] == "Mordred" || roles[j] == "Morgana" || roles[j] == "Evil")
+                                        {
+                                            SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                        }
+                                    }
+                                    SendToPlayer("end", seatsTaken[i]);
+                                }
+                                else if(roles[i]=="Mordred")
+                                {
+                                    for (int j = 0; j < numberOfPlayers; j++)
+                                    {
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Morgana" || roles[j] == "Evil")
+                                        {
+                                            SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                        }
+                                    }
+                                    SendToPlayer("end", seatsTaken[i]);
+                                }
+                                else if(roles[i]=="Morgana")
+                                {
+                                    for (int j = 0; j < numberOfPlayers; j++)
+                                    {
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Mordred" || roles[j] == "Evil")
+                                        {
+                                            SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                        }
+                                    }
+                                    SendToPlayer("end", seatsTaken[i]);
+                                }
+                                else if(roles[i]=="Evil")
+                                {
+                                    for (int j = 0; j < numberOfPlayers; j++)
+                                    {
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Mordred" || roles[j] == "Morgana" || roles[j] == "Evil")
+                                        {
+                                            if (i != j)
+                                            {
+                                                SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                            }
+                                        }
+                                    }
+                                    SendToPlayer("end", seatsTaken[i]);
+                                }
+                                else
+                                {
+                                    SendToPlayer("end", seatsTaken[i]);
+                                }
+                            }
                             break;
                         default:
                             break;
@@ -342,6 +490,16 @@ namespace AvalonSerwer
                     bw.Write(message);
 
                 }
+            }
+        }
+
+        private void SendToPlayer(string message, int seat)
+        {
+            if (players[seat] != null && players[seat].Connected)
+            {
+                NetworkStream ns = players[seat].GetStream();
+                BinaryWriter bw = new BinaryWriter(ns);
+                bw.Write(message);
             }
         }
 
