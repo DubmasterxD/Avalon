@@ -40,6 +40,8 @@ namespace AvalonSerwer
         int leader;
         string[] roles;
         int lady;
+        int currRound;
+        List<int> team;
 
         public Serwer()
         {
@@ -68,7 +70,7 @@ namespace AvalonSerwer
             try
             {
                 server.Start();
-                while(true)
+                while (true)
                 {
                     newClient = server.AcceptTcpClient();
                     clientList.Add(newClient);
@@ -94,7 +96,7 @@ namespace AvalonSerwer
             string cmd = "";
             try
             {
-                while ((cmd=br.ReadString())!="disconnect")
+                while ((cmd = br.ReadString()) != "disconnect")
                 {
                     switch (cmd)
                     {
@@ -124,7 +126,7 @@ namespace AvalonSerwer
                                 bw.Write("seataccepted");
                                 bw.Write(askingSeat.ToString());
                                 seat = askingSeat;
-                                if(numberOfPlayers>=5)
+                                if (numberOfPlayers >= 5)
                                 {
 
                                     SendToPlayer("ableToStart", 0);
@@ -155,7 +157,7 @@ namespace AvalonSerwer
                                 }
                             }
                             bw.Write("end");
-                            if(numberOfPlayers<5)
+                            if (numberOfPlayers < 5)
                             {
                                 SendToPlayer("unableToStart", 0);
                             }
@@ -194,9 +196,9 @@ namespace AvalonSerwer
                             gameRunning = true;
                             break;
                         case "ladyChosen":
-                            if(seat==0)
+                            if (seat == 0)
                             {
-                                if(withLady)
+                                if (withLady)
                                 {
                                     withLady = false;
                                     SendToAll("addChosen");
@@ -304,24 +306,26 @@ namespace AvalonSerwer
                             }
                             break;
                         case "startGame":
+                            currRound = 1;
                             SendToAll("gameStarted");
                             seatsTaken = new int[numberOfPlayers];
                             int h = 0;
-                            for(int i=0; i<nicks.Length;i++)
+                            for (int i = 0; i < nicks.Length; i++)
                             {
-                                if(nicks[i]!=null&&nicks[i]!="")
+                                if (nicks[i] != null && nicks[i] != "")
                                 {
                                     seatsTaken[h] = i;
                                     h++;
                                 }
                             }
                             leader = rnd.Next(numberOfPlayers);
+                            leader = 0;
                             SendToAll(seatsTaken[leader].ToString());
-                            if(withLady)
+                            if (withLady)
                             {
                                 SendToAll("true");
                                 lady = leader - 1;
-                                if(lady==-1)
+                                if (lady == -1)
                                 {
                                     lady = numberOfPlayers - 1;
                                 }
@@ -332,14 +336,14 @@ namespace AvalonSerwer
                                 SendToAll("false");
                             }
                             roles = new string[numberOfPlayers];
-                            for (int i=0; i<numberOfPlayers;i++)
+                            for (int i = 0; i < numberOfPlayers; i++)
                             {
                                 roles[i] = "";
                             }
                             string[] freeRoles = new string[numberOfPlayers];
                             freeRoles[0] = "Merlin";
                             freeRoles[1] = "Skrytobójca";
-                            if(withPersifal)
+                            if (withPersifal)
                             {
                                 freeRoles[2] = "Persifal";
                             }
@@ -347,23 +351,23 @@ namespace AvalonSerwer
                             {
                                 freeRoles[2] = "Good";
                             }
-                            for(int i=3;i<=info[5];i++)
+                            for (int i = 3; i <= info[5]; i++)
                             {
                                 freeRoles[i] = "Good";
                             }
-                            for(int i=numberOfPlayers-1;i>numberOfPlayers-info[6];i--)
+                            for (int i = numberOfPlayers - 1; i > numberOfPlayers - info[6]; i--)
                             {
-                                if(withMordred)
+                                if (withMordred)
                                 {
                                     freeRoles[i] = "Mordred";
                                     withMordred = false;
                                 }
-                                else if(withMorgana)
+                                else if (withMorgana)
                                 {
                                     freeRoles[i] = "Morgana";
                                     withMorgana = false;
                                 }
-                                else if(withOberon)
+                                else if (withOberon)
                                 {
                                     freeRoles[i] = "Oberon";
                                     withOberon = false;
@@ -375,30 +379,30 @@ namespace AvalonSerwer
                             }
                             int k = 0;
                             int l;
-                            while(k<numberOfPlayers)
+                            while (k < numberOfPlayers)
                             {
                                 l = rnd2.Next(numberOfPlayers);
-                                if(roles[l]=="")
+                                if (roles[l] == "")
                                 {
                                     roles[l] = freeRoles[k];
                                     k++;
                                 }
                             }
-                            for(int i=0; i<numberOfPlayers;i++)
+                            for (int i = 0; i < numberOfPlayers; i++)
                             {
                                 SendToPlayer(roles[i], seatsTaken[i]);
-                                if(roles[i]=="Merlin")
+                                if (roles[i] == "Merlin")
                                 {
-                                    for(int j=0; j<numberOfPlayers;j++)
+                                    for (int j = 0; j < numberOfPlayers; j++)
                                     {
-                                        if(roles[j] == "Skrytobójca"|| roles[j] == "Oberon"|| roles[j] == "Morgana"|| roles[j] == "Evil")
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Oberon" || roles[j] == "Morgana" || roles[j] == "Evil")
                                         {
                                             SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
                                         }
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
                                 }
-                                else if(roles[i]=="Persifal")
+                                else if (roles[i] == "Persifal")
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
@@ -409,7 +413,7 @@ namespace AvalonSerwer
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
                                 }
-                                else if (roles[i]=="Skrytobójca")
+                                else if (roles[i] == "Skrytobójca")
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
@@ -420,7 +424,7 @@ namespace AvalonSerwer
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
                                 }
-                                else if(roles[i]=="Mordred")
+                                else if (roles[i] == "Mordred")
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
@@ -431,7 +435,7 @@ namespace AvalonSerwer
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
                                 }
-                                else if(roles[i]=="Morgana")
+                                else if (roles[i] == "Morgana")
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
@@ -442,7 +446,7 @@ namespace AvalonSerwer
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
                                 }
-                                else if(roles[i]=="Evil")
+                                else if (roles[i] == "Evil")
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
@@ -461,6 +465,34 @@ namespace AvalonSerwer
                                     SendToPlayer("end", seatsTaken[i]);
                                 }
                             }
+                            team = new List<int>();
+                            break;
+                        case "addToTeam":
+                            team.Add(Convert.ToInt16(br.ReadString()));
+                            SendToAll("added");
+                            SendToAll(team.Last().ToString());
+                            if(team.Count()==info[currRound-1])
+                            {
+                                bw.Write("fullTeam");
+                            }
+                            break;
+                        case "removeFromTeam":
+                            int removed = Convert.ToInt16(br.ReadString());
+                            team.Remove(removed);
+                            SendToAll("removed");
+                            SendToAll(removed.ToString());
+                            if(team.Count==info[currRound-1]-1)
+                            {
+                                bw.Write("canAdd");
+                                foreach(int seattaken in team)
+                                {
+                                    bw.Write(seattaken.ToString());
+                                }
+                                bw.Write("end");
+                            }
+                            break;
+                        case "tryTeam":
+                            SendToAll("voteTeam");
                             break;
                         default:
                             break;

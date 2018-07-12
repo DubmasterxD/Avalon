@@ -173,6 +173,16 @@ namespace Avalon.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap levelScoreBckg {
+            get {
+                object obj = ResourceManager.GetObject("levelScoreBckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Lider {
             get {
                 object obj = ResourceManager.GetObject("Lider", resourceCulture);
@@ -196,6 +206,16 @@ namespace Avalon.Properties {
         internal static System.Drawing.Bitmap Merlin {
             get {
                 object obj = ResourceManager.GetObject("Merlin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minimizeBckg {
+            get {
+                object obj = ResourceManager.GetObject("minimizeBckg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -233,6 +253,36 @@ namespace Avalon.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nickBckg {
+            get {
+                object obj = ResourceManager.GetObject("nickBckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noPlayersBckg {
+            get {
+                object obj = ResourceManager.GetObject("noPlayersBckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noTeamBckg {
+            get {
+                object obj = ResourceManager.GetObject("noTeamBckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Oberon {
             get {
                 object obj = ResourceManager.GetObject("Oberon", resourceCulture);
@@ -256,6 +306,106 @@ namespace Avalon.Properties {
         internal static System.Drawing.Bitmap Parsifal {
             get {
                 object obj = ResourceManager.GetObject("Parsifal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player10Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player10Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player1Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player1Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player2Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player2Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player3Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player3Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player4Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player4Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player5Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player5Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player6Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player6Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player7Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player7Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player8Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player8Bckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap player9Bckg {
+            get {
+                object obj = ResourceManager.GetObject("player9Bckg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -353,6 +503,16 @@ namespace Avalon.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap resultBckg {
+            get {
+                object obj = ResourceManager.GetObject("resultBckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Skrytobojca {
             get {
                 object obj = ResourceManager.GetObject("Skrytobojca", resourceCulture);
@@ -426,6 +586,16 @@ namespace Avalon.Properties {
         internal static System.Drawing.Bitmap VoteZgoda {
             get {
                 object obj = ResourceManager.GetObject("VoteZgoda", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xBckg {
+            get {
+                object obj = ResourceManager.GetObject("xBckg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

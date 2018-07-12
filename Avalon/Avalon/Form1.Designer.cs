@@ -40,7 +40,6 @@
             this.AddToTeamButton1 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton1 = new System.Windows.Forms.Button();
             this.LadyCheckButton1 = new System.Windows.Forms.Button();
-            this.NicknameLabel1 = new System.Windows.Forms.Label();
             this.ChoiceAcceptButton1 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton1 = new System.Windows.Forms.Button();
             this.SitButton1 = new System.Windows.Forms.Button();
@@ -49,7 +48,6 @@
             this.SitButton2 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton2 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton2 = new System.Windows.Forms.Button();
-            this.NicknameLabel2 = new System.Windows.Forms.Label();
             this.LadyCheckButton2 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton2 = new System.Windows.Forms.Button();
             this.AddToTeamButton2 = new System.Windows.Forms.Button();
@@ -57,7 +55,6 @@
             this.SitButton3 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton3 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton3 = new System.Windows.Forms.Button();
-            this.NicknameLabel3 = new System.Windows.Forms.Label();
             this.LadyCheckButton3 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton3 = new System.Windows.Forms.Button();
             this.AddToTeamButton3 = new System.Windows.Forms.Button();
@@ -65,7 +62,6 @@
             this.SitButton4 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton4 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton4 = new System.Windows.Forms.Button();
-            this.NicknameLabel4 = new System.Windows.Forms.Label();
             this.LadyCheckButton4 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton4 = new System.Windows.Forms.Button();
             this.AddToTeamButton4 = new System.Windows.Forms.Button();
@@ -73,7 +69,6 @@
             this.SitButton5 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton5 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton5 = new System.Windows.Forms.Button();
-            this.NicknameLabel5 = new System.Windows.Forms.Label();
             this.LadyCheckButton5 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton5 = new System.Windows.Forms.Button();
             this.AddToTeamButton5 = new System.Windows.Forms.Button();
@@ -81,7 +76,6 @@
             this.SitButton6 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton6 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton6 = new System.Windows.Forms.Button();
-            this.NicknameLabel6 = new System.Windows.Forms.Label();
             this.LadyCheckButton6 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton6 = new System.Windows.Forms.Button();
             this.AddToTeamButton6 = new System.Windows.Forms.Button();
@@ -89,7 +83,6 @@
             this.SitButton7 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton7 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton7 = new System.Windows.Forms.Button();
-            this.NicknameLabel7 = new System.Windows.Forms.Label();
             this.LadyCheckButton7 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton7 = new System.Windows.Forms.Button();
             this.AddToTeamButton7 = new System.Windows.Forms.Button();
@@ -97,7 +90,6 @@
             this.SitButton8 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton8 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton8 = new System.Windows.Forms.Button();
-            this.NicknameLabel8 = new System.Windows.Forms.Label();
             this.LadyCheckButton8 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton8 = new System.Windows.Forms.Button();
             this.AddToTeamButton8 = new System.Windows.Forms.Button();
@@ -105,7 +97,6 @@
             this.SitButton9 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton9 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton9 = new System.Windows.Forms.Button();
-            this.NicknameLabel9 = new System.Windows.Forms.Label();
             this.LadyCheckButton9 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton9 = new System.Windows.Forms.Button();
             this.AddToTeamButton9 = new System.Windows.Forms.Button();
@@ -113,87 +104,96 @@
             this.SitButton10 = new System.Windows.Forms.Button();
             this.ChoiceAgainstButton10 = new System.Windows.Forms.Button();
             this.ChoiceAcceptButton10 = new System.Windows.Forms.Button();
-            this.NicknameLabel10 = new System.Windows.Forms.Label();
             this.LadyCheckButton10 = new System.Windows.Forms.Button();
             this.RemoveFromTeamButton10 = new System.Windows.Forms.Button();
             this.AddToTeamButton10 = new System.Windows.Forms.Button();
             this.StartGameButton = new System.Windows.Forms.Button();
-            this.MaxSpecialEvilLabel = new System.Windows.Forms.Label();
-            this.NumberForMission1 = new System.Windows.Forms.Label();
-            this.NumberForMission2 = new System.Windows.Forms.Label();
-            this.NumberForMission3 = new System.Windows.Forms.Label();
-            this.NumberForMission4 = new System.Windows.Forms.Label();
-            this.NumberForMission5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.Mission1Table = new System.Windows.Forms.Label();
+            this.Mission2Table = new System.Windows.Forms.Label();
+            this.Mission3Table = new System.Windows.Forms.Label();
+            this.Mission4Table = new System.Windows.Forms.Label();
+            this.Mission5Table = new System.Windows.Forms.Label();
+            this.GameResultImage = new System.Windows.Forms.PictureBox();
             this.PlayersInfoLabel = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.NumberForMission5 = new System.Windows.Forms.Label();
+            this.NumberForMission4 = new System.Windows.Forms.Label();
+            this.NumberForMission3 = new System.Windows.Forms.Label();
+            this.NumberForMission2 = new System.Windows.Forms.Label();
+            this.NumberForMission1 = new System.Windows.Forms.Label();
+            this.MissionResultPic2 = new System.Windows.Forms.PictureBox();
+            this.MissionResultPic3 = new System.Windows.Forms.PictureBox();
+            this.MissionResultPic4 = new System.Windows.Forms.PictureBox();
+            this.MissionResultPic5 = new System.Windows.Forms.PictureBox();
+            this.MissionResultPic1 = new System.Windows.Forms.PictureBox();
+            this.MaxSpecialEvilLabel = new System.Windows.Forms.Label();
             this.ParsifalChoiceImg = new System.Windows.Forms.PictureBox();
             this.LadyChoiceImg = new System.Windows.Forms.PictureBox();
             this.OberonChoiceImg = new System.Windows.Forms.PictureBox();
             this.MorganaChoiceImg = new System.Windows.Forms.PictureBox();
             this.MordredChoiceImg = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel10 = new System.Windows.Forms.Label();
             this.InTeamIcon10 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture10 = new System.Windows.Forms.PictureBox();
             this.LadyPicture10 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture10 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon10 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture10 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel9 = new System.Windows.Forms.Label();
             this.InTeamIcon9 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture9 = new System.Windows.Forms.PictureBox();
             this.LadyPicture9 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture9 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon9 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture9 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel8 = new System.Windows.Forms.Label();
             this.InTeamIcon8 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture8 = new System.Windows.Forms.PictureBox();
             this.LadyPicture8 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture8 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon8 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture8 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel7 = new System.Windows.Forms.Label();
             this.InTeamIcon7 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture7 = new System.Windows.Forms.PictureBox();
             this.LadyPicture7 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture7 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon7 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture7 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel6 = new System.Windows.Forms.Label();
             this.InTeamIcon6 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture6 = new System.Windows.Forms.PictureBox();
             this.LadyPicture6 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture6 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon6 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture6 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel5 = new System.Windows.Forms.Label();
             this.InTeamIcon5 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture5 = new System.Windows.Forms.PictureBox();
             this.LadyPicture5 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture5 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon5 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture5 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel4 = new System.Windows.Forms.Label();
             this.InTeamIcon4 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture4 = new System.Windows.Forms.PictureBox();
             this.LadyPicture4 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture4 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon4 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture4 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel3 = new System.Windows.Forms.Label();
             this.InTeamIcon3 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture3 = new System.Windows.Forms.PictureBox();
             this.LadyPicture3 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture3 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon3 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture3 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel2 = new System.Windows.Forms.Label();
             this.InTeamIcon2 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture2 = new System.Windows.Forms.PictureBox();
             this.LadyPicture2 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture2 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon2 = new System.Windows.Forms.PictureBox();
+            this.NicknameLabel1 = new System.Windows.Forms.Label();
             this.InTeamIcon1 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture1 = new System.Windows.Forms.PictureBox();
             this.LadyPicture1 = new System.Windows.Forms.PictureBox();
@@ -204,12 +204,19 @@
             this.ExitButton = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture1 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture2 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.BackgroundImage = new System.Windows.Forms.PictureBox();
+            this.TeamMembersLeftLabel = new System.Windows.Forms.Label();
+            this.FailedVotes1 = new System.Windows.Forms.Label();
+            this.FailedVotes2 = new System.Windows.Forms.Label();
+            this.FailedVotes3 = new System.Windows.Forms.Label();
+            this.FailedVotes4 = new System.Windows.Forms.Label();
+            this.FailedVotes5 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.GameResultImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParsifalChoiceImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LadyChoiceImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OberonChoiceImg)).BeginInit();
@@ -278,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExitButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).BeginInit();
             this.SuspendLayout();
             // 
             // ConnectButton
@@ -375,6 +383,7 @@
             this.AddToTeamButton1.Text = "+";
             this.AddToTeamButton1.UseVisualStyleBackColor = true;
             this.AddToTeamButton1.Visible = false;
+            this.AddToTeamButton1.Click += new System.EventHandler(this.AddToTeamButton1_Click);
             // 
             // RemoveFromTeamButton1
             // 
@@ -385,6 +394,7 @@
             this.RemoveFromTeamButton1.Text = "-";
             this.RemoveFromTeamButton1.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton1.Visible = false;
+            this.RemoveFromTeamButton1.Click += new System.EventHandler(this.RemoveFromTeamButton1_Click);
             // 
             // LadyCheckButton1
             // 
@@ -396,22 +406,6 @@
             this.LadyCheckButton1.Text = "Sprawdź";
             this.LadyCheckButton1.UseVisualStyleBackColor = false;
             this.LadyCheckButton1.Visible = false;
-            // 
-            // NicknameLabel1
-            // 
-            this.NicknameLabel1.AutoSize = true;
-            this.NicknameLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel1.Location = new System.Drawing.Point(10, 352);
-            this.NicknameLabel1.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel1.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel1.Name = "NicknameLabel1";
-            this.NicknameLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel1.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel1.TabIndex = 19;
-            this.NicknameLabel1.Text = "Nick";
-            this.NicknameLabel1.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel1.Visible = false;
             // 
             // ChoiceAcceptButton1
             // 
@@ -497,22 +491,6 @@
             this.ChoiceAcceptButton2.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton2.Visible = false;
             // 
-            // NicknameLabel2
-            // 
-            this.NicknameLabel2.AutoSize = true;
-            this.NicknameLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel2.Location = new System.Drawing.Point(285, 187);
-            this.NicknameLabel2.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel2.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel2.Name = "NicknameLabel2";
-            this.NicknameLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel2.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel2.TabIndex = 42;
-            this.NicknameLabel2.Text = "Nick";
-            this.NicknameLabel2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel2.Visible = false;
-            // 
             // LadyCheckButton2
             // 
             this.LadyCheckButton2.BackColor = System.Drawing.Color.Transparent;
@@ -533,6 +511,7 @@
             this.RemoveFromTeamButton2.Text = "-";
             this.RemoveFromTeamButton2.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton2.Visible = false;
+            this.RemoveFromTeamButton2.Click += new System.EventHandler(this.RemoveFromTeamButton2_Click);
             // 
             // AddToTeamButton2
             // 
@@ -543,6 +522,7 @@
             this.AddToTeamButton2.Text = "+";
             this.AddToTeamButton2.UseVisualStyleBackColor = true;
             this.AddToTeamButton2.Visible = false;
+            this.AddToTeamButton2.Click += new System.EventHandler(this.AddToTeamButton2_Click);
             // 
             // AwayButton3
             // 
@@ -586,22 +566,6 @@
             this.ChoiceAcceptButton3.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton3.Visible = false;
             // 
-            // NicknameLabel3
-            // 
-            this.NicknameLabel3.AutoSize = true;
-            this.NicknameLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel3.Location = new System.Drawing.Point(575, 187);
-            this.NicknameLabel3.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel3.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel3.Name = "NicknameLabel3";
-            this.NicknameLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel3.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel3.TabIndex = 56;
-            this.NicknameLabel3.Text = "Nick";
-            this.NicknameLabel3.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel3.Visible = false;
-            // 
             // LadyCheckButton3
             // 
             this.LadyCheckButton3.BackColor = System.Drawing.Color.Transparent;
@@ -622,6 +586,7 @@
             this.RemoveFromTeamButton3.Text = "-";
             this.RemoveFromTeamButton3.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton3.Visible = false;
+            this.RemoveFromTeamButton3.Click += new System.EventHandler(this.RemoveFromTeamButton3_Click);
             // 
             // AddToTeamButton3
             // 
@@ -632,6 +597,7 @@
             this.AddToTeamButton3.Text = "+";
             this.AddToTeamButton3.UseVisualStyleBackColor = true;
             this.AddToTeamButton3.Visible = false;
+            this.AddToTeamButton3.Click += new System.EventHandler(this.AddToTeamButton3_Click);
             // 
             // AwayButton4
             // 
@@ -675,22 +641,6 @@
             this.ChoiceAcceptButton4.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton4.Visible = false;
             // 
-            // NicknameLabel4
-            // 
-            this.NicknameLabel4.AutoSize = true;
-            this.NicknameLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel4.Location = new System.Drawing.Point(865, 187);
-            this.NicknameLabel4.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel4.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel4.Name = "NicknameLabel4";
-            this.NicknameLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel4.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel4.TabIndex = 70;
-            this.NicknameLabel4.Text = "Nick";
-            this.NicknameLabel4.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel4.Visible = false;
-            // 
             // LadyCheckButton4
             // 
             this.LadyCheckButton4.BackColor = System.Drawing.Color.Transparent;
@@ -711,6 +661,7 @@
             this.RemoveFromTeamButton4.Text = "-";
             this.RemoveFromTeamButton4.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton4.Visible = false;
+            this.RemoveFromTeamButton4.Click += new System.EventHandler(this.RemoveFromTeamButton4_Click);
             // 
             // AddToTeamButton4
             // 
@@ -721,6 +672,7 @@
             this.AddToTeamButton4.Text = "+";
             this.AddToTeamButton4.UseVisualStyleBackColor = true;
             this.AddToTeamButton4.Visible = false;
+            this.AddToTeamButton4.Click += new System.EventHandler(this.AddToTeamButton4_Click);
             // 
             // AwayButton5
             // 
@@ -764,22 +716,6 @@
             this.ChoiceAcceptButton5.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton5.Visible = false;
             // 
-            // NicknameLabel5
-            // 
-            this.NicknameLabel5.AutoSize = true;
-            this.NicknameLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel5.Location = new System.Drawing.Point(1148, 352);
-            this.NicknameLabel5.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel5.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel5.Name = "NicknameLabel5";
-            this.NicknameLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel5.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel5.TabIndex = 84;
-            this.NicknameLabel5.Text = "Nick";
-            this.NicknameLabel5.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel5.Visible = false;
-            // 
             // LadyCheckButton5
             // 
             this.LadyCheckButton5.BackColor = System.Drawing.Color.Transparent;
@@ -800,6 +736,7 @@
             this.RemoveFromTeamButton5.Text = "-";
             this.RemoveFromTeamButton5.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton5.Visible = false;
+            this.RemoveFromTeamButton5.Click += new System.EventHandler(this.RemoveFromTeamButton5_Click);
             // 
             // AddToTeamButton5
             // 
@@ -810,6 +747,7 @@
             this.AddToTeamButton5.Text = "+";
             this.AddToTeamButton5.UseVisualStyleBackColor = true;
             this.AddToTeamButton5.Visible = false;
+            this.AddToTeamButton5.Click += new System.EventHandler(this.AddToTeamButton5_Click);
             // 
             // AwayButton6
             // 
@@ -853,22 +791,6 @@
             this.ChoiceAcceptButton6.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton6.Visible = false;
             // 
-            // NicknameLabel6
-            // 
-            this.NicknameLabel6.AutoSize = true;
-            this.NicknameLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel6.Location = new System.Drawing.Point(1148, 619);
-            this.NicknameLabel6.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel6.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel6.Name = "NicknameLabel6";
-            this.NicknameLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel6.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel6.TabIndex = 98;
-            this.NicknameLabel6.Text = "Nick";
-            this.NicknameLabel6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel6.Visible = false;
-            // 
             // LadyCheckButton6
             // 
             this.LadyCheckButton6.BackColor = System.Drawing.Color.Transparent;
@@ -889,6 +811,7 @@
             this.RemoveFromTeamButton6.Text = "-";
             this.RemoveFromTeamButton6.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton6.Visible = false;
+            this.RemoveFromTeamButton6.Click += new System.EventHandler(this.RemoveFromTeamButton6_Click);
             // 
             // AddToTeamButton6
             // 
@@ -899,6 +822,7 @@
             this.AddToTeamButton6.Text = "+";
             this.AddToTeamButton6.UseVisualStyleBackColor = true;
             this.AddToTeamButton6.Visible = false;
+            this.AddToTeamButton6.Click += new System.EventHandler(this.AddToTeamButton6_Click);
             // 
             // AwayButton7
             // 
@@ -942,22 +866,6 @@
             this.ChoiceAcceptButton7.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton7.Visible = false;
             // 
-            // NicknameLabel7
-            // 
-            this.NicknameLabel7.AutoSize = true;
-            this.NicknameLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel7.Location = new System.Drawing.Point(865, 764);
-            this.NicknameLabel7.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel7.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel7.Name = "NicknameLabel7";
-            this.NicknameLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel7.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel7.TabIndex = 112;
-            this.NicknameLabel7.Text = "Nick";
-            this.NicknameLabel7.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel7.Visible = false;
-            // 
             // LadyCheckButton7
             // 
             this.LadyCheckButton7.BackColor = System.Drawing.Color.Transparent;
@@ -978,6 +886,7 @@
             this.RemoveFromTeamButton7.Text = "-";
             this.RemoveFromTeamButton7.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton7.Visible = false;
+            this.RemoveFromTeamButton7.Click += new System.EventHandler(this.RemoveFromTeamButton7_Click);
             // 
             // AddToTeamButton7
             // 
@@ -988,6 +897,7 @@
             this.AddToTeamButton7.Text = "+";
             this.AddToTeamButton7.UseVisualStyleBackColor = true;
             this.AddToTeamButton7.Visible = false;
+            this.AddToTeamButton7.Click += new System.EventHandler(this.AddToTeamButton7_Click);
             // 
             // AwayButton8
             // 
@@ -1031,22 +941,6 @@
             this.ChoiceAcceptButton8.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton8.Visible = false;
             // 
-            // NicknameLabel8
-            // 
-            this.NicknameLabel8.AutoSize = true;
-            this.NicknameLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel8.Location = new System.Drawing.Point(575, 764);
-            this.NicknameLabel8.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel8.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel8.Name = "NicknameLabel8";
-            this.NicknameLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel8.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel8.TabIndex = 126;
-            this.NicknameLabel8.Text = "Nick";
-            this.NicknameLabel8.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel8.Visible = false;
-            // 
             // LadyCheckButton8
             // 
             this.LadyCheckButton8.BackColor = System.Drawing.Color.Transparent;
@@ -1067,6 +961,7 @@
             this.RemoveFromTeamButton8.Text = "-";
             this.RemoveFromTeamButton8.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton8.Visible = false;
+            this.RemoveFromTeamButton8.Click += new System.EventHandler(this.RemoveFromTeamButton8_Click);
             // 
             // AddToTeamButton8
             // 
@@ -1077,6 +972,7 @@
             this.AddToTeamButton8.Text = "+";
             this.AddToTeamButton8.UseVisualStyleBackColor = true;
             this.AddToTeamButton8.Visible = false;
+            this.AddToTeamButton8.Click += new System.EventHandler(this.AddToTeamButton8_Click);
             // 
             // AwayButton9
             // 
@@ -1120,22 +1016,6 @@
             this.ChoiceAcceptButton9.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton9.Visible = false;
             // 
-            // NicknameLabel9
-            // 
-            this.NicknameLabel9.AutoSize = true;
-            this.NicknameLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel9.Location = new System.Drawing.Point(285, 764);
-            this.NicknameLabel9.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel9.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel9.Name = "NicknameLabel9";
-            this.NicknameLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel9.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel9.TabIndex = 140;
-            this.NicknameLabel9.Text = "Nick";
-            this.NicknameLabel9.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel9.Visible = false;
-            // 
             // LadyCheckButton9
             // 
             this.LadyCheckButton9.BackColor = System.Drawing.Color.Transparent;
@@ -1156,6 +1036,7 @@
             this.RemoveFromTeamButton9.Text = "-";
             this.RemoveFromTeamButton9.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton9.Visible = false;
+            this.RemoveFromTeamButton9.Click += new System.EventHandler(this.RemoveFromTeamButton9_Click);
             // 
             // AddToTeamButton9
             // 
@@ -1166,6 +1047,7 @@
             this.AddToTeamButton9.Text = "+";
             this.AddToTeamButton9.UseVisualStyleBackColor = true;
             this.AddToTeamButton9.Visible = false;
+            this.AddToTeamButton9.Click += new System.EventHandler(this.AddToTeamButton9_Click);
             // 
             // AwayButton10
             // 
@@ -1209,22 +1091,6 @@
             this.ChoiceAcceptButton10.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton10.Visible = false;
             // 
-            // NicknameLabel10
-            // 
-            this.NicknameLabel10.AutoSize = true;
-            this.NicknameLabel10.BackColor = System.Drawing.Color.Transparent;
-            this.NicknameLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NicknameLabel10.Location = new System.Drawing.Point(10, 619);
-            this.NicknameLabel10.MaximumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel10.MinimumSize = new System.Drawing.Size(165, 13);
-            this.NicknameLabel10.Name = "NicknameLabel10";
-            this.NicknameLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.NicknameLabel10.Size = new System.Drawing.Size(165, 13);
-            this.NicknameLabel10.TabIndex = 154;
-            this.NicknameLabel10.Text = "Nick";
-            this.NicknameLabel10.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.NicknameLabel10.Visible = false;
-            // 
             // LadyCheckButton10
             // 
             this.LadyCheckButton10.BackColor = System.Drawing.Color.Transparent;
@@ -1245,6 +1111,7 @@
             this.RemoveFromTeamButton10.Text = "-";
             this.RemoveFromTeamButton10.UseVisualStyleBackColor = true;
             this.RemoveFromTeamButton10.Visible = false;
+            this.RemoveFromTeamButton10.Click += new System.EventHandler(this.RemoveFromTeamButton10_Click);
             // 
             // AddToTeamButton10
             // 
@@ -1255,6 +1122,7 @@
             this.AddToTeamButton10.Text = "+";
             this.AddToTeamButton10.UseVisualStyleBackColor = true;
             this.AddToTeamButton10.Visible = false;
+            this.AddToTeamButton10.Click += new System.EventHandler(this.AddToTeamButton10_Click);
             // 
             // StartGameButton
             // 
@@ -1267,85 +1135,132 @@
             this.StartGameButton.Visible = false;
             this.StartGameButton.Click += new System.EventHandler(this.StartGameButton_Click);
             // 
-            // MaxSpecialEvilLabel
+            // Mission1Table
             // 
-            this.MaxSpecialEvilLabel.AutoSize = true;
-            this.MaxSpecialEvilLabel.BackColor = System.Drawing.Color.Transparent;
-            this.MaxSpecialEvilLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.MaxSpecialEvilLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.MaxSpecialEvilLabel.Location = new System.Drawing.Point(833, 457);
-            this.MaxSpecialEvilLabel.Name = "MaxSpecialEvilLabel";
-            this.MaxSpecialEvilLabel.Size = new System.Drawing.Size(49, 13);
-            this.MaxSpecialEvilLabel.TabIndex = 166;
-            this.MaxSpecialEvilLabel.Text = "Max : 1";
-            this.MaxSpecialEvilLabel.Visible = false;
+            this.Mission1Table.AutoSize = true;
+            this.Mission1Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission1Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission1Table.ForeColor = System.Drawing.Color.Lime;
+            this.Mission1Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission1Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission1Table.Location = new System.Drawing.Point(370, 412);
+            this.Mission1Table.MaximumSize = new System.Drawing.Size(80, 104);
+            this.Mission1Table.MinimumSize = new System.Drawing.Size(80, 104);
+            this.Mission1Table.Name = "Mission1Table";
+            this.Mission1Table.Size = new System.Drawing.Size(80, 104);
+            this.Mission1Table.TabIndex = 177;
+            this.Mission1Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission1Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission1Table.Visible = false;
             // 
-            // NumberForMission1
+            // Mission2Table
             // 
-            this.NumberForMission1.AutoSize = true;
-            this.NumberForMission1.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission1.ForeColor = System.Drawing.Color.Cyan;
-            this.NumberForMission1.Location = new System.Drawing.Point(370, 261);
-            this.NumberForMission1.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission1.Name = "NumberForMission1";
-            this.NumberForMission1.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission1.TabIndex = 172;
-            this.NumberForMission1.Text = "Skład : 3";
-            this.NumberForMission1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission1.Visible = false;
+            this.Mission2Table.AutoSize = true;
+            this.Mission2Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission2Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission2Table.ForeColor = System.Drawing.Color.Red;
+            this.Mission2Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission2Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission2Table.Location = new System.Drawing.Point(519, 412);
+            this.Mission2Table.MaximumSize = new System.Drawing.Size(80, 104);
+            this.Mission2Table.MinimumSize = new System.Drawing.Size(80, 104);
+            this.Mission2Table.Name = "Mission2Table";
+            this.Mission2Table.Size = new System.Drawing.Size(80, 104);
+            this.Mission2Table.TabIndex = 178;
+            this.Mission2Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission2Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission2Table.Visible = false;
             // 
-            // NumberForMission2
+            // Mission3Table
             // 
-            this.NumberForMission2.AutoSize = true;
-            this.NumberForMission2.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission2.ForeColor = System.Drawing.Color.Cyan;
-            this.NumberForMission2.Location = new System.Drawing.Point(519, 261);
-            this.NumberForMission2.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission2.Name = "NumberForMission2";
-            this.NumberForMission2.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission2.TabIndex = 173;
-            this.NumberForMission2.Text = "Skład : 3";
-            this.NumberForMission2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission2.Visible = false;
+            this.Mission3Table.AutoSize = true;
+            this.Mission3Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission3Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission3Table.ForeColor = System.Drawing.Color.Lime;
+            this.Mission3Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission3Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission3Table.Location = new System.Drawing.Point(660, 412);
+            this.Mission3Table.MaximumSize = new System.Drawing.Size(80, 104);
+            this.Mission3Table.MinimumSize = new System.Drawing.Size(80, 104);
+            this.Mission3Table.Name = "Mission3Table";
+            this.Mission3Table.Size = new System.Drawing.Size(80, 104);
+            this.Mission3Table.TabIndex = 179;
+            this.Mission3Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission3Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission3Table.Visible = false;
             // 
-            // NumberForMission3
+            // Mission4Table
             // 
-            this.NumberForMission3.AutoSize = true;
-            this.NumberForMission3.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission3.ForeColor = System.Drawing.Color.Cyan;
-            this.NumberForMission3.Location = new System.Drawing.Point(660, 261);
-            this.NumberForMission3.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission3.Name = "NumberForMission3";
-            this.NumberForMission3.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission3.TabIndex = 174;
-            this.NumberForMission3.Text = "Skład : 3";
-            this.NumberForMission3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission3.Visible = false;
+            this.Mission4Table.AutoSize = true;
+            this.Mission4Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission4Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission4Table.ForeColor = System.Drawing.Color.Red;
+            this.Mission4Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission4Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission4Table.Location = new System.Drawing.Point(803, 412);
+            this.Mission4Table.MaximumSize = new System.Drawing.Size(80, 104);
+            this.Mission4Table.MinimumSize = new System.Drawing.Size(80, 104);
+            this.Mission4Table.Name = "Mission4Table";
+            this.Mission4Table.Size = new System.Drawing.Size(80, 104);
+            this.Mission4Table.TabIndex = 180;
+            this.Mission4Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission4Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission4Table.Visible = false;
             // 
-            // NumberForMission4
+            // Mission5Table
             // 
-            this.NumberForMission4.AutoSize = true;
-            this.NumberForMission4.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission4.ForeColor = System.Drawing.Color.Cyan;
-            this.NumberForMission4.Location = new System.Drawing.Point(803, 261);
-            this.NumberForMission4.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission4.Name = "NumberForMission4";
-            this.NumberForMission4.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission4.TabIndex = 175;
-            this.NumberForMission4.Text = "Skład : 3";
-            this.NumberForMission4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission4.Visible = false;
+            this.Mission5Table.AutoSize = true;
+            this.Mission5Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission5Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission5Table.ForeColor = System.Drawing.Color.Lime;
+            this.Mission5Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission5Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission5Table.Location = new System.Drawing.Point(950, 412);
+            this.Mission5Table.MaximumSize = new System.Drawing.Size(80, 104);
+            this.Mission5Table.MinimumSize = new System.Drawing.Size(80, 104);
+            this.Mission5Table.Name = "Mission5Table";
+            this.Mission5Table.Size = new System.Drawing.Size(80, 104);
+            this.Mission5Table.TabIndex = 181;
+            this.Mission5Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission5Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission5Table.Visible = false;
+            // 
+            // GameResultImage
+            // 
+            this.GameResultImage.BackColor = System.Drawing.Color.Transparent;
+            this.GameResultImage.BackgroundImage = global::Avalon.Properties.Resources.resultBckg;
+            this.GameResultImage.Location = new System.Drawing.Point(361, 231);
+            this.GameResultImage.Name = "GameResultImage";
+            this.GameResultImage.Size = new System.Drawing.Size(700, 300);
+            this.GameResultImage.TabIndex = 183;
+            this.GameResultImage.TabStop = false;
+            this.GameResultImage.Visible = false;
+            // 
+            // PlayersInfoLabel
+            // 
+            this.PlayersInfoLabel.AutoSize = true;
+            this.PlayersInfoLabel.BackColor = System.Drawing.Color.Transparent;
+            this.PlayersInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.PlayersInfoLabel.ForeColor = System.Drawing.Color.Aquamarine;
+            this.PlayersInfoLabel.Image = global::Avalon.Properties.Resources.noPlayersBckg;
+            this.PlayersInfoLabel.Location = new System.Drawing.Point(1071, 233);
+            this.PlayersInfoLabel.MaximumSize = new System.Drawing.Size(72, 39);
+            this.PlayersInfoLabel.MinimumSize = new System.Drawing.Size(72, 39);
+            this.PlayersInfoLabel.Name = "PlayersInfoLabel";
+            this.PlayersInfoLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.PlayersInfoLabel.Size = new System.Drawing.Size(72, 39);
+            this.PlayersInfoLabel.TabIndex = 182;
+            this.PlayersInfoLabel.Text = "Graczy : 10\r\nDobrzy : 6\r\nŹli : 4";
+            this.PlayersInfoLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.PlayersInfoLabel.Visible = false;
             // 
             // NumberForMission5
             // 
             this.NumberForMission5.AutoSize = true;
             this.NumberForMission5.BackColor = System.Drawing.Color.Transparent;
             this.NumberForMission5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission5.ForeColor = System.Drawing.Color.Cyan;
+            this.NumberForMission5.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission5.Image = global::Avalon.Properties.Resources.noTeamBckg;
             this.NumberForMission5.Location = new System.Drawing.Point(950, 261);
             this.NumberForMission5.MinimumSize = new System.Drawing.Size(80, 0);
             this.NumberForMission5.Name = "NumberForMission5";
@@ -1355,166 +1270,138 @@
             this.NumberForMission5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.NumberForMission5.Visible = false;
             // 
-            // label7
+            // NumberForMission4
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.ForeColor = System.Drawing.Color.Lime;
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Location = new System.Drawing.Point(370, 412);
-            this.label7.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 104);
-            this.label7.TabIndex = 177;
-            this.label7.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label7.Visible = false;
+            this.NumberForMission4.AutoSize = true;
+            this.NumberForMission4.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission4.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission4.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission4.Location = new System.Drawing.Point(803, 261);
+            this.NumberForMission4.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission4.Name = "NumberForMission4";
+            this.NumberForMission4.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission4.TabIndex = 175;
+            this.NumberForMission4.Text = "Skład : 3";
+            this.NumberForMission4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission4.Visible = false;
             // 
-            // label8
+            // NumberForMission3
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label8.Location = new System.Drawing.Point(519, 412);
-            this.label8.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 104);
-            this.label8.TabIndex = 178;
-            this.label8.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label8.Visible = false;
+            this.NumberForMission3.AutoSize = true;
+            this.NumberForMission3.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission3.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission3.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission3.Location = new System.Drawing.Point(660, 261);
+            this.NumberForMission3.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission3.Name = "NumberForMission3";
+            this.NumberForMission3.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission3.TabIndex = 174;
+            this.NumberForMission3.Text = "Skład : 3";
+            this.NumberForMission3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission3.Visible = false;
             // 
-            // label9
+            // NumberForMission2
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.ForeColor = System.Drawing.Color.Lime;
-            this.label9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Location = new System.Drawing.Point(660, 412);
-            this.label9.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 104);
-            this.label9.TabIndex = 179;
-            this.label9.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label9.Visible = false;
+            this.NumberForMission2.AutoSize = true;
+            this.NumberForMission2.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission2.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission2.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission2.Location = new System.Drawing.Point(519, 261);
+            this.NumberForMission2.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission2.Name = "NumberForMission2";
+            this.NumberForMission2.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission2.TabIndex = 173;
+            this.NumberForMission2.Text = "Skład : 3";
+            this.NumberForMission2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission2.Visible = false;
             // 
-            // label10
+            // NumberForMission1
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(803, 412);
-            this.label10.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(80, 104);
-            this.label10.TabIndex = 180;
-            this.label10.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Visible = false;
+            this.NumberForMission1.AutoSize = true;
+            this.NumberForMission1.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission1.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission1.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission1.Location = new System.Drawing.Point(370, 261);
+            this.NumberForMission1.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission1.Name = "NumberForMission1";
+            this.NumberForMission1.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission1.TabIndex = 172;
+            this.NumberForMission1.Text = "Skład : 3";
+            this.NumberForMission1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission1.Visible = false;
             // 
-            // label11
+            // MissionResultPic2
             // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.ForeColor = System.Drawing.Color.Lime;
-            this.label11.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label11.Location = new System.Drawing.Point(950, 412);
-            this.label11.MinimumSize = new System.Drawing.Size(80, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(80, 104);
-            this.label11.TabIndex = 181;
-            this.label11.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label11.Visible = false;
+            this.MissionResultPic2.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic2.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic2.Location = new System.Drawing.Point(519, 277);
+            this.MissionResultPic2.Name = "MissionResultPic2";
+            this.MissionResultPic2.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic2.TabIndex = 171;
+            this.MissionResultPic2.TabStop = false;
+            this.MissionResultPic2.Visible = false;
             // 
-            // PlayersInfoLabel
+            // MissionResultPic3
             // 
-            this.PlayersInfoLabel.AutoSize = true;
-            this.PlayersInfoLabel.BackColor = System.Drawing.Color.Transparent;
-            this.PlayersInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PlayersInfoLabel.ForeColor = System.Drawing.Color.Cyan;
-            this.PlayersInfoLabel.Location = new System.Drawing.Point(1070, 223);
-            this.PlayersInfoLabel.Name = "PlayersInfoLabel";
-            this.PlayersInfoLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.PlayersInfoLabel.Size = new System.Drawing.Size(72, 39);
-            this.PlayersInfoLabel.TabIndex = 182;
-            this.PlayersInfoLabel.Text = "Graczy : 10\r\nDobrzy : 6\r\nŹli : 4";
-            this.PlayersInfoLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.PlayersInfoLabel.Visible = false;
+            this.MissionResultPic3.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic3.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic3.Location = new System.Drawing.Point(660, 277);
+            this.MissionResultPic3.Name = "MissionResultPic3";
+            this.MissionResultPic3.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic3.TabIndex = 170;
+            this.MissionResultPic3.TabStop = false;
+            this.MissionResultPic3.Visible = false;
             // 
-            // pictureBox6
+            // MissionResultPic4
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImage = global::Avalon.Properties.Resources.Victory;
-            this.pictureBox6.Location = new System.Drawing.Point(361, 231);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(700, 300);
-            this.pictureBox6.TabIndex = 183;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Visible = false;
+            this.MissionResultPic4.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic4.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic4.Location = new System.Drawing.Point(803, 277);
+            this.MissionResultPic4.Name = "MissionResultPic4";
+            this.MissionResultPic4.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic4.TabIndex = 169;
+            this.MissionResultPic4.TabStop = false;
+            this.MissionResultPic4.Visible = false;
             // 
-            // pictureBox5
+            // MissionResultPic5
             // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.pictureBox5.Location = new System.Drawing.Point(519, 277);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(80, 128);
-            this.pictureBox5.TabIndex = 171;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Visible = false;
+            this.MissionResultPic5.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic5.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic5.Location = new System.Drawing.Point(950, 277);
+            this.MissionResultPic5.Name = "MissionResultPic5";
+            this.MissionResultPic5.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic5.TabIndex = 168;
+            this.MissionResultPic5.TabStop = false;
+            this.MissionResultPic5.Visible = false;
             // 
-            // pictureBox4
+            // MissionResultPic1
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.pictureBox4.Location = new System.Drawing.Point(660, 277);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(80, 128);
-            this.pictureBox4.TabIndex = 170;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Visible = false;
+            this.MissionResultPic1.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic1.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic1.Location = new System.Drawing.Point(370, 277);
+            this.MissionResultPic1.Name = "MissionResultPic1";
+            this.MissionResultPic1.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic1.TabIndex = 167;
+            this.MissionResultPic1.TabStop = false;
+            this.MissionResultPic1.Visible = false;
             // 
-            // pictureBox3
+            // MaxSpecialEvilLabel
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.pictureBox3.Location = new System.Drawing.Point(803, 277);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(80, 128);
-            this.pictureBox3.TabIndex = 169;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Visible = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.pictureBox2.Location = new System.Drawing.Point(950, 277);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 128);
-            this.pictureBox2.TabIndex = 168;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.pictureBox1.Location = new System.Drawing.Point(370, 277);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(80, 128);
-            this.pictureBox1.TabIndex = 167;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.MaxSpecialEvilLabel.AutoSize = true;
+            this.MaxSpecialEvilLabel.BackColor = System.Drawing.Color.Transparent;
+            this.MaxSpecialEvilLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.MaxSpecialEvilLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.MaxSpecialEvilLabel.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.MaxSpecialEvilLabel.Location = new System.Drawing.Point(833, 457);
+            this.MaxSpecialEvilLabel.Name = "MaxSpecialEvilLabel";
+            this.MaxSpecialEvilLabel.Size = new System.Drawing.Size(49, 13);
+            this.MaxSpecialEvilLabel.TabIndex = 166;
+            this.MaxSpecialEvilLabel.Text = "Max : 1";
+            this.MaxSpecialEvilLabel.Visible = false;
             // 
             // ParsifalChoiceImg
             // 
@@ -1576,6 +1463,24 @@
             this.MordredChoiceImg.Visible = false;
             this.MordredChoiceImg.Click += new System.EventHandler(this.MordredChoiceImg_Click);
             // 
+            // NicknameLabel10
+            // 
+            this.NicknameLabel10.AutoSize = true;
+            this.NicknameLabel10.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel10.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel10.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel10.Location = new System.Drawing.Point(10, 619);
+            this.NicknameLabel10.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel10.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel10.Name = "NicknameLabel10";
+            this.NicknameLabel10.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel10.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel10.TabIndex = 154;
+            this.NicknameLabel10.Text = "Nick";
+            this.NicknameLabel10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel10.Visible = false;
+            // 
             // InTeamIcon10
             // 
             this.InTeamIcon10.BackColor = System.Drawing.Color.Transparent;
@@ -1634,12 +1539,31 @@
             // PlayerAreaPicture10
             // 
             this.PlayerAreaPicture10.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture10.BackgroundImage = global::Avalon.Properties.Resources.player10Bckg;
             this.PlayerAreaPicture10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture10.Location = new System.Drawing.Point(5, 437);
             this.PlayerAreaPicture10.Name = "PlayerAreaPicture10";
             this.PlayerAreaPicture10.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture10.TabIndex = 159;
             this.PlayerAreaPicture10.TabStop = false;
+            // 
+            // NicknameLabel9
+            // 
+            this.NicknameLabel9.AutoSize = true;
+            this.NicknameLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel9.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel9.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel9.Location = new System.Drawing.Point(285, 764);
+            this.NicknameLabel9.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel9.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel9.Name = "NicknameLabel9";
+            this.NicknameLabel9.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel9.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel9.TabIndex = 140;
+            this.NicknameLabel9.Text = "Nick";
+            this.NicknameLabel9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel9.Visible = false;
             // 
             // InTeamIcon9
             // 
@@ -1699,12 +1623,31 @@
             // PlayerAreaPicture9
             // 
             this.PlayerAreaPicture9.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture9.BackgroundImage = global::Avalon.Properties.Resources.player9Bckg;
             this.PlayerAreaPicture9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture9.Location = new System.Drawing.Point(280, 582);
             this.PlayerAreaPicture9.Name = "PlayerAreaPicture9";
             this.PlayerAreaPicture9.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture9.TabIndex = 145;
             this.PlayerAreaPicture9.TabStop = false;
+            // 
+            // NicknameLabel8
+            // 
+            this.NicknameLabel8.AutoSize = true;
+            this.NicknameLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel8.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel8.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel8.Location = new System.Drawing.Point(575, 764);
+            this.NicknameLabel8.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel8.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel8.Name = "NicknameLabel8";
+            this.NicknameLabel8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel8.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel8.TabIndex = 126;
+            this.NicknameLabel8.Text = "Nick";
+            this.NicknameLabel8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel8.Visible = false;
             // 
             // InTeamIcon8
             // 
@@ -1764,12 +1707,31 @@
             // PlayerAreaPicture8
             // 
             this.PlayerAreaPicture8.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture8.BackgroundImage = global::Avalon.Properties.Resources.player8Bckg;
             this.PlayerAreaPicture8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture8.Location = new System.Drawing.Point(570, 582);
             this.PlayerAreaPicture8.Name = "PlayerAreaPicture8";
             this.PlayerAreaPicture8.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture8.TabIndex = 131;
             this.PlayerAreaPicture8.TabStop = false;
+            // 
+            // NicknameLabel7
+            // 
+            this.NicknameLabel7.AutoSize = true;
+            this.NicknameLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel7.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel7.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel7.Location = new System.Drawing.Point(865, 764);
+            this.NicknameLabel7.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel7.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel7.Name = "NicknameLabel7";
+            this.NicknameLabel7.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel7.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel7.TabIndex = 112;
+            this.NicknameLabel7.Text = "Nick";
+            this.NicknameLabel7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel7.Visible = false;
             // 
             // InTeamIcon7
             // 
@@ -1829,12 +1791,31 @@
             // PlayerAreaPicture7
             // 
             this.PlayerAreaPicture7.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture7.BackgroundImage = global::Avalon.Properties.Resources.player7Bckg;
             this.PlayerAreaPicture7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture7.Location = new System.Drawing.Point(860, 582);
             this.PlayerAreaPicture7.Name = "PlayerAreaPicture7";
             this.PlayerAreaPicture7.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture7.TabIndex = 117;
             this.PlayerAreaPicture7.TabStop = false;
+            // 
+            // NicknameLabel6
+            // 
+            this.NicknameLabel6.AutoSize = true;
+            this.NicknameLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel6.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel6.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel6.Location = new System.Drawing.Point(1148, 619);
+            this.NicknameLabel6.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel6.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel6.Name = "NicknameLabel6";
+            this.NicknameLabel6.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel6.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel6.TabIndex = 98;
+            this.NicknameLabel6.Text = "Nick";
+            this.NicknameLabel6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel6.Visible = false;
             // 
             // InTeamIcon6
             // 
@@ -1894,12 +1875,31 @@
             // PlayerAreaPicture6
             // 
             this.PlayerAreaPicture6.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture6.BackgroundImage = global::Avalon.Properties.Resources.player6Bckg;
             this.PlayerAreaPicture6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture6.Location = new System.Drawing.Point(1143, 437);
             this.PlayerAreaPicture6.Name = "PlayerAreaPicture6";
             this.PlayerAreaPicture6.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture6.TabIndex = 103;
             this.PlayerAreaPicture6.TabStop = false;
+            // 
+            // NicknameLabel5
+            // 
+            this.NicknameLabel5.AutoSize = true;
+            this.NicknameLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel5.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel5.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel5.Location = new System.Drawing.Point(1148, 352);
+            this.NicknameLabel5.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel5.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel5.Name = "NicknameLabel5";
+            this.NicknameLabel5.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel5.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel5.TabIndex = 84;
+            this.NicknameLabel5.Text = "Nick";
+            this.NicknameLabel5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel5.Visible = false;
             // 
             // InTeamIcon5
             // 
@@ -1959,12 +1959,31 @@
             // PlayerAreaPicture5
             // 
             this.PlayerAreaPicture5.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture5.BackgroundImage = global::Avalon.Properties.Resources.player5Bckg;
             this.PlayerAreaPicture5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture5.Location = new System.Drawing.Point(1143, 170);
             this.PlayerAreaPicture5.Name = "PlayerAreaPicture5";
             this.PlayerAreaPicture5.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture5.TabIndex = 89;
             this.PlayerAreaPicture5.TabStop = false;
+            // 
+            // NicknameLabel4
+            // 
+            this.NicknameLabel4.AutoSize = true;
+            this.NicknameLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel4.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel4.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel4.Location = new System.Drawing.Point(865, 187);
+            this.NicknameLabel4.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel4.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel4.Name = "NicknameLabel4";
+            this.NicknameLabel4.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel4.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel4.TabIndex = 70;
+            this.NicknameLabel4.Text = "Nick";
+            this.NicknameLabel4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel4.Visible = false;
             // 
             // InTeamIcon4
             // 
@@ -2024,12 +2043,31 @@
             // PlayerAreaPicture4
             // 
             this.PlayerAreaPicture4.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture4.BackgroundImage = global::Avalon.Properties.Resources.player4Bckg;
             this.PlayerAreaPicture4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture4.Location = new System.Drawing.Point(860, 5);
             this.PlayerAreaPicture4.Name = "PlayerAreaPicture4";
             this.PlayerAreaPicture4.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture4.TabIndex = 75;
             this.PlayerAreaPicture4.TabStop = false;
+            // 
+            // NicknameLabel3
+            // 
+            this.NicknameLabel3.AutoSize = true;
+            this.NicknameLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel3.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel3.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel3.Location = new System.Drawing.Point(575, 187);
+            this.NicknameLabel3.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel3.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel3.Name = "NicknameLabel3";
+            this.NicknameLabel3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel3.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel3.TabIndex = 56;
+            this.NicknameLabel3.Text = "Nick";
+            this.NicknameLabel3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel3.Visible = false;
             // 
             // InTeamIcon3
             // 
@@ -2089,12 +2127,31 @@
             // PlayerAreaPicture3
             // 
             this.PlayerAreaPicture3.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture3.BackgroundImage = global::Avalon.Properties.Resources.player3Bckg;
             this.PlayerAreaPicture3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture3.Location = new System.Drawing.Point(570, 5);
             this.PlayerAreaPicture3.Name = "PlayerAreaPicture3";
             this.PlayerAreaPicture3.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture3.TabIndex = 61;
             this.PlayerAreaPicture3.TabStop = false;
+            // 
+            // NicknameLabel2
+            // 
+            this.NicknameLabel2.AutoSize = true;
+            this.NicknameLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel2.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel2.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel2.Location = new System.Drawing.Point(285, 187);
+            this.NicknameLabel2.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel2.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel2.Name = "NicknameLabel2";
+            this.NicknameLabel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel2.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel2.TabIndex = 42;
+            this.NicknameLabel2.Text = "Nick";
+            this.NicknameLabel2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel2.Visible = false;
             // 
             // InTeamIcon2
             // 
@@ -2150,6 +2207,24 @@
             this.LeaderIcon2.TabIndex = 34;
             this.LeaderIcon2.TabStop = false;
             this.LeaderIcon2.Visible = false;
+            // 
+            // NicknameLabel1
+            // 
+            this.NicknameLabel1.AutoSize = true;
+            this.NicknameLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.NicknameLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NicknameLabel1.ForeColor = System.Drawing.Color.White;
+            this.NicknameLabel1.Image = global::Avalon.Properties.Resources.nickBckg;
+            this.NicknameLabel1.Location = new System.Drawing.Point(10, 352);
+            this.NicknameLabel1.MaximumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel1.MinimumSize = new System.Drawing.Size(165, 13);
+            this.NicknameLabel1.Name = "NicknameLabel1";
+            this.NicknameLabel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.NicknameLabel1.Size = new System.Drawing.Size(165, 13);
+            this.NicknameLabel1.TabIndex = 19;
+            this.NicknameLabel1.Text = "Nick";
+            this.NicknameLabel1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NicknameLabel1.Visible = false;
             // 
             // InTeamIcon1
             // 
@@ -2218,6 +2293,7 @@
             // MinimizeButton
             // 
             this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
+            this.MinimizeButton.BackgroundImage = global::Avalon.Properties.Resources.minimizeBckg;
             this.MinimizeButton.Location = new System.Drawing.Point(1274, 0);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Size = new System.Drawing.Size(67, 56);
@@ -2230,6 +2306,7 @@
             // ExitButton
             // 
             this.ExitButton.BackColor = System.Drawing.Color.Transparent;
+            this.ExitButton.BackgroundImage = global::Avalon.Properties.Resources.xBckg;
             this.ExitButton.Location = new System.Drawing.Point(1341, 0);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(67, 56);
@@ -2242,6 +2319,7 @@
             // PlayerAreaPicture1
             // 
             this.PlayerAreaPicture1.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture1.BackgroundImage = global::Avalon.Properties.Resources.player1Bckg;
             this.PlayerAreaPicture1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture1.Location = new System.Drawing.Point(5, 170);
             this.PlayerAreaPicture1.Name = "PlayerAreaPicture1";
@@ -2252,6 +2330,7 @@
             // PlayerAreaPicture2
             // 
             this.PlayerAreaPicture2.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture2.BackgroundImage = global::Avalon.Properties.Resources.player2Bckg;
             this.PlayerAreaPicture2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PlayerAreaPicture2.Location = new System.Drawing.Point(280, 5);
             this.PlayerAreaPicture2.Name = "PlayerAreaPicture2";
@@ -2259,28 +2338,140 @@
             this.PlayerAreaPicture2.TabIndex = 47;
             this.PlayerAreaPicture2.TabStop = false;
             // 
+            // BackgroundImage
+            // 
+            this.BackgroundImage.BackgroundImage = global::Avalon.Properties.Resources.bckg;
+            this.BackgroundImage.Location = new System.Drawing.Point(0, 0);
+            this.BackgroundImage.Name = "BackgroundImage";
+            this.BackgroundImage.Size = new System.Drawing.Size(1408, 792);
+            this.BackgroundImage.TabIndex = 184;
+            this.BackgroundImage.TabStop = false;
+            // 
+            // TeamMembersLeftLabel
+            // 
+            this.TeamMembersLeftLabel.AutoSize = true;
+            this.TeamMembersLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TeamMembersLeftLabel.ForeColor = System.Drawing.Color.White;
+            this.TeamMembersLeftLabel.Image = global::Avalon.Properties.Resources.InTeam;
+            this.TeamMembersLeftLabel.Location = new System.Drawing.Point(1095, 309);
+            this.TeamMembersLeftLabel.MaximumSize = new System.Drawing.Size(25, 36);
+            this.TeamMembersLeftLabel.MinimumSize = new System.Drawing.Size(25, 36);
+            this.TeamMembersLeftLabel.Name = "TeamMembersLeftLabel";
+            this.TeamMembersLeftLabel.Size = new System.Drawing.Size(25, 36);
+            this.TeamMembersLeftLabel.TabIndex = 185;
+            this.TeamMembersLeftLabel.Text = "0";
+            this.TeamMembersLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TeamMembersLeftLabel.Visible = false;
+            // 
+            // FailedVotes1
+            // 
+            this.FailedVotes1.AutoSize = true;
+            this.FailedVotes1.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes1.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes1.Location = new System.Drawing.Point(1093, 363);
+            this.FailedVotes1.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes1.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes1.Name = "FailedVotes1";
+            this.FailedVotes1.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes1.TabIndex = 186;
+            this.FailedVotes1.Text = "1";
+            this.FailedVotes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes1.Visible = false;
+            // 
+            // FailedVotes2
+            // 
+            this.FailedVotes2.AutoSize = true;
+            this.FailedVotes2.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes2.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes2.Location = new System.Drawing.Point(1093, 407);
+            this.FailedVotes2.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes2.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes2.Name = "FailedVotes2";
+            this.FailedVotes2.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes2.TabIndex = 187;
+            this.FailedVotes2.Text = "2";
+            this.FailedVotes2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes2.Visible = false;
+            // 
+            // FailedVotes3
+            // 
+            this.FailedVotes3.AutoSize = true;
+            this.FailedVotes3.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes3.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes3.Location = new System.Drawing.Point(1093, 452);
+            this.FailedVotes3.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes3.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes3.Name = "FailedVotes3";
+            this.FailedVotes3.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes3.TabIndex = 188;
+            this.FailedVotes3.Text = "3";
+            this.FailedVotes3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes3.Visible = false;
+            // 
+            // FailedVotes4
+            // 
+            this.FailedVotes4.AutoSize = true;
+            this.FailedVotes4.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes4.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes4.Location = new System.Drawing.Point(1093, 496);
+            this.FailedVotes4.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes4.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes4.Name = "FailedVotes4";
+            this.FailedVotes4.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes4.TabIndex = 189;
+            this.FailedVotes4.Text = "4";
+            this.FailedVotes4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes4.Visible = false;
+            // 
+            // FailedVotes5
+            // 
+            this.FailedVotes5.AutoSize = true;
+            this.FailedVotes5.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes5.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes5.Location = new System.Drawing.Point(1093, 537);
+            this.FailedVotes5.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes5.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes5.Name = "FailedVotes5";
+            this.FailedVotes5.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes5.TabIndex = 190;
+            this.FailedVotes5.Text = "5";
+            this.FailedVotes5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes5.Visible = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1408, 792);
             this.ControlBox = false;
+            this.Controls.Add(this.FailedVotes5);
+            this.Controls.Add(this.FailedVotes4);
+            this.Controls.Add(this.FailedVotes3);
+            this.Controls.Add(this.FailedVotes2);
+            this.Controls.Add(this.FailedVotes1);
+            this.Controls.Add(this.TeamMembersLeftLabel);
+            this.Controls.Add(this.GameResultImage);
             this.Controls.Add(this.PlayersInfoLabel);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.Mission5Table);
+            this.Controls.Add(this.Mission4Table);
+            this.Controls.Add(this.Mission3Table);
+            this.Controls.Add(this.Mission2Table);
+            this.Controls.Add(this.Mission1Table);
             this.Controls.Add(this.NumberForMission5);
             this.Controls.Add(this.NumberForMission4);
             this.Controls.Add(this.NumberForMission3);
             this.Controls.Add(this.NumberForMission2);
             this.Controls.Add(this.NumberForMission1);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.MissionResultPic2);
+            this.Controls.Add(this.MissionResultPic3);
+            this.Controls.Add(this.MissionResultPic4);
+            this.Controls.Add(this.MissionResultPic5);
+            this.Controls.Add(this.MissionResultPic1);
             this.Controls.Add(this.MaxSpecialEvilLabel);
             this.Controls.Add(this.StartGameButton);
             this.Controls.Add(this.ParsifalChoiceImg);
@@ -2439,17 +2630,18 @@
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.PlayerAreaPicture1);
             this.Controls.Add(this.PlayerAreaPicture2);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.BackgroundImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Text = "Avalon";
+            ((System.ComponentModel.ISupportInitialize)(this.GameResultImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParsifalChoiceImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LadyChoiceImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OberonChoiceImg)).EndInit();
@@ -2518,6 +2710,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExitButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2683,23 +2876,30 @@
         private System.Windows.Forms.PictureBox ParsifalChoiceImg;
         private System.Windows.Forms.Button StartGameButton;
         private System.Windows.Forms.Label MaxSpecialEvilLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox MissionResultPic1;
+        private System.Windows.Forms.PictureBox MissionResultPic5;
+        private System.Windows.Forms.PictureBox MissionResultPic4;
+        private System.Windows.Forms.PictureBox MissionResultPic3;
+        private System.Windows.Forms.PictureBox MissionResultPic2;
         private System.Windows.Forms.Label NumberForMission1;
         private System.Windows.Forms.Label NumberForMission2;
         private System.Windows.Forms.Label NumberForMission3;
         private System.Windows.Forms.Label NumberForMission4;
         private System.Windows.Forms.Label NumberForMission5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label Mission1Table;
+        private System.Windows.Forms.Label Mission2Table;
+        private System.Windows.Forms.Label Mission3Table;
+        private System.Windows.Forms.Label Mission4Table;
+        private System.Windows.Forms.Label Mission5Table;
         private System.Windows.Forms.Label PlayersInfoLabel;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox GameResultImage;
+        private System.Windows.Forms.PictureBox BackgroundImage;
+        private System.Windows.Forms.Label TeamMembersLeftLabel;
+        private System.Windows.Forms.Label FailedVotes1;
+        private System.Windows.Forms.Label FailedVotes2;
+        private System.Windows.Forms.Label FailedVotes3;
+        private System.Windows.Forms.Label FailedVotes4;
+        private System.Windows.Forms.Label FailedVotes5;
     }
 }
 

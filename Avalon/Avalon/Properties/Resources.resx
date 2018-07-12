@@ -118,14 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="resultBckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\resultBckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Merlin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Merlin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Victory" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Victory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoteZgoda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoteZgoda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LadyBad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LadyBad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="player9Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player9Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VotePorazka" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VotePorazka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoteBack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoteBack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,17 +142,23 @@
   <data name="LancelotChange" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LancelotChange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="noPlayersBckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noPlayersBckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PoplecznikMordreda2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PoplecznikMordreda2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PoddanyArtura1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PoddanyArtura1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minimizeBckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minimizeBckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PaniJeziora" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PaniJeziora.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VotePorazka" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VotePorazka.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LadyBad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LadyBad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="xHighlight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\xHighlight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +166,8 @@
   <data name="InTeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\InTeam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PoplecznikMordreda1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PoplecznikMordreda1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nickBckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nickBckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ekskalibur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ekskalibur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,14 +178,29 @@
   <data name="LancelotSaty" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LancelotSaty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="player1Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player1Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player6Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player6Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PoddanyArtura5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PoddanyArtura5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PoddanyArtura2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PoddanyArtura2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Lider" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Lider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="LancelotEvil" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LancelotEvil.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Loss" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Loss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player7Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player7Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Mordred" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Mordred.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,14 +214,26 @@
   <data name="PoddanyArtura4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PoddanyArtura4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="player2Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player2Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoteTeam" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoteTeam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="player8Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player8Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="PoddanyArtura3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PoddanyArtura3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player10Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player10Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player5Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player5Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VoteSprzeciw" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VoteSprzeciw.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,11 +247,20 @@
   <data name="LadyGood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LadyGood.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Lider" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Lider.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="player4Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player4Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PoplecznikMordreda1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PoplecznikMordreda1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="xBckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\xBckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Parsifal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Parsifal1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="player3Bckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\player3Bckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Oberon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Oberon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,10 +277,10 @@
   <data name="Skrytobojca" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Skrytobojca.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Loss" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Loss.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="noTeamBckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\noTeamBckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Victory" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Victory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="levelScoreBckg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\levelScoreBckg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -191,5 +191,56 @@
   <ItemGroup>
     <None Include="Resources\Victory.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizeBckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noPlayersBckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player1Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player2Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player3Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player4Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player5Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player6Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player7Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player8Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player9Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\player10Bckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\resultBckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xBckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nickBckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\noTeamBckg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\levelScoreBckg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

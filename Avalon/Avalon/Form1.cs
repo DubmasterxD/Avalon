@@ -26,6 +26,9 @@ namespace Avalon
         int mySeat;
         int stage;
         int[] info;
+        bool[] seatsTaken;
+        int round = 0;
+        int inTeam;
 
         public Game()
         {
@@ -33,6 +36,7 @@ namespace Avalon
             mySeat = -1;
             stage = 0;
             info = new int[7];
+            seatsTaken = new bool[10];
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
@@ -77,9 +81,9 @@ namespace Avalon
             string cmd = "";
             try
             {
-                while((cmd=br.ReadString())!="disconnect")
+                while ((cmd = br.ReadString()) != "disconnect")
                 {
-                    switch(cmd)
+                    switch (cmd)
                     {
                         case "seatstaken":
                             mySeat = -1;
@@ -94,7 +98,7 @@ namespace Avalon
                             Seat9Taken(false, "");
                             Seat10Taken(false, "");
                             string numbers = "";
-                            while((numbers = br.ReadString()) != "end")
+                            while ((numbers = br.ReadString()) != "end")
                             {
                                 SeatTaken(Convert.ToInt16(numbers), true, br.ReadString());
                             }
@@ -109,7 +113,7 @@ namespace Avalon
                         case "seatfree":
                             int freedSeat = Convert.ToInt16(br.ReadString());
                             SeatTaken(freedSeat, false, "");
-                            if(mySeat!=-1)
+                            if (mySeat != -1)
                             {
                                 MySeatChanged(mySeat);
                             }
@@ -121,6 +125,7 @@ namespace Avalon
                             CanStartGame(false);
                             break;
                         case "chooseStarted":
+                            stage = 1;
                             info[0] = Convert.ToInt16(br.ReadString());
                             info[1] = Convert.ToInt16(br.ReadString());
                             info[2] = Convert.ToInt16(br.ReadString());
@@ -134,16 +139,43 @@ namespace Avalon
                             AddSelected(br.ReadString(), br.ReadString());
                             break;
                         case "gameStarted":
+                            stage = 2;
+                            inTeam = 0;
+                            round = 1;
                             ChangeLeader(Convert.ToInt16(br.ReadString()));
-                            if(br.ReadString()=="true")
+                            if (br.ReadString() == "true")
                             {
                                 ChangeLady(Convert.ToInt16(br.ReadString()));
                             }
                             ChooseSeatToSetRole(br.ReadString());
-                            while(br.ReadString()!="end")
+                            string tmp;
+                            while ((tmp = br.ReadString()) != "end")
                             {
-                                HighlightCharacter(Convert.ToInt16(br.ReadString()));
+                                HighlightCharacter(Convert.ToInt16(tmp));
                             }
+                            ChooseStageToGameStage();
+                            MissionHighlight(1);
+                            break;
+                        case "added":
+                            AddToTeam(Convert.ToInt16(br.ReadString()));
+                            break;
+                        case "fullTeam":
+                            FullTeam();
+                            break;
+                        case "removed":
+                            RemoveFromTeam(Convert.ToInt16(br.ReadString()));
+                            break;
+                        case "canAdd":
+                            List<int> cantAdd = new List<int>();
+                            string tmp2;
+                            while((tmp2=br.ReadString())!="end")
+                            {
+                                cantAdd.Add(Convert.ToInt16(tmp2));
+                            }
+                            CanAddToTeam(cantAdd);
+                            break;
+                        case "voteTeam":
+
                             break;
                         default:
                             break;
@@ -170,139 +202,397 @@ namespace Avalon
             }
         }
 
+        delegate void CanAddToTeamDelegate(List<int> cantAdd);
+
+        private void CanAddToTeam(List<int> cantAdd)
+        {
+            if (StartGameButton.InvokeRequired || AddToTeamButton1.InvokeRequired || AddToTeamButton2.InvokeRequired || AddToTeamButton3.InvokeRequired || AddToTeamButton4.InvokeRequired || AddToTeamButton5.InvokeRequired || AddToTeamButton6.InvokeRequired || AddToTeamButton7.InvokeRequired || AddToTeamButton8.InvokeRequired || AddToTeamButton9.InvokeRequired || AddToTeamButton10.InvokeRequired)
+            {
+                CanAddToTeamDelegate f = new CanAddToTeamDelegate(CanAddToTeam);
+                this.Invoke(f, new object[] { cantAdd });
+            }
+            else
+            {
+                StartGameButton.Visible = false;
+                for (int i = 0; i < 10; i++)
+                {
+                    if (seatsTaken[i] && !cantAdd.Contains(i))
+                    {
+                        switch (i)
+                        {
+                            case 0:
+                                AddToTeamButton1.Visible = true;
+                                break;
+                            case 1:
+                                AddToTeamButton2.Visible = true;
+                                break;
+                            case 2:
+                                AddToTeamButton3.Visible = true;
+                                break;
+                            case 3:
+                                AddToTeamButton4.Visible = true;
+                                break;
+                            case 4:
+                                AddToTeamButton5.Visible = true;
+                                break;
+                            case 5:
+                                AddToTeamButton6.Visible = true;
+                                break;
+                            case 6:
+                                AddToTeamButton7.Visible = true;
+                                break;
+                            case 7:
+                                AddToTeamButton8.Visible = true;
+                                break;
+                            case 8:
+                                AddToTeamButton9.Visible = true;
+                                break;
+                            case 9:
+                                AddToTeamButton10.Visible = true;
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+
+        delegate void RemoveFromTeamDelegate(int seat);
+
+        private void RemoveFromTeam(int seat)
+        {
+            if (TeamMembersLeftLabel.InvokeRequired || InTeamIcon1.InvokeRequired || InTeamIcon2.InvokeRequired || InTeamIcon3.InvokeRequired || InTeamIcon4.InvokeRequired || InTeamIcon5.InvokeRequired || InTeamIcon6.InvokeRequired || InTeamIcon7.InvokeRequired || InTeamIcon8.InvokeRequired || InTeamIcon9.InvokeRequired || InTeamIcon10.InvokeRequired)
+            {
+                RemoveFromTeamDelegate f = new RemoveFromTeamDelegate(RemoveFromTeam);
+                this.Invoke(f, new object[] { seat });
+            }
+            else
+            {
+                inTeam--;
+                TeamMembersLeftLabel.Text = (info[round - 1] - inTeam).ToString();
+                switch(seat)
+                {
+                    case 0:
+                        InTeamIcon1.Visible = false;
+                        break;
+                    case 1:
+                        InTeamIcon2.Visible = false;
+                        break;
+                    case 2:
+                        InTeamIcon3.Visible = false;
+                        break;
+                    case 3:
+                        InTeamIcon4.Visible = false;
+                        break;
+                    case 4:
+                        InTeamIcon5.Visible = false;
+                        break;
+                    case 5:
+                        InTeamIcon6.Visible = false;
+                        break;
+                    case 6:
+                        InTeamIcon7.Visible = false;
+                        break;
+                    case 7:
+                        InTeamIcon8.Visible = false;
+                        break;
+                    case 8:
+                        InTeamIcon9.Visible = false;
+                        break;
+                    case 9:
+                        InTeamIcon10.Visible = false;
+                        break;
+                }
+            }
+        }
+
+        delegate void FullTeamDelegate();
+
+        private void FullTeam()
+        {
+            if (StartGameButton.InvokeRequired || AddToTeamButton1.InvokeRequired || AddToTeamButton2.InvokeRequired || AddToTeamButton3.InvokeRequired || AddToTeamButton4.InvokeRequired || AddToTeamButton5.InvokeRequired || AddToTeamButton6.InvokeRequired || AddToTeamButton7.InvokeRequired || AddToTeamButton8.InvokeRequired || AddToTeamButton9.InvokeRequired || AddToTeamButton10.InvokeRequired)
+            {
+                FullTeamDelegate f = new FullTeamDelegate(FullTeam);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                StartGameButton.Visible = true;
+                AddToTeamButton1.Visible = false;
+                AddToTeamButton2.Visible = false;
+                AddToTeamButton3.Visible = false;
+                AddToTeamButton4.Visible = false;
+                AddToTeamButton5.Visible = false;
+                AddToTeamButton6.Visible = false;
+                AddToTeamButton7.Visible = false;
+                AddToTeamButton8.Visible = false;
+                AddToTeamButton9.Visible = false;
+                AddToTeamButton10.Visible = false;
+            }
+        }
+
+        delegate void AddToTeamDelegate(int seat);
+
+        private void AddToTeam(int seat)
+        {
+            if (TeamMembersLeftLabel.InvokeRequired || InTeamIcon1.InvokeRequired || InTeamIcon2.InvokeRequired || InTeamIcon3.InvokeRequired || InTeamIcon4.InvokeRequired || InTeamIcon5.InvokeRequired || InTeamIcon6.InvokeRequired || InTeamIcon7.InvokeRequired || InTeamIcon8.InvokeRequired || InTeamIcon9.InvokeRequired || InTeamIcon10.InvokeRequired)
+            {
+                AddToTeamDelegate f = new AddToTeamDelegate(AddToTeam);
+                this.Invoke(f, new object[] { seat });
+            }
+            else
+            {
+                inTeam++;
+                TeamMembersLeftLabel.Text = (info[round - 1] - inTeam).ToString();
+                switch (seat)
+                {
+                    case 0:
+                        InTeamIcon1.Visible = true;
+                        break;
+                    case 1:
+                        InTeamIcon2.Visible = true;
+                        break;
+                    case 2:
+                        InTeamIcon3.Visible = true;
+                        break;
+                    case 3:
+                        InTeamIcon4.Visible = true;
+                        break;
+                    case 4:
+                        InTeamIcon5.Visible = true;
+                        break;
+                    case 5:
+                        InTeamIcon6.Visible = true;
+                        break;
+                    case 6:
+                        InTeamIcon7.Visible = true;
+                        break;
+                    case 7:
+                        InTeamIcon8.Visible = true;
+                        break;
+                    case 8:
+                        InTeamIcon9.Visible = true;
+                        break;
+                    case 9:
+                        InTeamIcon10.Visible = true;
+                        break;
+                }
+            }
+        }
+
+        delegate void MissionHighlightDelegate(int number);
+
+        private void MissionHighlight(int number)
+        {
+            if (TeamMembersLeftLabel.InvokeRequired || MissionResultPic1.InvokeRequired || MissionResultPic2.InvokeRequired || MissionResultPic3.InvokeRequired || MissionResultPic4.InvokeRequired || MissionResultPic5.InvokeRequired)
+            {
+                MissionHighlightDelegate f = new MissionHighlightDelegate(MissionHighlight);
+                this.Invoke(f, new object[] { number });
+            }
+            else
+            {
+                MissionResultPic1.Image = null;
+                MissionResultPic2.Image = null;
+                MissionResultPic3.Image = null;
+                MissionResultPic4.Image = null;
+                MissionResultPic5.Image = null;
+                switch (number)
+                {
+                    case 1:
+                        MissionResultPic1.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 2:
+                        MissionResultPic2.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 3:
+                        MissionResultPic3.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 4:
+                        MissionResultPic4.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                    case 5:
+                        MissionResultPic5.Image = Avalon.Properties.Resources.HighlightedCard;
+                        break;
+                }
+                TeamMembersLeftLabel.Visible = true;
+                TeamMembersLeftLabel.Text = info[0].ToString();
+            }
+        }
+
+        delegate void ChooseStageToGameStageDelegate();
+
+        private void ChooseStageToGameStage()
+        {
+            if (StartGameButton.InvokeRequired || LadyChoiceImg.InvokeRequired || MordredChoiceImg.InvokeRequired || MorganaChoiceImg.InvokeRequired || OberonChoiceImg.InvokeRequired || ParsifalChoiceImg.InvokeRequired || MaxSpecialEvilLabel.InvokeRequired || NumberForMission1.InvokeRequired || NumberForMission2.InvokeRequired || NumberForMission3.InvokeRequired || NumberForMission4.InvokeRequired || NumberForMission5.InvokeRequired || Mission1Table.InvokeRequired || Mission2Table.InvokeRequired || Mission3Table.InvokeRequired || Mission4Table.InvokeRequired || Mission5Table.InvokeRequired || MissionResultPic1.InvokeRequired || MissionResultPic2.InvokeRequired || MissionResultPic3.InvokeRequired || MissionResultPic4.InvokeRequired || MissionResultPic5.InvokeRequired)
+            {
+                ChooseStageToGameStageDelegate f = new ChooseStageToGameStageDelegate(ChooseStageToGameStage);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                LadyChoiceImg.Visible = false;
+                MordredChoiceImg.Visible = false;
+                MorganaChoiceImg.Visible = false;
+                OberonChoiceImg.Visible = false;
+                ParsifalChoiceImg.Visible = false;
+                MaxSpecialEvilLabel.Visible = false;
+                NumberForMission1.Visible = true;
+                NumberForMission1.Text = "Skład : " + info[0];
+                NumberForMission2.Visible = true;
+                NumberForMission2.Text = "Skład : " + info[1];
+                NumberForMission3.Visible = true;
+                NumberForMission3.Text = "Skład : " + info[2];
+                NumberForMission4.Visible = true;
+                NumberForMission4.Text = "Skład : " + info[3];
+                NumberForMission5.Visible = true;
+                NumberForMission5.Text = "Skład : " + info[4];
+                Mission1Table.Visible = true;
+                Mission1Table.Text = "";
+                Mission2Table.Visible = true;
+                Mission2Table.Text = "";
+                Mission3Table.Visible = true;
+                Mission3Table.Text = "";
+                Mission4Table.Visible = true;
+                Mission4Table.Text = "";
+                Mission5Table.Visible = true;
+                Mission5Table.Text = "";
+                MissionResultPic1.Visible = true;
+                MissionResultPic2.Visible = true;
+                MissionResultPic3.Visible = true;
+                MissionResultPic4.Visible = true;
+                MissionResultPic5.Visible = true;
+                StartGameButton.Text = "Accept";
+            }
+        }
+
         delegate void ChangeLadyDelegate(int seat);
 
         private void ChangeLady(int seat)
         {
-            if(LadyPicture1.InvokeRequired || LadyPicture2.InvokeRequired || LadyPicture3.InvokeRequired || LadyPicture4.InvokeRequired || LadyPicture5.InvokeRequired || LadyPicture6.InvokeRequired || LadyPicture7.InvokeRequired || LadyPicture8.InvokeRequired || LadyPicture9.InvokeRequired || LadyPicture10.InvokeRequired)
+            if (LadyPicture1.InvokeRequired || LadyPicture2.InvokeRequired || LadyPicture3.InvokeRequired || LadyPicture4.InvokeRequired || LadyPicture5.InvokeRequired || LadyPicture6.InvokeRequired || LadyPicture7.InvokeRequired || LadyPicture8.InvokeRequired || LadyPicture9.InvokeRequired || LadyPicture10.InvokeRequired || LadyCheckButton1.InvokeRequired || LadyCheckButton2.InvokeRequired || LadyCheckButton3.InvokeRequired || LadyCheckButton4.InvokeRequired || LadyCheckButton5.InvokeRequired || LadyCheckButton6.InvokeRequired || LadyCheckButton7.InvokeRequired || LadyCheckButton8.InvokeRequired || LadyCheckButton9.InvokeRequired || LadyCheckButton10.InvokeRequired)
             {
                 ChangeLadyDelegate f = new ChangeLadyDelegate(ChangeLady);
                 this.Invoke(f, new object[] { seat });
             }
             else
             {
-                switch(seat)
+                LadyPicture1.Visible = false;
+                LadyPicture2.Visible = false;
+                LadyPicture3.Visible = false;
+                LadyPicture4.Visible = false;
+                LadyPicture5.Visible = false;
+                LadyPicture6.Visible = false;
+                LadyPicture7.Visible = false;
+                LadyPicture8.Visible = false;
+                LadyPicture9.Visible = false;
+                LadyPicture10.Visible = false;
+                switch (seat)
                 {
                     case 0:
                         LadyPicture1.Visible = true;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 1:
-                        LadyPicture1.Visible = false;
                         LadyPicture2.Visible = true;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 2:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
                         LadyPicture3.Visible = true;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 3:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
                         LadyPicture4.Visible = true;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 4:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
                         LadyPicture5.Visible = true;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 5:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
                         LadyPicture6.Visible = true;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 6:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
                         LadyPicture7.Visible = true;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 7:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
                         LadyPicture8.Visible = true;
-                        LadyPicture9.Visible = false;
-                        LadyPicture10.Visible = false;
                         break;
                     case 8:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
                         LadyPicture9.Visible = true;
-                        LadyPicture10.Visible = false;
                         break;
                     case 9:
-                        LadyPicture1.Visible = false;
-                        LadyPicture2.Visible = false;
-                        LadyPicture3.Visible = false;
-                        LadyPicture4.Visible = false;
-                        LadyPicture5.Visible = false;
-                        LadyPicture6.Visible = false;
-                        LadyPicture7.Visible = false;
-                        LadyPicture8.Visible = false;
-                        LadyPicture9.Visible = false;
                         LadyPicture10.Visible = true;
                         break;
+                }
+                if(seat==mySeat && round>2)
+                {
+                    if (seatsTaken[0])
+                    {
+                        LadyCheckButton1.Visible = true;
+                    }
+                    if (seatsTaken[1])
+                    {
+                        LadyCheckButton2.Visible = true;
+                    }
+                    if (seatsTaken[2])
+                    {
+                        LadyCheckButton3.Visible = true;
+                    }
+                    if (seatsTaken[3])
+                    {
+                        LadyCheckButton4.Visible = true;
+                    }
+                    if (seatsTaken[4])
+                    {
+                        LadyCheckButton5.Visible = true;
+                    }
+                    if (seatsTaken[5])
+                    {
+                        LadyCheckButton6.Visible = true;
+                    }
+                    if (seatsTaken[6])
+                    {
+                        LadyCheckButton7.Visible = true;
+                    }
+                    if (seatsTaken[7])
+                    {
+                        LadyCheckButton8.Visible = true;
+                    }
+                    if (seatsTaken[8])
+                    {
+                        LadyCheckButton9.Visible = true;
+                    }
+                    if (seatsTaken[9])
+                    {
+                        LadyCheckButton10.Visible = true;
+                    }
+                        switch (seat)
+                    {
+                        case 0:
+                            LadyCheckButton1.Visible = false;
+                            break;
+                        case 1:
+                            LadyCheckButton2.Visible = false;
+                            break;
+                        case 2:
+                            LadyCheckButton3.Visible = false;
+                            break;
+                        case 3:
+                            LadyCheckButton4.Visible = false;
+                            break;
+                        case 4:
+                            LadyCheckButton5.Visible = false;
+                            break;
+                        case 5:
+                            LadyCheckButton6.Visible = false;
+                            break;
+                        case 6:
+                            LadyCheckButton7.Visible = false;
+                            break;
+                        case 7:
+                            LadyCheckButton8.Visible = false;
+                            break;
+                        case 8:
+                            LadyCheckButton9.Visible = false;
+                            break;
+                        case 9:
+                            LadyCheckButton10.Visible = false;
+                            break;
+                    }
                 }
             }
         }
@@ -318,128 +608,91 @@ namespace Avalon
             }
             else
             {
+                LeaderIcon1.Visible = false;
+                LeaderIcon2.Visible = false;
+                LeaderIcon3.Visible = false;
+                LeaderIcon4.Visible = false;
+                LeaderIcon5.Visible = false;
+                LeaderIcon6.Visible = false;
+                LeaderIcon7.Visible = false;
+                LeaderIcon8.Visible = false;
+                LeaderIcon9.Visible = false;
+                LeaderIcon10.Visible = false;
                 switch (seat)
                 {
                     case 0:
                         LeaderIcon1.Visible = true;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 1:
-                        LeaderIcon1.Visible = false;
                         LeaderIcon2.Visible = true;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 2:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
                         LeaderIcon3.Visible = true;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 3:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
                         LeaderIcon4.Visible = true;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 4:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
                         LeaderIcon5.Visible = true;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 5:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
                         LeaderIcon6.Visible = true;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 6:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
                         LeaderIcon7.Visible = true;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 7:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
                         LeaderIcon8.Visible = true;
-                        LeaderIcon9.Visible = false;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 8:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
                         LeaderIcon9.Visible = true;
-                        LeaderIcon10.Visible = false;
                         break;
                     case 9:
-                        LeaderIcon1.Visible = false;
-                        LeaderIcon2.Visible = false;
-                        LeaderIcon3.Visible = false;
-                        LeaderIcon4.Visible = false;
-                        LeaderIcon5.Visible = false;
-                        LeaderIcon6.Visible = false;
-                        LeaderIcon7.Visible = false;
-                        LeaderIcon8.Visible = false;
-                        LeaderIcon9.Visible = false;
                         LeaderIcon10.Visible = true;
                         break;
+                }
+                if (seat == mySeat)
+                {
+                    if (seatsTaken[0])
+                    {
+                        AddToTeamButton1.Visible = true;
+                    }
+                    if (seatsTaken[1])
+                    {
+                        AddToTeamButton2.Visible = true;
+                    }
+                    if (seatsTaken[2])
+                    {
+                        AddToTeamButton3.Visible = true;
+                    }
+                    if (seatsTaken[3])
+                    {
+                        AddToTeamButton4.Visible = true;
+                    }
+                    if (seatsTaken[4])
+                    {
+                        AddToTeamButton5.Visible = true;
+                    }
+                    if (seatsTaken[5])
+                    {
+                        AddToTeamButton6.Visible = true;
+                    }
+                    if (seatsTaken[6])
+                    {
+                        AddToTeamButton7.Visible = true;
+                    }
+                    if (seatsTaken[7])
+                    {
+                        AddToTeamButton8.Visible = true;
+                    }
+                    if (seatsTaken[8])
+                    {
+                        AddToTeamButton9.Visible = true;
+                    }
+                    if (seatsTaken[9])
+                    {
+                        AddToTeamButton10.Visible = true;
+                    }
                 }
             }
         }
@@ -541,7 +794,7 @@ namespace Avalon
         private Image SetRole(string name)
         {
             Image role = null;
-            switch(name)
+            switch (name)
             {
                 case "Merlin":
                     role = Avalon.Properties.Resources.Merlin;
@@ -690,14 +943,14 @@ namespace Avalon
 
         private void CanStartGame(bool canStart)
         {
-            if(StartGameButton.InvokeRequired)
+            if (StartGameButton.InvokeRequired)
             {
                 CanStartGameDelegate f = new CanStartGameDelegate(CanStartGame);
                 this.Invoke(f, new object[] { canStart });
             }
             else
             {
-                if(canStart)
+                if (canStart)
                 {
                     StartGameButton.Visible = true;
                 }
@@ -715,132 +968,52 @@ namespace Avalon
             if (AwayButton1.InvokeRequired || AwayButton2.InvokeRequired || AwayButton3.InvokeRequired || AwayButton4.InvokeRequired || AwayButton5.InvokeRequired || AwayButton6.InvokeRequired || AwayButton7.InvokeRequired || AwayButton8.InvokeRequired || AwayButton9.InvokeRequired || AwayButton10.InvokeRequired || SitButton1.InvokeRequired || SitButton2.InvokeRequired || SitButton3.InvokeRequired || SitButton4.InvokeRequired || SitButton5.InvokeRequired || SitButton6.InvokeRequired || SitButton7.InvokeRequired || SitButton8.InvokeRequired || SitButton9.InvokeRequired || SitButton10.InvokeRequired)
             {
                 MySeatChangedDelegate f = new MySeatChangedDelegate(MySeatChanged);
-                this.Invoke(f, new object[] { number});
+                this.Invoke(f, new object[] { number });
             }
             else
             {
+                SitButton1.Visible = false;
+                SitButton2.Visible = false;
+                SitButton3.Visible = false;
+                SitButton4.Visible = false;
+                SitButton5.Visible = false;
+                SitButton6.Visible = false;
+                SitButton7.Visible = false;
+                SitButton8.Visible = false;
+                SitButton9.Visible = false;
+                SitButton10.Visible = false;
                 mySeat = number;
                 switch (mySeat)
                 {
                     case 0:
                         AwayButton1.Visible = true;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 1:
                         AwayButton2.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 2:
                         AwayButton3.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 3:
                         AwayButton4.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 4:
                         AwayButton5.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 5:
                         AwayButton6.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 6:
                         AwayButton7.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 7:
                         AwayButton8.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton9.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 8:
                         AwayButton9.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton10.Visible = false;
                         break;
                     case 9:
                         AwayButton10.Visible = true;
-                        SitButton1.Visible = false;
-                        SitButton2.Visible = false;
-                        SitButton3.Visible = false;
-                        SitButton4.Visible = false;
-                        SitButton5.Visible = false;
-                        SitButton6.Visible = false;
-                        SitButton7.Visible = false;
-                        SitButton8.Visible = false;
-                        SitButton9.Visible = false;
                         break;
                 }
             }
@@ -848,7 +1021,7 @@ namespace Avalon
 
         private void SeatTaken(int number, bool taken, string nick)
         {
-            switch(number)
+            switch (number)
             {
                 case 0:
                     Seat1Taken(taken, nick);
@@ -895,6 +1068,7 @@ namespace Avalon
             else
             {
                 NicknameLabel1.Text = nick;
+                seatsTaken[0] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton1.Visible = false;
@@ -940,6 +1114,7 @@ namespace Avalon
             else
             {
                 NicknameLabel2.Text = nick;
+                seatsTaken[1] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton2.Visible = false;
@@ -985,6 +1160,7 @@ namespace Avalon
             else
             {
                 NicknameLabel3.Text = nick;
+                seatsTaken[2] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton3.Visible = false;
@@ -1030,6 +1206,7 @@ namespace Avalon
             else
             {
                 NicknameLabel4.Text = nick;
+                seatsTaken[3] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton4.Visible = false;
@@ -1075,6 +1252,7 @@ namespace Avalon
             else
             {
                 NicknameLabel5.Text = nick;
+                seatsTaken[4] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton5.Visible = false;
@@ -1120,6 +1298,7 @@ namespace Avalon
             else
             {
                 NicknameLabel6.Text = nick;
+                seatsTaken[5] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton6.Visible = false;
@@ -1165,6 +1344,7 @@ namespace Avalon
             else
             {
                 NicknameLabel7.Text = nick;
+                seatsTaken[6] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton7.Visible = false;
@@ -1210,6 +1390,7 @@ namespace Avalon
             else
             {
                 NicknameLabel8.Text = nick;
+                seatsTaken[7] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton8.Visible = false;
@@ -1255,6 +1436,7 @@ namespace Avalon
             else
             {
                 NicknameLabel9.Text = nick;
+                seatsTaken[8] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton9.Visible = false;
@@ -1300,6 +1482,7 @@ namespace Avalon
             else
             {
                 NicknameLabel10.Text = nick;
+                seatsTaken[9] = taken;
                 if (taken)
                 {
                     RemoveFromTeamButton10.Visible = false;
@@ -1337,7 +1520,7 @@ namespace Avalon
 
         private void ExitButton_Click(object sender, EventArgs e)
         {
-            if (server!=null && server.Connected)
+            if (server != null && server.Connected)
             {
                 bw.Write("stand");
                 bw.Write("disconnect");
@@ -1348,12 +1531,12 @@ namespace Avalon
 
         private void ExitButton_MouseEnter(object sender, EventArgs e)
         {
-            ExitButton.BackgroundImage = Avalon.Properties.Resources.xHighlight;
+            ExitButton.Image = Avalon.Properties.Resources.xHighlight;
         }
 
         private void ExitButton_MouseLeave(object sender, EventArgs e)
         {
-            ExitButton.BackgroundImage = null;
+            ExitButton.Image = null;
         }
 
         private void MinimizeButton_Click(object sender, EventArgs e)
@@ -1363,12 +1546,12 @@ namespace Avalon
 
         private void MinimizeButton_MouseEnter(object sender, EventArgs e)
         {
-            MinimizeButton.BackgroundImage = Avalon.Properties.Resources.minimizeHighlight;
+            MinimizeButton.Image = Avalon.Properties.Resources.minimizeHighlight;
         }
 
         private void MinimizeButton_MouseLeave(object sender, EventArgs e)
         {
-            MinimizeButton.BackgroundImage = null;
+            MinimizeButton.Image = null;
         }
 
         private void SitButton1_Click(object sender, EventArgs e)
@@ -1438,7 +1621,7 @@ namespace Avalon
 
         private void StartGameButton_Click(object sender, EventArgs e)
         {
-            switch(stage)
+            switch (stage)
             {
                 case 0:
                     bw.Write("startChoose");
@@ -1449,10 +1632,24 @@ namespace Avalon
                     StartGameButton.Visible = false;
                     break;
                 case 2:
-
+                    bw.Write("tryTeam");
+                    StartGameButton.Visible = false;
+                    RemoveFromTeamButton1.Visible = false;
+                    RemoveFromTeamButton2.Visible = false;
+                    RemoveFromTeamButton3.Visible = false;
+                    RemoveFromTeamButton4.Visible = false;
+                    RemoveFromTeamButton5.Visible = false;
+                    RemoveFromTeamButton6.Visible = false;
+                    RemoveFromTeamButton7.Visible = false;
+                    RemoveFromTeamButton8.Visible = false;
+                    RemoveFromTeamButton9.Visible = false;
+                    RemoveFromTeamButton10.Visible = false;
+                    break;
+                case 3:
+                    bw.Write("restart");
+                    StartGameButton.Text = "Start";
                     break;
             }
-            stage++;
         }
 
         private void MordredChoiceImg_Click(object sender, EventArgs e)
@@ -1478,6 +1675,166 @@ namespace Avalon
         private void ParsifalChoiceImg_Click(object sender, EventArgs e)
         {
             bw.Write("persifalChosen");
+        }
+
+        private void AddToTeamButton1_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("0");
+            AddToTeamButton1.Visible = false;
+            RemoveFromTeamButton1.Visible = true;
+        }
+
+        private void AddToTeamButton2_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("1");
+            AddToTeamButton2.Visible = false;
+            RemoveFromTeamButton2.Visible = true;
+        }
+
+        private void AddToTeamButton3_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("2");
+            AddToTeamButton3.Visible = false;
+            RemoveFromTeamButton3.Visible = true;
+        }
+
+        private void AddToTeamButton4_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("3");
+            AddToTeamButton4.Visible = false;
+            RemoveFromTeamButton4.Visible = true;
+        }
+
+        private void AddToTeamButton5_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("4");
+            AddToTeamButton5.Visible = false;
+            RemoveFromTeamButton5.Visible = true;
+        }
+
+        private void AddToTeamButton6_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("5");
+            AddToTeamButton6.Visible = false;
+            RemoveFromTeamButton6.Visible = true;
+        }
+
+        private void AddToTeamButton7_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("6");
+            AddToTeamButton7.Visible = false;
+            RemoveFromTeamButton7.Visible = true;
+        }
+
+        private void AddToTeamButton8_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("7");
+            AddToTeamButton8.Visible = false;
+            RemoveFromTeamButton8.Visible = true;
+        }
+
+        private void AddToTeamButton9_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("8");
+            AddToTeamButton9.Visible = false;
+            RemoveFromTeamButton9.Visible = true;
+        }
+
+        private void AddToTeamButton10_Click(object sender, EventArgs e)
+        {
+            bw.Write("addToTeam");
+            bw.Write("9");
+            AddToTeamButton10.Visible = false;
+            RemoveFromTeamButton10.Visible = true;
+        }
+
+        private void RemoveFromTeamButton1_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("0");
+            AddToTeamButton1.Visible = true;
+            RemoveFromTeamButton1.Visible = false;
+        }
+
+        private void RemoveFromTeamButton2_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("1");
+            AddToTeamButton2.Visible = true;
+            RemoveFromTeamButton2.Visible = false;
+        }
+
+        private void RemoveFromTeamButton3_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("2");
+            AddToTeamButton3.Visible = true;
+            RemoveFromTeamButton3.Visible = false;
+        }
+
+        private void RemoveFromTeamButton4_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("3");
+            AddToTeamButton4.Visible = true;
+            RemoveFromTeamButton4.Visible = false;
+        }
+
+        private void RemoveFromTeamButton5_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("4");
+            AddToTeamButton5.Visible = true;
+            RemoveFromTeamButton5.Visible = false;
+        }
+
+        private void RemoveFromTeamButton6_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("5");
+            AddToTeamButton6.Visible = true;
+            RemoveFromTeamButton6.Visible = false;
+        }
+
+        private void RemoveFromTeamButton7_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("6");
+            AddToTeamButton7.Visible = true;
+            RemoveFromTeamButton7.Visible = false;
+        }
+
+        private void RemoveFromTeamButton8_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("7");
+            AddToTeamButton8.Visible = true;
+            RemoveFromTeamButton8.Visible = false;
+        }
+
+        private void RemoveFromTeamButton9_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("8");
+            AddToTeamButton9.Visible = true;
+            RemoveFromTeamButton9.Visible = false;
+        }
+
+        private void RemoveFromTeamButton10_Click(object sender, EventArgs e)
+        {
+            bw.Write("removeFromTeam");
+            bw.Write("9");
+            AddToTeamButton10.Visible = true;
+            RemoveFromTeamButton10.Visible = false;
         }
     }
 }
