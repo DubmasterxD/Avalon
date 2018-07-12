@@ -416,6 +416,7 @@
             this.ChoiceAcceptButton1.Text = "Zgoda";
             this.ChoiceAcceptButton1.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton1.Visible = false;
+            this.ChoiceAcceptButton1.Click += new System.EventHandler(this.ChoiceAcceptButton1_Click);
             // 
             // ChoiceAgainstButton1
             // 
@@ -426,6 +427,7 @@
             this.ChoiceAgainstButton1.Text = "Sprzeciw";
             this.ChoiceAgainstButton1.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton1.Visible = false;
+            this.ChoiceAgainstButton1.Click += new System.EventHandler(this.ChoiceAgainstButton1_Click);
             // 
             // SitButton1
             // 
@@ -480,6 +482,7 @@
             this.ChoiceAgainstButton2.Text = "Sprzeciw";
             this.ChoiceAgainstButton2.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton2.Visible = false;
+            this.ChoiceAgainstButton2.Click += new System.EventHandler(this.ChoiceAgainstButton2_Click);
             // 
             // ChoiceAcceptButton2
             // 
@@ -490,6 +493,7 @@
             this.ChoiceAcceptButton2.Text = "Zgoda";
             this.ChoiceAcceptButton2.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton2.Visible = false;
+            this.ChoiceAcceptButton2.Click += new System.EventHandler(this.ChoiceAcceptButton2_Click);
             // 
             // LadyCheckButton2
             // 
@@ -555,6 +559,7 @@
             this.ChoiceAgainstButton3.Text = "Sprzeciw";
             this.ChoiceAgainstButton3.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton3.Visible = false;
+            this.ChoiceAgainstButton3.Click += new System.EventHandler(this.ChoiceAgainstButton3_Click);
             // 
             // ChoiceAcceptButton3
             // 
@@ -565,6 +570,7 @@
             this.ChoiceAcceptButton3.Text = "Zgoda";
             this.ChoiceAcceptButton3.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton3.Visible = false;
+            this.ChoiceAcceptButton3.Click += new System.EventHandler(this.ChoiceAcceptButton3_Click);
             // 
             // LadyCheckButton3
             // 
@@ -630,6 +636,7 @@
             this.ChoiceAgainstButton4.Text = "Sprzeciw";
             this.ChoiceAgainstButton4.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton4.Visible = false;
+            this.ChoiceAgainstButton4.Click += new System.EventHandler(this.ChoiceAgainstButton4_Click);
             // 
             // ChoiceAcceptButton4
             // 
@@ -640,6 +647,7 @@
             this.ChoiceAcceptButton4.Text = "Zgoda";
             this.ChoiceAcceptButton4.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton4.Visible = false;
+            this.ChoiceAcceptButton4.Click += new System.EventHandler(this.ChoiceAcceptButton4_Click);
             // 
             // LadyCheckButton4
             // 
@@ -705,6 +713,7 @@
             this.ChoiceAgainstButton5.Text = "Sprzeciw";
             this.ChoiceAgainstButton5.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton5.Visible = false;
+            this.ChoiceAgainstButton5.Click += new System.EventHandler(this.ChoiceAgainstButton5_Click);
             // 
             // ChoiceAcceptButton5
             // 
@@ -715,6 +724,7 @@
             this.ChoiceAcceptButton5.Text = "Zgoda";
             this.ChoiceAcceptButton5.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton5.Visible = false;
+            this.ChoiceAcceptButton5.Click += new System.EventHandler(this.ChoiceAcceptButton5_Click);
             // 
             // LadyCheckButton5
             // 
@@ -780,6 +790,7 @@
             this.ChoiceAgainstButton6.Text = "Sprzeciw";
             this.ChoiceAgainstButton6.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton6.Visible = false;
+            this.ChoiceAgainstButton6.Click += new System.EventHandler(this.ChoiceAgainstButton6_Click);
             // 
             // ChoiceAcceptButton6
             // 
@@ -790,6 +801,7 @@
             this.ChoiceAcceptButton6.Text = "Zgoda";
             this.ChoiceAcceptButton6.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton6.Visible = false;
+            this.ChoiceAcceptButton6.Click += new System.EventHandler(this.ChoiceAcceptButton6_Click);
             // 
             // LadyCheckButton6
             // 
@@ -855,6 +867,7 @@
             this.ChoiceAgainstButton7.Text = "Sprzeciw";
             this.ChoiceAgainstButton7.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton7.Visible = false;
+            this.ChoiceAgainstButton7.Click += new System.EventHandler(this.ChoiceAgainstButton7_Click);
             // 
             // ChoiceAcceptButton7
             // 
@@ -865,6 +878,7 @@
             this.ChoiceAcceptButton7.Text = "Zgoda";
             this.ChoiceAcceptButton7.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton7.Visible = false;
+            this.ChoiceAcceptButton7.Click += new System.EventHandler(this.ChoiceAcceptButton7_Click);
             // 
             // LadyCheckButton7
             // 
@@ -930,6 +944,7 @@
             this.ChoiceAgainstButton8.Text = "Sprzeciw";
             this.ChoiceAgainstButton8.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton8.Visible = false;
+            this.ChoiceAgainstButton8.Click += new System.EventHandler(this.ChoiceAgainstButton8_Click);
             // 
             // ChoiceAcceptButton8
             // 
@@ -940,6 +955,7 @@
             this.ChoiceAcceptButton8.Text = "Zgoda";
             this.ChoiceAcceptButton8.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton8.Visible = false;
+            this.ChoiceAcceptButton8.Click += new System.EventHandler(this.ChoiceAcceptButton8_Click);
             // 
             // LadyCheckButton8
             // 
@@ -1005,6 +1021,7 @@
             this.ChoiceAgainstButton9.Text = "Sprzeciw";
             this.ChoiceAgainstButton9.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton9.Visible = false;
+            this.ChoiceAgainstButton9.Click += new System.EventHandler(this.ChoiceAgainstButton9_Click);
             // 
             // ChoiceAcceptButton9
             // 
@@ -1015,6 +1032,7 @@
             this.ChoiceAcceptButton9.Text = "Zgoda";
             this.ChoiceAcceptButton9.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton9.Visible = false;
+            this.ChoiceAcceptButton9.Click += new System.EventHandler(this.ChoiceAcceptButton9_Click);
             // 
             // LadyCheckButton9
             // 
@@ -1080,6 +1098,7 @@
             this.ChoiceAgainstButton10.Text = "Sprzeciw";
             this.ChoiceAgainstButton10.UseVisualStyleBackColor = true;
             this.ChoiceAgainstButton10.Visible = false;
+            this.ChoiceAgainstButton10.Click += new System.EventHandler(this.ChoiceAgainstButton10_Click);
             // 
             // ChoiceAcceptButton10
             // 
@@ -1090,6 +1109,7 @@
             this.ChoiceAcceptButton10.Text = "Zgoda";
             this.ChoiceAcceptButton10.UseVisualStyleBackColor = true;
             this.ChoiceAcceptButton10.Visible = false;
+            this.ChoiceAcceptButton10.Click += new System.EventHandler(this.ChoiceAcceptButton10_Click);
             // 
             // LadyCheckButton10
             // 

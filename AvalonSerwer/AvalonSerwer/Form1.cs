@@ -42,6 +42,10 @@ namespace AvalonSerwer
         int lady;
         int currRound;
         List<int> team;
+        bool[] vote;
+        bool[] passed;
+        bool[] mission;
+        int voted;
 
         public Serwer()
         {
@@ -493,6 +497,24 @@ namespace AvalonSerwer
                             break;
                         case "tryTeam":
                             SendToAll("voteTeam");
+                            voted = 0;
+                            vote = new bool[10];
+                            break;
+                        case "accept":
+                            voted++;
+                            vote[seat] = true;
+                            if(voted==numberOfPlayers)
+                            {
+                                CheckVotes();
+                            }
+                            break;
+                        case "against":
+                            voted++;
+                            vote[seat] = false;
+                            if (voted == numberOfPlayers)
+                            {
+                                CheckVotes();
+                            }
                             break;
                         default:
                             break;
@@ -506,6 +528,29 @@ namespace AvalonSerwer
             finally
             {
                 Player.Close();
+            }
+        }
+
+        private void CheckVotes()
+        {
+            int accepted = 0;
+            SendToAll("voteTeamEnded");
+            foreach(int seat in seatsTaken)
+            {
+                SendToAll(vote[seat].ToString());
+                if(vote[seat])
+                {
+                    accepted++;
+                }
+            }
+            Thread.Sleep(5000);
+            if((accepted*2)>numberOfPlayers)
+            {
+                SendToAll("accepted");
+            }
+            else
+            {
+                SendToAll("rejected");
             }
         }
 

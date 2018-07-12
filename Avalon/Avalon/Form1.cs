@@ -175,7 +175,22 @@ namespace Avalon
                             CanAddToTeam(cantAdd);
                             break;
                         case "voteTeam":
-
+                            StartVote();
+                            break;
+                        case "voteTeamEnded":
+                            for (int i = 0; i < 10; i++)
+                            {
+                                if (seatsTaken[i])
+                                {
+                                    ShowVote(i, Convert.ToBoolean(br.ReadString()));
+                                }
+                            }
+                            break;
+                        case "accepted":
+                            TeamAccepted();
+                            break;
+                        case "rejected":
+                            TeamRejected();
                             break;
                         default:
                             break;
@@ -199,6 +214,342 @@ namespace Avalon
                     MessageBox.Show("Serwer został wyłączony");
                 }
                 Application.Exit();
+            }
+        }
+
+        delegate void TeamAcceptedDelegate();
+
+        private void TeamAccepted()
+        {
+            if (ChoiceAcceptButton1.InvokeRequired || ChoiceAcceptButton2.InvokeRequired || ChoiceAcceptButton3.InvokeRequired || ChoiceAcceptButton4.InvokeRequired || ChoiceAcceptButton5.InvokeRequired || ChoiceAcceptButton6.InvokeRequired || ChoiceAcceptButton7.InvokeRequired || ChoiceAcceptButton8.InvokeRequired || ChoiceAcceptButton9.InvokeRequired || ChoiceAcceptButton10.InvokeRequired || ChoiceAgainstButton1.InvokeRequired || ChoiceAgainstButton2.InvokeRequired || ChoiceAgainstButton3.InvokeRequired || ChoiceAgainstButton4.InvokeRequired || ChoiceAgainstButton5.InvokeRequired || ChoiceAgainstButton6.InvokeRequired || ChoiceAgainstButton7.InvokeRequired || ChoiceAgainstButton8.InvokeRequired || ChoiceAgainstButton9.InvokeRequired || ChoiceAgainstButton10.InvokeRequired)
+            {
+                TeamAcceptedDelegate f = new TeamAcceptedDelegate(TeamAccepted);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                switch (mySeat)
+                {
+                    case 0:
+                        if (InTeamIcon1.Visible)
+                        {
+                            ChoiceAcceptButton1.Visible = true;
+                            ChoiceAcceptButton1.Text = "Sukces";
+                            ChoiceAgainstButton1.Visible = true;
+                            ChoiceAgainstButton1.Text = "Porażka";
+                            if (CharacterPicture1.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture1.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture1.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton1.Visible = false;
+                                ChoiceAgainstButton1.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 1:
+                        if (InTeamIcon2.Visible)
+                        {
+                            ChoiceAcceptButton2.Visible = true;
+                            ChoiceAcceptButton2.Text = "Sukces";
+                            ChoiceAgainstButton2.Visible = true;
+                            ChoiceAgainstButton2.Text = "Porażka";
+                            if (CharacterPicture2.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture2.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture2.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton2.Visible = false;
+                                ChoiceAgainstButton2.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 2:
+                        if (InTeamIcon3.Visible)
+                        {
+                            ChoiceAcceptButton3.Visible = true;
+                            ChoiceAcceptButton3.Text = "Sukces";
+                            ChoiceAgainstButton3.Visible = true;
+                            ChoiceAgainstButton3.Text = "Porażka";
+                            if (CharacterPicture3.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture3.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture3.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton3.Visible = false;
+                                ChoiceAgainstButton3.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 3:
+                        if (InTeamIcon4.Visible)
+                        {
+                            ChoiceAcceptButton4.Visible = true;
+                            ChoiceAcceptButton4.Text = "Sukces";
+                            ChoiceAgainstButton4.Visible = true;
+                            ChoiceAgainstButton4.Text = "Porażka";
+                            if (CharacterPicture4.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture4.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture4.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton4.Visible = false;
+                                ChoiceAgainstButton4.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 4:
+                        if (InTeamIcon5.Visible)
+                        {
+                            ChoiceAcceptButton5.Visible = true;
+                            ChoiceAcceptButton5.Text = "Sukces";
+                            ChoiceAgainstButton5.Visible = true;
+                            ChoiceAgainstButton5.Text = "Porażka";
+                            if (CharacterPicture5.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture5.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture5.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton5.Visible = false;
+                                ChoiceAgainstButton5.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 5:
+                        if (InTeamIcon6.Visible)
+                        {
+                            ChoiceAcceptButton6.Visible = true;
+                            ChoiceAcceptButton6.Text = "Sukces";
+                            ChoiceAgainstButton6.Visible = true;
+                            ChoiceAgainstButton6.Text = "Porażka";
+                            if (CharacterPicture6.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture6.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture6.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton6.Visible = false;
+                                ChoiceAgainstButton6.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 6:
+                        if (InTeamIcon7.Visible)
+                        {
+                            ChoiceAcceptButton7.Visible = true;
+                            ChoiceAcceptButton7.Text = "Sukces";
+                            ChoiceAgainstButton7.Visible = true;
+                            ChoiceAgainstButton7.Text = "Porażka";
+                            if (CharacterPicture7.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture7.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture7.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton7.Visible = false;
+                                ChoiceAgainstButton7.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 7:
+                        if (InTeamIcon8.Visible)
+                        {
+                            ChoiceAcceptButton8.Visible = true;
+                            ChoiceAcceptButton8.Text = "Sukces";
+                            ChoiceAgainstButton8.Visible = true;
+                            ChoiceAgainstButton8.Text = "Porażka";
+                            if (CharacterPicture8.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture8.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture8.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton8.Visible = false;
+                                ChoiceAgainstButton8.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 8:
+                        if (InTeamIcon9.Visible)
+                        {
+                            ChoiceAcceptButton9.Visible = true;
+                            ChoiceAcceptButton9.Text = "Sukces";
+                            ChoiceAgainstButton9.Visible = true;
+                            ChoiceAgainstButton9.Text = "Porażka";
+                            if (CharacterPicture9.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture9.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture9.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton9.Visible = false;
+                                ChoiceAgainstButton9.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                    case 9:
+                        if (InTeamIcon10.Visible)
+                        {
+                            ChoiceAcceptButton10.Visible = true;
+                            ChoiceAcceptButton10.Text = "Sukces";
+                            ChoiceAgainstButton10.Visible = true;
+                            ChoiceAgainstButton10.Text = "Porażka";
+                            if (CharacterPicture10.BackgroundImage == Avalon.Properties.Resources.Merlin || CharacterPicture10.BackgroundImage == Avalon.Properties.Resources.Parsifal || CharacterPicture10.BackgroundImage == Avalon.Properties.Resources.PoddanyArtura5)
+                            {
+                                ChoiceAgainstButton10.Visible = false;
+                                ChoiceAgainstButton10.Text = "Sprzeciw";
+                            }
+                        }
+                        break;
+                }
+            }
+        }
+
+        private void TeamRejected()
+        {
+
+        }
+
+        delegate void ShowVoteDelegate(int seat, bool accepted);
+
+        private void ShowVote(int seat, bool accepted)
+        {
+            if(ChoicePicture1.InvokeRequired || ChoicePicture2.InvokeRequired || ChoicePicture3.InvokeRequired || ChoicePicture4.InvokeRequired || ChoicePicture5.InvokeRequired || ChoicePicture6.InvokeRequired || ChoicePicture7.InvokeRequired || ChoicePicture8.InvokeRequired || ChoicePicture9.InvokeRequired || ChoicePicture10.InvokeRequired)
+            {
+                ShowVoteDelegate f = new ShowVoteDelegate(ShowVote);
+                this.Invoke(f, new object[] { seat, accepted });
+            }
+            else
+            {
+                switch(seat)
+                {
+                    case 0:
+                        if (accepted)
+                        {
+                            ChoicePicture1.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture1.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 1:
+                        if (accepted)
+                        {
+                            ChoicePicture2.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture2.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 2:
+                        if (accepted)
+                        {
+                            ChoicePicture3.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture3.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 3:
+                        if (accepted)
+                        {
+                            ChoicePicture4.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture4.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 4:
+                        if (accepted)
+                        {
+                            ChoicePicture5.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture5.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 5:
+                        if (accepted)
+                        {
+                            ChoicePicture6.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture6.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 6:
+                        if (accepted)
+                        {
+                            ChoicePicture7.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture7.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 7:
+                        if (accepted)
+                        {
+                            ChoicePicture8.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture8.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 8:
+                        if (accepted)
+                        {
+                            ChoicePicture9.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture9.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                    case 9:
+                        if (accepted)
+                        {
+                            ChoicePicture10.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+                        }
+                        else
+                        {
+                            ChoicePicture10.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+                        }
+                        break;
+                }
+            }
+        }
+
+        delegate void StartVoteDelegate();
+
+        private void StartVote()
+        {
+            if(ChoiceAcceptButton1.InvokeRequired || ChoiceAcceptButton2.InvokeRequired || ChoiceAcceptButton3.InvokeRequired || ChoiceAcceptButton4.InvokeRequired || ChoiceAcceptButton5.InvokeRequired || ChoiceAcceptButton6.InvokeRequired || ChoiceAcceptButton7.InvokeRequired || ChoiceAcceptButton8.InvokeRequired || ChoiceAcceptButton9.InvokeRequired || ChoiceAcceptButton10.InvokeRequired || ChoiceAgainstButton1.InvokeRequired || ChoiceAgainstButton2.InvokeRequired || ChoiceAgainstButton3.InvokeRequired || ChoiceAgainstButton4.InvokeRequired || ChoiceAgainstButton5.InvokeRequired || ChoiceAgainstButton6.InvokeRequired || ChoiceAgainstButton7.InvokeRequired || ChoiceAgainstButton8.InvokeRequired || ChoiceAgainstButton9.InvokeRequired || ChoiceAgainstButton10.InvokeRequired)
+            {
+                StartVoteDelegate f = new StartVoteDelegate(StartVote);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                switch(mySeat)
+                {
+                    case 0:
+                        ChoiceAcceptButton1.Visible = true;
+                        ChoiceAgainstButton1.Visible = true;
+                        break;
+                    case 1:
+                        ChoiceAcceptButton2.Visible = true;
+                        ChoiceAgainstButton2.Visible = true;
+                        break;
+                    case 2:
+                        ChoiceAcceptButton3.Visible = true;
+                        ChoiceAgainstButton3.Visible = true;
+                        break;
+                    case 3:
+                        ChoiceAcceptButton4.Visible = true;
+                        ChoiceAgainstButton4.Visible = true;
+                        break;
+                    case 4:
+                        ChoiceAcceptButton5.Visible = true;
+                        ChoiceAgainstButton5.Visible = true;
+                        break;
+                    case 5:
+                        ChoiceAcceptButton6.Visible = true;
+                        ChoiceAgainstButton6.Visible = true;
+                        break;
+                    case 6:
+                        ChoiceAcceptButton7.Visible = true;
+                        ChoiceAgainstButton7.Visible = true;
+                        break;
+                    case 7:
+                        ChoiceAcceptButton8.Visible = true;
+                        ChoiceAgainstButton8.Visible = true;
+                        break;
+                    case 8:
+                        ChoiceAcceptButton9.Visible = true;
+                        ChoiceAgainstButton9.Visible = true;
+                        break;
+                    case 9:
+                        ChoiceAcceptButton10.Visible = true;
+                        ChoiceAgainstButton10.Visible = true;
+                        break;
+                }
             }
         }
 
@@ -1835,6 +2186,166 @@ namespace Avalon
             bw.Write("9");
             AddToTeamButton10.Visible = true;
             RemoveFromTeamButton10.Visible = false;
+        }
+
+        private void ChoiceAcceptButton1_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton1.Visible = false;
+            ChoiceAgainstButton1.Visible = false;
+            ChoicePicture1.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton2_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton2.Visible = false;
+            ChoiceAgainstButton2.Visible = false;
+            ChoicePicture2.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton3_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton3.Visible = false;
+            ChoiceAgainstButton3.Visible = false;
+            ChoicePicture3.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton4_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton4.Visible = false;
+            ChoiceAgainstButton4.Visible = false;
+            ChoicePicture4.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton5_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton5.Visible = false;
+            ChoiceAgainstButton5.Visible = false;
+            ChoicePicture5.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton6_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton6.Visible = false;
+            ChoiceAgainstButton6.Visible = false;
+            ChoicePicture6.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton7_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton7.Visible = false;
+            ChoiceAgainstButton7.Visible = false;
+            ChoicePicture7.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton8_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton8.Visible = false;
+            ChoiceAgainstButton8.Visible = false;
+            ChoicePicture8.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton9_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton9.Visible = false;
+            ChoiceAgainstButton9.Visible = false;
+            ChoicePicture9.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAcceptButton10_Click(object sender, EventArgs e)
+        {
+            bw.Write("accept");
+            ChoiceAcceptButton10.Visible = false;
+            ChoiceAgainstButton10.Visible = false;
+            ChoicePicture10.BackgroundImage = Avalon.Properties.Resources.VoteZgoda;
+        }
+
+        private void ChoiceAgainstButton1_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton1.Visible = false;
+            ChoiceAgainstButton1.Visible = false;
+            ChoicePicture1.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton2_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton2.Visible = false;
+            ChoiceAgainstButton2.Visible = false;
+            ChoicePicture2.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton3_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton3.Visible = false;
+            ChoiceAgainstButton3.Visible = false;
+            ChoicePicture3.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton4_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton4.Visible = false;
+            ChoiceAgainstButton4.Visible = false;
+            ChoicePicture4.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton5_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton5.Visible = false;
+            ChoiceAgainstButton5.Visible = false;
+            ChoicePicture5.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton6_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton6.Visible = false;
+            ChoiceAgainstButton6.Visible = false;
+            ChoicePicture6.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton7_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton7.Visible = false;
+            ChoiceAgainstButton7.Visible = false;
+            ChoicePicture7.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton8_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton8.Visible = false;
+            ChoiceAgainstButton8.Visible = false;
+            ChoicePicture8.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton9_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton9.Visible = false;
+            ChoiceAgainstButton9.Visible = false;
+            ChoicePicture9.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
+        }
+
+        private void ChoiceAgainstButton10_Click(object sender, EventArgs e)
+        {
+            bw.Write("against");
+            ChoiceAcceptButton10.Visible = false;
+            ChoiceAgainstButton10.Visible = false;
+            ChoicePicture10.BackgroundImage = Avalon.Properties.Resources.VoteSprzeciw;
         }
     }
 }
