@@ -43,9 +43,10 @@ namespace AvalonSerwer
         int currRound;
         List<int> team;
         bool[] vote;
-        bool[] passed;
-        bool[] mission;
+        int succeeded;
+        int failed;
         int voted;
+        int failedVotes;
 
         public Serwer()
         {
@@ -165,9 +166,14 @@ namespace AvalonSerwer
                             {
                                 SendToPlayer("unableToStart", 0);
                             }
+                            if (gameRunning)
+                            {
+                                SendToAll("restarted");
+                            }
                             break;
                         case "startChoose":
                             rnd2 = new Random();
+                            gameRunning = true;
                             SendToAll("chooseStarted");
                             switch (numberOfPlayers)
                             {
@@ -197,7 +203,6 @@ namespace AvalonSerwer
                             SendToAll(info[4].ToString());
                             SendToAll(info[5].ToString());
                             SendToAll(info[6].ToString());
-                            gameRunning = true;
                             break;
                         case "ladyChosen":
                             if (seat == 0)
@@ -310,6 +315,9 @@ namespace AvalonSerwer
                             }
                             break;
                         case "startGame":
+                            failedVotes = 0;
+                            succeeded = 0;
+                            failed = 0;
                             currRound = 1;
                             SendToAll("gameStarted");
                             seatsTaken = new int[numberOfPlayers];
@@ -323,7 +331,6 @@ namespace AvalonSerwer
                                 }
                             }
                             leader = rnd.Next(numberOfPlayers);
-                            leader = 0;
                             SendToAll(seatsTaken[leader].ToString());
                             if (withLady)
                             {
@@ -475,7 +482,7 @@ namespace AvalonSerwer
                             team.Add(Convert.ToInt16(br.ReadString()));
                             SendToAll("added");
                             SendToAll(team.Last().ToString());
-                            if(team.Count()==info[currRound-1])
+                            if (team.Count() == info[currRound - 1])
                             {
                                 bw.Write("fullTeam");
                             }
@@ -485,10 +492,10 @@ namespace AvalonSerwer
                             team.Remove(removed);
                             SendToAll("removed");
                             SendToAll(removed.ToString());
-                            if(team.Count==info[currRound-1]-1)
+                            if (team.Count == info[currRound - 1] - 1)
                             {
                                 bw.Write("canAdd");
-                                foreach(int seattaken in team)
+                                foreach (int seattaken in team)
                                 {
                                     bw.Write(seattaken.ToString());
                                 }
@@ -503,7 +510,7 @@ namespace AvalonSerwer
                         case "accept":
                             voted++;
                             vote[seat] = true;
-                            if(voted==numberOfPlayers)
+                            if (voted == numberOfPlayers)
                             {
                                 CheckVotes();
                             }
@@ -515,6 +522,26 @@ namespace AvalonSerwer
                             {
                                 CheckVotes();
                             }
+                            break;
+                        case "fail":
+                            voted++;
+                            vote[seat] = false;
+                            if (voted == team.Count)
+                            {
+                                CheckMission();
+                            }
+                            break;
+                        case "success":
+                            voted++;
+                            vote[seat] = true;
+                            if(voted==team.Count)
+                            {
+                                CheckMission();
+                            }
+                            break;
+
+                        case "restart":
+
                             break;
                         default:
                             break;
@@ -531,27 +558,151 @@ namespace AvalonSerwer
             }
         }
 
+        private void CheckMission()
+        {
+            int accepted = 0;
+            foreach (int seat in seatsTaken)
+            {
+                if (vote[seat])
+                {
+                    accepted++;
+                }
+            }
+            if (currRound == 4 && info[currRound - 1] != 3)
+            {
+                if (accepted >= info[currRound - 1] - 1)
+                {
+                    SendToAll("missionSuccess");
+                    succeeded++;
+                }
+                else
+                {
+                    SendToAll("missionFailed");
+                    failed++;
+                }
+            }
+            else
+            {
+                if (accepted == info[currRound - 1])
+                {
+                    SendToAll("missionSuccess");
+                    succeeded++;
+                }
+                else
+                {
+                    SendToAll("missionFailed");
+                    failed++;
+                }
+            }
+            SendToAll(accepted.ToString());
+            foreach (int seat in team)
+            {
+                SendToAll(nicks[seat]);
+            }
+            SendToAll("end");
+            Thread.Sleep(5000);
+            if (succeeded == 3)
+            {
+                GoodWins();
+            }
+            else if (failed == 3)
+            {
+                EvilWins();
+            }
+            else
+            {
+                currRound++;
+                NextLeader();
+            }
+        }
+
         private void CheckVotes()
         {
             int accepted = 0;
             SendToAll("voteTeamEnded");
-            foreach(int seat in seatsTaken)
+            foreach (int seat in seatsTaken)
             {
                 SendToAll(vote[seat].ToString());
-                if(vote[seat])
+                if (vote[seat])
                 {
                     accepted++;
                 }
             }
             Thread.Sleep(5000);
-            if((accepted*2)>numberOfPlayers)
+            if ((accepted * 2) > numberOfPlayers)
             {
+                failedVotes = 0;
                 SendToAll("accepted");
             }
             else
             {
+                failedVotes++;
                 SendToAll("rejected");
+                if (failedVotes == 5)
+                {
+                    EvilWins();
+                }
+                else
+                {
+                    NextLeader();
+                }
             }
+            voted = 0;
+            vote = new bool[10];
+        }
+
+        private void EvilWins()
+        {
+            SendToAll("seatstaken");
+            for (int i = 0; i < nicks.Length; i++)
+            {
+                if (nicks[i] != "" && nicks[i] != null)
+                {
+                    SendToAll((i).ToString());
+                    SendToAll(nicks[i]);
+                }
+            }
+            SendToAll("end");
+            SendToAll("evilWins");
+            for (int i = 0; i < seatsTaken.Length; i++)
+            {
+                SendToAll(seatsTaken[i].ToString());
+                SendToAll(roles[i]);
+            }
+            SendToAll("end");
+        }
+
+        private void GoodWins()
+        {
+            SendToAll("seatstaken");
+            for (int i = 0; i < nicks.Length; i++)
+            {
+                if (nicks[i] != "" && nicks[i] != null)
+                {
+                    SendToAll((i).ToString());
+                    SendToAll(nicks[i]);
+                }
+            }
+            SendToAll("end");
+            SendToAll("goodWins");
+            for (int i = 0; i < seatsTaken.Length; i++)
+            {
+                SendToAll(seatsTaken[i].ToString());
+                SendToAll(roles[i]);
+            }
+            SendToAll("end");
+        }
+
+        private void NextLeader()
+        {
+            SendToAll("changeLeader");
+            leader++;
+            if (leader == seatsTaken.Length)
+            {
+                leader = 0;
+            }
+            SendToAll(seatsTaken[leader].ToString());
+            team = new List<int>();
         }
 
         private void SendToAll(string message)
