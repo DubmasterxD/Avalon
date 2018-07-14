@@ -231,11 +231,13 @@ namespace Avalon
                             break;
                         case "leaver":
                             MessageBox.Show(br.ReadString() + " wyszedł z gry");
+                            Restart();
                             break;
                         case "gamerunning":
                             if(br.ReadString()==true.ToString())
                             {
                                 CantSit();
+                                stage = 3;
                             }
                             break;
                         case "restarted":
@@ -299,108 +301,111 @@ namespace Avalon
             }
             else
             {
-                switch(seat)
+                if (lady)
                 {
-                    case 0:
-                        if (isGood)
-                        {
-                            LadyPicture1.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture1.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 1:
-                        if (isGood)
-                        {
-                            LadyPicture2.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture2.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 2:
-                        if (isGood)
-                        {
-                            LadyPicture3.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture3.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 3:
-                        if (isGood)
-                        {
-                            LadyPicture4.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture4.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 4:
-                        if (isGood)
-                        {
-                            LadyPicture5.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture5.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 5:
-                        if (isGood)
-                        {
-                            LadyPicture6.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture6.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 6:
-                        if (isGood)
-                        {
-                            LadyPicture7.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture7.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 7:
-                        if (isGood)
-                        {
-                            LadyPicture8.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture8.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 8:
-                        if (isGood)
-                        {
-                            LadyPicture9.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture9.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
-                    case 9:
-                        if (isGood)
-                        {
-                            LadyPicture10.Image = Avalon.Properties.Resources.LadyGood;
-                        }
-                        else
-                        {
-                            LadyPicture10.Image = Avalon.Properties.Resources.LadyBad;
-                        }
-                        break;
+                    switch (seat)
+                    {
+                        case 0:
+                            if (isGood)
+                            {
+                                LadyPicture1.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture1.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 1:
+                            if (isGood)
+                            {
+                                LadyPicture2.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture2.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 2:
+                            if (isGood)
+                            {
+                                LadyPicture3.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture3.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 3:
+                            if (isGood)
+                            {
+                                LadyPicture4.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture4.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 4:
+                            if (isGood)
+                            {
+                                LadyPicture5.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture5.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 5:
+                            if (isGood)
+                            {
+                                LadyPicture6.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture6.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 6:
+                            if (isGood)
+                            {
+                                LadyPicture7.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture7.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 7:
+                            if (isGood)
+                            {
+                                LadyPicture8.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture8.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 8:
+                            if (isGood)
+                            {
+                                LadyPicture9.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture9.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                        case 9:
+                            if (isGood)
+                            {
+                                LadyPicture10.Image = Avalon.Properties.Resources.LadyGood;
+                            }
+                            else
+                            {
+                                LadyPicture10.Image = Avalon.Properties.Resources.LadyBad;
+                            }
+                            break;
+                    }
                 }
                 ChangeLady(seat);
             }
@@ -417,43 +422,43 @@ namespace Avalon
             }
             else
             {
-                if (seatsTaken[0] && CharacterPicture1.Image == null)
+                if (seatsTaken[0])
                 {
                     LadyCheckButton1.Visible = true;
                 }
-                if (seatsTaken[1] && CharacterPicture2.Image == null)
+                if (seatsTaken[1])
                 {
                     LadyCheckButton2.Visible = true;
                 }
-                if (seatsTaken[2] && CharacterPicture3.Image == null)
+                if (seatsTaken[2])
                 {
                     LadyCheckButton3.Visible = true;
                 }
-                if (seatsTaken[3] && CharacterPicture4.Image == null)
+                if (seatsTaken[3])
                 {
                     LadyCheckButton4.Visible = true;
                 }
-                if (seatsTaken[4] && CharacterPicture5.Image == null)
+                if (seatsTaken[4])
                 {
                     LadyCheckButton5.Visible = true;
                 }
-                if (seatsTaken[5] && CharacterPicture6.Image == null)
+                if (seatsTaken[5])
                 {
                     LadyCheckButton6.Visible = true;
                 }
-                if (seatsTaken[6] && CharacterPicture7.Image == null)
+                if (seatsTaken[6])
                 {
                     LadyCheckButton7.Visible = true;
                 }
-                if (seatsTaken[7] && CharacterPicture8.Image == null)
+                if (seatsTaken[7])
                 {
                     LadyCheckButton8.Visible = true;
                 }
-                if (seatsTaken[8] && CharacterPicture9.Image == null)
+                if (seatsTaken[8])
                 {
                     LadyCheckButton9.Visible = true;
                 }
-                if (seatsTaken[9] && CharacterPicture10.Image == null)
+                if (seatsTaken[9])
                 {
                     LadyCheckButton10.Visible = true;
                 }
@@ -515,41 +520,71 @@ namespace Avalon
                 LadyPicture8.Visible = false;
                 LadyPicture9.Visible = false;
                 LadyPicture10.Visible = false;
-                for(int i=0; i<10; i++)
+                for (int i = 0; i < 10; i++)
                 {
-                    if(seatsTaken[i])
+                    if (seatsTaken[i])
                     {
-                        switch(i)
+                        switch (i)
                         {
                             case 0:
-                                LadyCheckButton1.Visible = true;
+                                if (mySeat != i && CharacterPicture1.Image == null)
+                                {
+                                    LadyCheckButton1.Visible = true;
+                                }
                                 break;
                             case 1:
-                                LadyCheckButton2.Visible = true;
+                                if (mySeat != i && CharacterPicture2.Image == null)
+                                {
+                                    LadyCheckButton2.Visible = true;
+                                }
                                 break;
                             case 2:
-                                LadyCheckButton3.Visible = true;
+                                if (mySeat != i && CharacterPicture3.Image == null)
+                                {
+                                    LadyCheckButton3.Visible = true;
+                                }
                                 break;
                             case 3:
-                                LadyCheckButton4.Visible = true;
+                                if (mySeat != i && CharacterPicture4.Image == null)
+                                {
+                                    LadyCheckButton4.Visible = true;
+                                }
                                 break;
                             case 4:
-                                LadyCheckButton5.Visible = true;
+                                if (mySeat != i && CharacterPicture5.Image == null)
+                                {
+                                    LadyCheckButton5.Visible = true;
+                                }
                                 break;
                             case 5:
-                                LadyCheckButton6.Visible = true;
+                                if (mySeat != i && CharacterPicture6.Image == null)
+                                {
+                                    LadyCheckButton6.Visible = true;
+                                }
                                 break;
                             case 6:
-                                LadyCheckButton7.Visible = true;
+                                if (mySeat != i && CharacterPicture7.Image == null)
+                                {
+                                    LadyCheckButton7.Visible = true;
+                                }
                                 break;
                             case 7:
-                                LadyCheckButton8.Visible = true;
+                                if (mySeat != i && CharacterPicture8.Image == null)
+                                {
+                                    LadyCheckButton8.Visible = true;
+                                }
                                 break;
                             case 8:
-                                LadyCheckButton9.Visible = true;
+                                if (mySeat != i && CharacterPicture9.Image == null)
+                                {
+                                    LadyCheckButton9.Visible = true;
+                                }
                                 break;
                             case 9:
-                                LadyCheckButton10.Visible = true;
+                                if (mySeat != i && CharacterPicture10.Image == null)
+                                {
+                                    LadyCheckButton10.Visible = true;
+                                }
                                 break;
                         }
                     }

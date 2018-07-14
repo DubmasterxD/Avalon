@@ -544,9 +544,9 @@ namespace AvalonSerwer
                         case "leaving":
                             if (gameRunning && nicks.Contains(nick))
                             {
+                                GoodWins();
                                 SendToAll("leaver");
                                 SendToAll(nick);
-                                GoodWins();
                             }
                             break;
                         case "restart":
@@ -581,16 +581,16 @@ namespace AvalonSerwer
                             {
                                 if(tmp2 == seatsTaken[i])
                                 {
-                                    bw.Write("ladyResult");
+                                    SendToAll("ladyResult");
                                     if(roles[i]=="Merlin"||roles[i]=="Persifal"|| roles[i]=="Good")
                                     {
-                                        bw.Write("good");
+                                        SendToAll("good");
                                     }
                                     else
                                     {
-                                        bw.Write("bad");
+                                        SendToAll("bad");
                                     }
-                                    bw.Write(tmp2.ToString());
+                                    SendToAll(tmp2.ToString());
                                 }
                             }
                             Thread.Sleep(3000);
