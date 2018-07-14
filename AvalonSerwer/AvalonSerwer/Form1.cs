@@ -117,6 +117,8 @@ namespace AvalonSerwer
                                 }
                             }
                             bw.Write("end");
+                            bw.Write("gamerunning");
+                            bw.Write(gameRunning.ToString());
                             break;
                         case "takeseat":
                             int askingSeat = Convert.ToInt16(br.ReadString());
@@ -539,9 +541,60 @@ namespace AvalonSerwer
                                 CheckMission();
                             }
                             break;
-
+                        case "leaving":
+                            if (gameRunning && nicks.Contains(nick))
+                            {
+                                SendToAll("leaver");
+                                SendToAll(nick);
+                                GoodWins();
+                            }
+                            break;
                         case "restart":
-
+                            SendToAll("restarted");
+                            withLady = false;
+                            withMordred = false;
+                            withMorgana = false;
+                            withOberon = false;
+                            withPersifal = false;
+                            numberOfEvilAdds = 0;
+                            break;
+                        case "kill":
+                            int tmp = Convert.ToInt16(br.ReadString());
+                            for (int i = 0; i < numberOfPlayers; i++)
+                            {
+                                if(tmp==seatsTaken[i])
+                                {
+                                    if(roles[i]=="Merlin")
+                                    {
+                                        EvilWins();
+                                    }
+                                    else
+                                    {
+                                        GoodWins();
+                                    }
+                                }
+                            }
+                            break;
+                        case "checkRole":
+                            int tmp2 = Convert.ToInt16(br.ReadString());
+                            for(int i=0; i<numberOfPlayers; i++)
+                            {
+                                if(tmp2 == seatsTaken[i])
+                                {
+                                    bw.Write("ladyResult");
+                                    if(roles[i]=="Merlin"||roles[i]=="Persifal"|| roles[i]=="Good")
+                                    {
+                                        bw.Write("good");
+                                    }
+                                    else
+                                    {
+                                        bw.Write("bad");
+                                    }
+                                    bw.Write(tmp2.ToString());
+                                }
+                            }
+                            Thread.Sleep(3000);
+                            NextLeader();
                             break;
                         default:
                             break;
@@ -603,7 +656,7 @@ namespace AvalonSerwer
             Thread.Sleep(5000);
             if (succeeded == 3)
             {
-                GoodWins();
+                SendToAll("kill");
             }
             else if (failed == 3)
             {
@@ -612,7 +665,14 @@ namespace AvalonSerwer
             else
             {
                 currRound++;
-                NextLeader();
+                if (currRound > 2)
+                {
+                    SendToAll("ladyTime");
+                }
+                else
+                {
+                    NextLeader();
+                }
             }
         }
 
@@ -653,6 +713,7 @@ namespace AvalonSerwer
 
         private void EvilWins()
         {
+            gameRunning = false;
             SendToAll("seatstaken");
             for (int i = 0; i < nicks.Length; i++)
             {
@@ -674,6 +735,7 @@ namespace AvalonSerwer
 
         private void GoodWins()
         {
+            gameRunning = false;
             SendToAll("seatstaken");
             for (int i = 0; i < nicks.Length; i++)
             {

@@ -30,6 +30,9 @@ namespace Avalon
         int round = 0;
         int inTeam;
         int tag; //0-spectator, 1-good, 2-evil
+        bool assassin;
+        bool lady;
+        bool canAssassin;
 
         public Game()
         {
@@ -82,6 +85,7 @@ namespace Avalon
             br = new BinaryReader(ns);
             string tmp = "";
             string cmd = "";
+            mySeat = -1;
             try
             {
                 while ((cmd = br.ReadString()) != "disconnect")
@@ -89,7 +93,6 @@ namespace Avalon
                     switch (cmd)
                     {
                         case "seatstaken":
-                            mySeat = -1;
                             Seat1Taken(false, "");
                             Seat2Taken(false, "");
                             Seat3Taken(false, "");
@@ -127,6 +130,7 @@ namespace Avalon
                             CanStartGame(false);
                             break;
                         case "chooseStarted":
+                            canAssassin = false;
                             stage = 1;
                             info[0] = Convert.ToInt16(br.ReadString());
                             info[1] = Convert.ToInt16(br.ReadString());
@@ -225,6 +229,40 @@ namespace Avalon
                                 AddNick(tmp);
                             }
                             break;
+                        case "leaver":
+                            MessageBox.Show(br.ReadString() + " wyszedł z gry");
+                            break;
+                        case "gamerunning":
+                            if(br.ReadString()==true.ToString())
+                            {
+                                CantSit();
+                            }
+                            break;
+                        case "restarted":
+                            Restart();
+                            break;
+                        case "kill":
+                            if(assassin)
+                            {
+                                Kill();
+                            }
+                            break;
+                        case "ladyTime":
+                            if(lady)
+                            {
+                                LadyCheck();
+                            }
+                            break;
+                        case "ladyResult":
+                            if(br.ReadString()=="good")
+                            {
+                                LadyResult(Convert.ToInt16(br.ReadString()), true);
+                            }
+                            else
+                            {
+                                LadyResult(Convert.ToInt16(br.ReadString()), false);
+                            }
+                            break;
                         default:
                             break;
                     }
@@ -248,6 +286,541 @@ namespace Avalon
                 }
                 Application.Exit();
             }
+        }
+
+        delegate void LadyResultDelegate(int seat, bool isGood);
+
+        private void LadyResult(int seat, bool isGood)
+        {
+            if(LadyPicture1.InvokeRequired || LadyPicture2.InvokeRequired || LadyPicture3.InvokeRequired || LadyPicture4.InvokeRequired || LadyPicture5.InvokeRequired || LadyPicture6.InvokeRequired || LadyPicture7.InvokeRequired || LadyPicture8.InvokeRequired || LadyPicture9.InvokeRequired || LadyPicture10.InvokeRequired)
+            {
+                LadyResultDelegate f = new LadyResultDelegate(LadyResult);
+                this.Invoke(f, new object[] { seat, isGood });
+            }
+            else
+            {
+                switch(seat)
+                {
+                    case 0:
+                        if (isGood)
+                        {
+                            LadyPicture1.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture1.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 1:
+                        if (isGood)
+                        {
+                            LadyPicture2.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture2.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 2:
+                        if (isGood)
+                        {
+                            LadyPicture3.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture3.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 3:
+                        if (isGood)
+                        {
+                            LadyPicture4.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture4.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 4:
+                        if (isGood)
+                        {
+                            LadyPicture5.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture5.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 5:
+                        if (isGood)
+                        {
+                            LadyPicture6.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture6.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 6:
+                        if (isGood)
+                        {
+                            LadyPicture7.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture7.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 7:
+                        if (isGood)
+                        {
+                            LadyPicture8.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture8.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 8:
+                        if (isGood)
+                        {
+                            LadyPicture9.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture9.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                    case 9:
+                        if (isGood)
+                        {
+                            LadyPicture10.Image = Avalon.Properties.Resources.LadyGood;
+                        }
+                        else
+                        {
+                            LadyPicture10.Image = Avalon.Properties.Resources.LadyBad;
+                        }
+                        break;
+                }
+                ChangeLady(seat);
+            }
+        }
+
+        delegate void LadyCheckDelegate();
+
+        private void LadyCheck()
+        {
+            if (LadyCheckButton1.InvokeRequired || LadyCheckButton2.InvokeRequired || LadyCheckButton3.InvokeRequired || LadyCheckButton4.InvokeRequired || LadyCheckButton5.InvokeRequired || LadyCheckButton6.InvokeRequired || LadyCheckButton7.InvokeRequired || LadyCheckButton8.InvokeRequired || LadyCheckButton9.InvokeRequired || LadyCheckButton10.InvokeRequired)
+            {
+                LadyCheckDelegate f = new LadyCheckDelegate(LadyCheck);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                if (seatsTaken[0] && CharacterPicture1.Image == null)
+                {
+                    LadyCheckButton1.Visible = true;
+                }
+                if (seatsTaken[1] && CharacterPicture2.Image == null)
+                {
+                    LadyCheckButton2.Visible = true;
+                }
+                if (seatsTaken[2] && CharacterPicture3.Image == null)
+                {
+                    LadyCheckButton3.Visible = true;
+                }
+                if (seatsTaken[3] && CharacterPicture4.Image == null)
+                {
+                    LadyCheckButton4.Visible = true;
+                }
+                if (seatsTaken[4] && CharacterPicture5.Image == null)
+                {
+                    LadyCheckButton5.Visible = true;
+                }
+                if (seatsTaken[5] && CharacterPicture6.Image == null)
+                {
+                    LadyCheckButton6.Visible = true;
+                }
+                if (seatsTaken[6] && CharacterPicture7.Image == null)
+                {
+                    LadyCheckButton7.Visible = true;
+                }
+                if (seatsTaken[7] && CharacterPicture8.Image == null)
+                {
+                    LadyCheckButton8.Visible = true;
+                }
+                if (seatsTaken[8] && CharacterPicture9.Image == null)
+                {
+                    LadyCheckButton9.Visible = true;
+                }
+                if (seatsTaken[9] && CharacterPicture10.Image == null)
+                {
+                    LadyCheckButton10.Visible = true;
+                }
+                switch (mySeat)
+                {
+                    case 0:
+                        LadyCheckButton1.Visible = false;
+                        break;
+                    case 1:
+                        LadyCheckButton2.Visible = false;
+                        break;
+                    case 2:
+                        LadyCheckButton3.Visible = false;
+                        break;
+                    case 3:
+                        LadyCheckButton4.Visible = false;
+                        break;
+                    case 4:
+                        LadyCheckButton5.Visible = false;
+                        break;
+                    case 5:
+                        LadyCheckButton6.Visible = false;
+                        break;
+                    case 6:
+                        LadyCheckButton7.Visible = false;
+                        break;
+                    case 7:
+                        LadyCheckButton8.Visible = false;
+                        break;
+                    case 8:
+                        LadyCheckButton9.Visible = false;
+                        break;
+                    case 9:
+                        LadyCheckButton10.Visible = false;
+                        break;
+                }
+            }
+        }
+
+        delegate void KillDelegate();
+
+        private void Kill()
+        {
+            if (LadyPicture1.InvokeRequired || LadyPicture2.InvokeRequired || LadyPicture3.InvokeRequired || LadyPicture4.InvokeRequired || LadyPicture5.InvokeRequired || LadyPicture6.InvokeRequired || LadyPicture7.InvokeRequired || LadyPicture8.InvokeRequired || LadyPicture9.InvokeRequired || LadyPicture10.InvokeRequired || LadyCheckButton1.InvokeRequired || LadyCheckButton2.InvokeRequired || LadyCheckButton3.InvokeRequired || LadyCheckButton4.InvokeRequired || LadyCheckButton5.InvokeRequired || LadyCheckButton6.InvokeRequired || LadyCheckButton7.InvokeRequired || LadyCheckButton8.InvokeRequired || LadyCheckButton9.InvokeRequired || LadyCheckButton10.InvokeRequired)
+            {
+                KillDelegate f = new KillDelegate(Kill);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                canAssassin = true;
+                LadyPicture1.Visible = false;
+                LadyPicture2.Visible = false;
+                LadyPicture3.Visible = false;
+                LadyPicture4.Visible = false;
+                LadyPicture5.Visible = false;
+                LadyPicture6.Visible = false;
+                LadyPicture7.Visible = false;
+                LadyPicture8.Visible = false;
+                LadyPicture9.Visible = false;
+                LadyPicture10.Visible = false;
+                for(int i=0; i<10; i++)
+                {
+                    if(seatsTaken[i])
+                    {
+                        switch(i)
+                        {
+                            case 0:
+                                LadyCheckButton1.Visible = true;
+                                break;
+                            case 1:
+                                LadyCheckButton2.Visible = true;
+                                break;
+                            case 2:
+                                LadyCheckButton3.Visible = true;
+                                break;
+                            case 3:
+                                LadyCheckButton4.Visible = true;
+                                break;
+                            case 4:
+                                LadyCheckButton5.Visible = true;
+                                break;
+                            case 5:
+                                LadyCheckButton6.Visible = true;
+                                break;
+                            case 6:
+                                LadyCheckButton7.Visible = true;
+                                break;
+                            case 7:
+                                LadyCheckButton8.Visible = true;
+                                break;
+                            case 8:
+                                LadyCheckButton9.Visible = true;
+                                break;
+                            case 9:
+                                LadyCheckButton10.Visible = true;
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+
+        delegate void RestartDelegate();
+
+        private void Restart()
+        {
+            if (GameResultImage.InvokeRequired || CharacterPicture1.InvokeRequired || CharacterPicture2.InvokeRequired || CharacterPicture3.InvokeRequired || CharacterPicture4.InvokeRequired || CharacterPicture5.InvokeRequired || CharacterPicture6.InvokeRequired || CharacterPicture7.InvokeRequired || CharacterPicture8.InvokeRequired || CharacterPicture9.InvokeRequired || CharacterPicture10.InvokeRequired || LeaderIcon1.InvokeRequired || LeaderIcon2.InvokeRequired || LeaderIcon3.InvokeRequired || LeaderIcon4.InvokeRequired || LeaderIcon5.InvokeRequired || LeaderIcon6.InvokeRequired || LeaderIcon7.InvokeRequired || LeaderIcon8.InvokeRequired || LeaderIcon9.InvokeRequired || LeaderIcon10.InvokeRequired || InTeamIcon1.InvokeRequired || InTeamIcon2.InvokeRequired || InTeamIcon3.InvokeRequired || InTeamIcon4.InvokeRequired || InTeamIcon5.InvokeRequired || InTeamIcon6.InvokeRequired || InTeamIcon7.InvokeRequired || InTeamIcon8.InvokeRequired || InTeamIcon9.InvokeRequired || InTeamIcon10.InvokeRequired || AddToTeamButton1.InvokeRequired || AddToTeamButton2.InvokeRequired || AddToTeamButton3.InvokeRequired || AddToTeamButton4.InvokeRequired || AddToTeamButton5.InvokeRequired || AddToTeamButton6.InvokeRequired || AddToTeamButton7.InvokeRequired || AddToTeamButton8.InvokeRequired || AddToTeamButton9.InvokeRequired || AddToTeamButton10.InvokeRequired || RemoveFromTeamButton1.InvokeRequired || RemoveFromTeamButton2.InvokeRequired || RemoveFromTeamButton3.InvokeRequired || RemoveFromTeamButton4.InvokeRequired || RemoveFromTeamButton5.InvokeRequired || RemoveFromTeamButton6.InvokeRequired || RemoveFromTeamButton7.InvokeRequired || RemoveFromTeamButton8.InvokeRequired || RemoveFromTeamButton9.InvokeRequired || RemoveFromTeamButton10.InvokeRequired || LadyPicture1.InvokeRequired || LadyPicture2.InvokeRequired || LadyPicture3.InvokeRequired || LadyPicture4.InvokeRequired || LadyPicture5.InvokeRequired || LadyPicture6.InvokeRequired || LadyPicture7.InvokeRequired || LadyPicture8.InvokeRequired || LadyPicture9.InvokeRequired || LadyPicture10.InvokeRequired || LadyCheckButton1.InvokeRequired || LadyCheckButton2.InvokeRequired || LadyCheckButton3.InvokeRequired || LadyCheckButton4.InvokeRequired || LadyCheckButton5.InvokeRequired || LadyCheckButton6.InvokeRequired || LadyCheckButton7.InvokeRequired || LadyCheckButton8.InvokeRequired || LadyCheckButton9.InvokeRequired || LadyCheckButton10.InvokeRequired || ChoicePicture1.InvokeRequired || ChoicePicture2.InvokeRequired || ChoicePicture3.InvokeRequired || ChoicePicture4.InvokeRequired || ChoicePicture5.InvokeRequired || ChoicePicture6.InvokeRequired || ChoicePicture7.InvokeRequired || ChoicePicture8.InvokeRequired || ChoicePicture9.InvokeRequired || ChoicePicture10.InvokeRequired || ChoiceAcceptButton1.InvokeRequired || ChoiceAcceptButton2.InvokeRequired || ChoiceAcceptButton3.InvokeRequired || ChoiceAcceptButton4.InvokeRequired || ChoiceAcceptButton5.InvokeRequired || ChoiceAcceptButton6.InvokeRequired || ChoiceAcceptButton7.InvokeRequired || ChoiceAcceptButton8.InvokeRequired || ChoiceAcceptButton9.InvokeRequired || ChoiceAcceptButton10.InvokeRequired || ChoiceAgainstButton1.InvokeRequired || ChoiceAgainstButton2.InvokeRequired || ChoiceAgainstButton3.InvokeRequired || ChoiceAgainstButton4.InvokeRequired || ChoiceAgainstButton5.InvokeRequired || ChoiceAgainstButton6.InvokeRequired || ChoiceAgainstButton7.InvokeRequired || ChoiceAgainstButton8.InvokeRequired || ChoiceAgainstButton9.InvokeRequired || ChoiceAgainstButton10.InvokeRequired || TeamMembersLeftLabel.InvokeRequired || PlayersInfoLabel.InvokeRequired || MaxSpecialEvilLabel.InvokeRequired || FailedVotes1.InvokeRequired || FailedVotes2.InvokeRequired || FailedVotes3.InvokeRequired || FailedVotes4.InvokeRequired || FailedVotes5.InvokeRequired || NumberForMission1.InvokeRequired || NumberForMission2.InvokeRequired || NumberForMission3.InvokeRequired || NumberForMission4.InvokeRequired || NumberForMission5.InvokeRequired || MissionResultPic1.InvokeRequired || MissionResultPic2.InvokeRequired || MissionResultPic3.InvokeRequired || MissionResultPic4.InvokeRequired || MissionResultPic5.InvokeRequired || Mission1Table.InvokeRequired || Mission2Table.InvokeRequired || Mission3Table.InvokeRequired || Mission4Table.InvokeRequired || Mission5Table.InvokeRequired)
+            {
+                RestartDelegate f = new RestartDelegate(Restart);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                stage = 0;
+                round = 0;
+                inTeam = 0;
+                CharacterPicture1.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture2.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture3.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture4.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture5.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture6.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture7.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture8.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture9.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture10.BackgroundImage = Avalon.Properties.Resources.Postacbckg;
+                CharacterPicture1.Image = null;
+                CharacterPicture2.Image = null;
+                CharacterPicture3.Image = null;
+                CharacterPicture4.Image = null;
+                CharacterPicture5.Image = null;
+                CharacterPicture6.Image = null;
+                CharacterPicture7.Image = null;
+                CharacterPicture8.Image = null;
+                CharacterPicture9.Image = null;
+                CharacterPicture10.Image = null;
+                LeaderIcon1.Visible = false;
+                LeaderIcon2.Visible = false;
+                LeaderIcon3.Visible = false;
+                LeaderIcon4.Visible = false;
+                LeaderIcon5.Visible = false;
+                LeaderIcon6.Visible = false;
+                LeaderIcon7.Visible = false;
+                LeaderIcon8.Visible = false;
+                LeaderIcon9.Visible = false;
+                LeaderIcon10.Visible = false;
+                InTeamIcon1.Visible = false;
+                InTeamIcon2.Visible = false;
+                InTeamIcon3.Visible = false;
+                InTeamIcon4.Visible = false;
+                InTeamIcon5.Visible = false;
+                InTeamIcon6.Visible = false;
+                InTeamIcon7.Visible = false;
+                InTeamIcon8.Visible = false;
+                InTeamIcon9.Visible = false;
+                InTeamIcon10.Visible = false;
+                AddToTeamButton1.Visible = false;
+                AddToTeamButton2.Visible = false;
+                AddToTeamButton3.Visible = false;
+                AddToTeamButton4.Visible = false;
+                AddToTeamButton5.Visible = false;
+                AddToTeamButton6.Visible = false;
+                AddToTeamButton7.Visible = false;
+                AddToTeamButton8.Visible = false;
+                AddToTeamButton9.Visible = false;
+                AddToTeamButton10.Visible = false;
+                RemoveFromTeamButton1.Visible = false;
+                RemoveFromTeamButton2.Visible = false;
+                RemoveFromTeamButton3.Visible = false;
+                RemoveFromTeamButton4.Visible = false;
+                RemoveFromTeamButton5.Visible = false;
+                RemoveFromTeamButton6.Visible = false;
+                RemoveFromTeamButton7.Visible = false;
+                RemoveFromTeamButton8.Visible = false;
+                RemoveFromTeamButton9.Visible = false;
+                RemoveFromTeamButton10.Visible = false;
+                LadyPicture1.Visible = true;
+                LadyPicture2.Visible = true;
+                LadyPicture3.Visible = true;
+                LadyPicture4.Visible = true;
+                LadyPicture5.Visible = true;
+                LadyPicture6.Visible = true;
+                LadyPicture7.Visible = true;
+                LadyPicture8.Visible = true;
+                LadyPicture9.Visible = true;
+                LadyPicture10.Visible = true;
+                LadyPicture1.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture2.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture3.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture4.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture5.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture6.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture7.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture8.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture9.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture10.BackgroundImage = Avalon.Properties.Resources.PaniJeziora;
+                LadyPicture1.Image = null;
+                LadyPicture2.Image = null;
+                LadyPicture3.Image = null;
+                LadyPicture4.Image = null;
+                LadyPicture5.Image = null;
+                LadyPicture6.Image = null;
+                LadyPicture7.Image = null;
+                LadyPicture8.Image = null;
+                LadyPicture9.Image = null;
+                LadyPicture10.Image = null;
+                LadyPicture1.Visible = false;
+                LadyPicture2.Visible = false;
+                LadyPicture3.Visible = false;
+                LadyPicture4.Visible = false;
+                LadyPicture5.Visible = false;
+                LadyPicture6.Visible = false;
+                LadyPicture7.Visible = false;
+                LadyPicture8.Visible = false;
+                LadyPicture9.Visible = false;
+                LadyPicture10.Visible = false;
+                LadyCheckButton1.Visible = false;
+                LadyCheckButton2.Visible = false;
+                LadyCheckButton3.Visible = false;
+                LadyCheckButton4.Visible = false;
+                LadyCheckButton5.Visible = false;
+                LadyCheckButton6.Visible = false;
+                LadyCheckButton7.Visible = false;
+                LadyCheckButton8.Visible = false;
+                LadyCheckButton9.Visible = false;
+                LadyCheckButton10.Visible = false;
+                ChoicePicture1.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture2.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture3.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture4.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture5.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture6.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture7.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture8.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture9.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoicePicture10.BackgroundImage = Avalon.Properties.Resources.VoteTeam;
+                ChoiceAcceptButton1.Visible = true;
+                ChoiceAcceptButton2.Visible = true;
+                ChoiceAcceptButton3.Visible = true;
+                ChoiceAcceptButton4.Visible = true;
+                ChoiceAcceptButton5.Visible = true;
+                ChoiceAcceptButton6.Visible = true;
+                ChoiceAcceptButton7.Visible = true;
+                ChoiceAcceptButton8.Visible = true;
+                ChoiceAcceptButton9.Visible = true;
+                ChoiceAcceptButton10.Visible = true;
+                ChoiceAcceptButton1.Text = "Zgoda";
+                ChoiceAcceptButton2.Text = "Zgoda";
+                ChoiceAcceptButton3.Text = "Zgoda";
+                ChoiceAcceptButton4.Text = "Zgoda";
+                ChoiceAcceptButton5.Text = "Zgoda";
+                ChoiceAcceptButton6.Text = "Zgoda";
+                ChoiceAcceptButton7.Text = "Zgoda";
+                ChoiceAcceptButton8.Text = "Zgoda";
+                ChoiceAcceptButton9.Text = "Zgoda";
+                ChoiceAcceptButton10.Text = "Zgoda";
+                ChoiceAcceptButton1.Visible = false;
+                ChoiceAcceptButton2.Visible = false;
+                ChoiceAcceptButton3.Visible = false;
+                ChoiceAcceptButton4.Visible = false;
+                ChoiceAcceptButton5.Visible = false;
+                ChoiceAcceptButton6.Visible = false;
+                ChoiceAcceptButton7.Visible = false;
+                ChoiceAcceptButton8.Visible = false;
+                ChoiceAcceptButton9.Visible = false;
+                ChoiceAcceptButton10.Visible = false;
+                ChoiceAgainstButton1.Visible = true;
+                ChoiceAgainstButton2.Visible = true;
+                ChoiceAgainstButton3.Visible = true;
+                ChoiceAgainstButton4.Visible = true;
+                ChoiceAgainstButton5.Visible = true;
+                ChoiceAgainstButton6.Visible = true;
+                ChoiceAgainstButton7.Visible = true;
+                ChoiceAgainstButton8.Visible = true;
+                ChoiceAgainstButton9.Visible = true;
+                ChoiceAgainstButton10.Visible = true;
+                ChoiceAgainstButton1.Text = "Sprzeciw";
+                ChoiceAgainstButton2.Text = "Sprzeciw";
+                ChoiceAgainstButton3.Text = "Sprzeciw";
+                ChoiceAgainstButton4.Text = "Sprzeciw";
+                ChoiceAgainstButton5.Text = "Sprzeciw";
+                ChoiceAgainstButton6.Text = "Sprzeciw";
+                ChoiceAgainstButton7.Text = "Sprzeciw";
+                ChoiceAgainstButton8.Text = "Sprzeciw";
+                ChoiceAgainstButton9.Text = "Sprzeciw";
+                ChoiceAgainstButton10.Text = "Sprzeciw";
+                ChoiceAgainstButton1.Visible = false;
+                ChoiceAgainstButton2.Visible = false;
+                ChoiceAgainstButton3.Visible = false;
+                ChoiceAgainstButton4.Visible = false;
+                ChoiceAgainstButton5.Visible = false;
+                ChoiceAgainstButton6.Visible = false;
+                ChoiceAgainstButton7.Visible = false;
+                ChoiceAgainstButton8.Visible = false;
+                ChoiceAgainstButton9.Visible = false;
+                ChoiceAgainstButton10.Visible = false;
+                TeamMembersLeftLabel.Visible = false;
+                PlayersInfoLabel.Visible = false;
+                MaxSpecialEvilLabel.Visible = false;
+                GameResultImage.Visible = false;
+                MorganaChoiceImg.Image = null;
+                LadyChoiceImg.Image = null;
+                MordredChoiceImg.Image = null;
+                OberonChoiceImg.Image = null;
+                ParsifalChoiceImg.Image = null;
+                FailedVotes1.Visible = false;
+                FailedVotes2.Visible = false;
+                FailedVotes3.Visible = false;
+                FailedVotes4.Visible = false;
+                FailedVotes5.Visible = false;
+                NumberForMission1.Visible = false;
+                NumberForMission2.Visible = false;
+                NumberForMission3.Visible = false;
+                NumberForMission4.Visible = false;
+                NumberForMission5.Visible = false;
+                MissionResultPic1.Visible = true;
+                MissionResultPic2.Visible = true;
+                MissionResultPic3.Visible = true;
+                MissionResultPic4.Visible = true;
+                MissionResultPic5.Visible = true;
+                MissionResultPic1.BackgroundImage = Avalon.Properties.Resources.VoteBack;
+                MissionResultPic2.BackgroundImage = Avalon.Properties.Resources.VoteBack;
+                MissionResultPic3.BackgroundImage = Avalon.Properties.Resources.VoteBack;
+                MissionResultPic4.BackgroundImage = Avalon.Properties.Resources.VoteBack;
+                MissionResultPic5.BackgroundImage = Avalon.Properties.Resources.VoteBack;
+                MissionResultPic1.Image = null;
+                MissionResultPic2.Image = null;
+                MissionResultPic3.Image = null;
+                MissionResultPic4.Image = null;
+                MissionResultPic5.Image = null;
+                MissionResultPic1.Visible = false;
+                MissionResultPic2.Visible = false;
+                MissionResultPic3.Visible = false;
+                MissionResultPic4.Visible = false;
+                MissionResultPic5.Visible = false;
+                Mission1Table.Visible = true;
+                Mission2Table.Visible = true;
+                Mission3Table.Visible = true;
+                Mission4Table.Visible = true;
+                Mission5Table.Visible = true;
+                Mission1Table.Text = "";
+                Mission2Table.Text = "";
+                Mission3Table.Text = "";
+                Mission4Table.Text = "";
+                Mission5Table.Text = "";
+                Mission1Table.Visible = false;
+                Mission2Table.Visible = false;
+                Mission3Table.Visible = false;
+                Mission4Table.Visible = false;
+                Mission5Table.Visible = false;
+            }
+        }
+
+        private void CantSit()
+        {
+            Seat1Taken(true, "");
+            Seat2Taken(true, "");
+            Seat3Taken(true, "");
+            Seat4Taken(true, "");
+            Seat5Taken(true, "");
+            Seat6Taken(true, "");
+            Seat7Taken(true, "");
+            Seat8Taken(true, "");
+            Seat9Taken(true, "");
+            Seat10Taken(true, "");
+
         }
 
         delegate void AddNickDelegate(string nick);
@@ -1155,6 +1728,24 @@ namespace Avalon
                 LadyPicture8.Visible = false;
                 LadyPicture9.Visible = false;
                 LadyPicture10.Visible = false;
+                LadyCheckButton1.Visible = false;
+                LadyCheckButton2.Visible = false;
+                LadyCheckButton3.Visible = false;
+                LadyCheckButton4.Visible = false;
+                LadyCheckButton5.Visible = false;
+                LadyCheckButton6.Visible = false;
+                LadyCheckButton7.Visible = false;
+                LadyCheckButton8.Visible = false;
+                LadyCheckButton9.Visible = false;
+                LadyCheckButton10.Visible = false;
+                if(seat==mySeat)
+                {
+                    lady = true;
+                }
+                else
+                {
+                    lady = false;
+                }
                 switch (seat)
                 {
                     case 0:
@@ -1187,82 +1778,6 @@ namespace Avalon
                     case 9:
                         LadyPicture10.Visible = true;
                         break;
-                }
-                if (seat == mySeat && round > 2)
-                {
-                    if (seatsTaken[0])
-                    {
-                        LadyCheckButton1.Visible = true;
-                    }
-                    if (seatsTaken[1])
-                    {
-                        LadyCheckButton2.Visible = true;
-                    }
-                    if (seatsTaken[2])
-                    {
-                        LadyCheckButton3.Visible = true;
-                    }
-                    if (seatsTaken[3])
-                    {
-                        LadyCheckButton4.Visible = true;
-                    }
-                    if (seatsTaken[4])
-                    {
-                        LadyCheckButton5.Visible = true;
-                    }
-                    if (seatsTaken[5])
-                    {
-                        LadyCheckButton6.Visible = true;
-                    }
-                    if (seatsTaken[6])
-                    {
-                        LadyCheckButton7.Visible = true;
-                    }
-                    if (seatsTaken[7])
-                    {
-                        LadyCheckButton8.Visible = true;
-                    }
-                    if (seatsTaken[8])
-                    {
-                        LadyCheckButton9.Visible = true;
-                    }
-                    if (seatsTaken[9])
-                    {
-                        LadyCheckButton10.Visible = true;
-                    }
-                    switch (seat)
-                    {
-                        case 0:
-                            LadyCheckButton1.Visible = false;
-                            break;
-                        case 1:
-                            LadyCheckButton2.Visible = false;
-                            break;
-                        case 2:
-                            LadyCheckButton3.Visible = false;
-                            break;
-                        case 3:
-                            LadyCheckButton4.Visible = false;
-                            break;
-                        case 4:
-                            LadyCheckButton5.Visible = false;
-                            break;
-                        case 5:
-                            LadyCheckButton6.Visible = false;
-                            break;
-                        case 6:
-                            LadyCheckButton7.Visible = false;
-                            break;
-                        case 7:
-                            LadyCheckButton8.Visible = false;
-                            break;
-                        case 8:
-                            LadyCheckButton9.Visible = false;
-                            break;
-                        case 9:
-                            LadyCheckButton10.Visible = false;
-                            break;
-                    }
                 }
             }
         }
@@ -1474,6 +1989,7 @@ namespace Avalon
         private Image SetRole(string name)
         {
             Image role = null;
+            assassin = false;
             switch (name)
             {
                 case "Merlin":
@@ -1495,6 +2011,7 @@ namespace Avalon
                 case "Skrytobójca":
                     role = Avalon.Properties.Resources.Skrytobojca;
                     tag = 2;
+                    assassin = true;
                     break;
                 case "Evil":
                     role = Avalon.Properties.Resources.PoplecznikMordreda3;
@@ -2210,6 +2727,7 @@ namespace Avalon
         {
             if (server != null && server.Connected)
             {
+                bw.Write("leaving");
                 bw.Write("stand");
                 bw.Write("disconnect");
                 server.Close();
@@ -2305,6 +2823,8 @@ namespace Avalon
         private void AwayButtons(object sender, EventArgs e)
         {
             bw.Write("stand");
+            mySeat = -1;
+            tag = 0;
         }
 
         private void StartGameButton_Click(object sender, EventArgs e)
@@ -2902,6 +3422,146 @@ namespace Avalon
                 ChoiceAgainstButton10.Visible = false;
                 ChoiceAcceptButton10.Text = "Zgoda";
                 ChoiceAgainstButton10.Text = "Sprzeciw";
+            }
+        }
+
+        private void LadyCheckButton1_Click(object sender, EventArgs e)
+        {
+            if(canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("0");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("0");
+            }
+        }
+
+        private void LadyCheckButton2_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("1");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("1");
+            }
+        }
+
+        private void LadyCheckButton3_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("2");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("2");
+            }
+        }
+
+        private void LadyCheckButton4_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("3");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("3");
+            }
+        }
+
+        private void LadyCheckButton5_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("4");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("4");
+            }
+        }
+
+        private void LadyCheckButton6_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("5");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("5");
+            }
+        }
+
+        private void LadyCheckButton7_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("6");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("6");
+            }
+        }
+
+        private void LadyCheckButton8_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("7");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("7");
+            }
+        }
+
+        private void LadyCheckButton9_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("8");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("8");
+            }
+        }
+
+        private void LadyCheckButton10_Click(object sender, EventArgs e)
+        {
+            if (canAssassin)
+            {
+                bw.Write("kill");
+                bw.Write("9");
+            }
+            else
+            {
+                bw.Write("checkRole");
+                bw.Write("9");
             }
         }
     }

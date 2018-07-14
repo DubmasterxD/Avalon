@@ -406,6 +406,7 @@
             this.LadyCheckButton1.Text = "Sprawdź";
             this.LadyCheckButton1.UseVisualStyleBackColor = false;
             this.LadyCheckButton1.Visible = false;
+            this.LadyCheckButton1.Click += new System.EventHandler(this.LadyCheckButton1_Click);
             // 
             // ChoiceAcceptButton1
             // 
@@ -505,6 +506,7 @@
             this.LadyCheckButton2.Text = "Sprawdź";
             this.LadyCheckButton2.UseVisualStyleBackColor = false;
             this.LadyCheckButton2.Visible = false;
+            this.LadyCheckButton2.Click += new System.EventHandler(this.LadyCheckButton2_Click);
             // 
             // RemoveFromTeamButton2
             // 
@@ -582,6 +584,7 @@
             this.LadyCheckButton3.Text = "Sprawdź";
             this.LadyCheckButton3.UseVisualStyleBackColor = false;
             this.LadyCheckButton3.Visible = false;
+            this.LadyCheckButton3.Click += new System.EventHandler(this.LadyCheckButton3_Click);
             // 
             // RemoveFromTeamButton3
             // 
@@ -659,6 +662,7 @@
             this.LadyCheckButton4.Text = "Sprawdź";
             this.LadyCheckButton4.UseVisualStyleBackColor = false;
             this.LadyCheckButton4.Visible = false;
+            this.LadyCheckButton4.Click += new System.EventHandler(this.LadyCheckButton4_Click);
             // 
             // RemoveFromTeamButton4
             // 
@@ -736,6 +740,7 @@
             this.LadyCheckButton5.Text = "Sprawdź";
             this.LadyCheckButton5.UseVisualStyleBackColor = false;
             this.LadyCheckButton5.Visible = false;
+            this.LadyCheckButton5.Click += new System.EventHandler(this.LadyCheckButton5_Click);
             // 
             // RemoveFromTeamButton5
             // 
@@ -813,6 +818,7 @@
             this.LadyCheckButton6.Text = "Sprawdź";
             this.LadyCheckButton6.UseVisualStyleBackColor = false;
             this.LadyCheckButton6.Visible = false;
+            this.LadyCheckButton6.Click += new System.EventHandler(this.LadyCheckButton6_Click);
             // 
             // RemoveFromTeamButton6
             // 
@@ -890,6 +896,7 @@
             this.LadyCheckButton7.Text = "Sprawdź";
             this.LadyCheckButton7.UseVisualStyleBackColor = false;
             this.LadyCheckButton7.Visible = false;
+            this.LadyCheckButton7.Click += new System.EventHandler(this.LadyCheckButton7_Click);
             // 
             // RemoveFromTeamButton7
             // 
@@ -967,6 +974,7 @@
             this.LadyCheckButton8.Text = "Sprawdź";
             this.LadyCheckButton8.UseVisualStyleBackColor = false;
             this.LadyCheckButton8.Visible = false;
+            this.LadyCheckButton8.Click += new System.EventHandler(this.LadyCheckButton8_Click);
             // 
             // RemoveFromTeamButton8
             // 
@@ -1044,6 +1052,7 @@
             this.LadyCheckButton9.Text = "Sprawdź";
             this.LadyCheckButton9.UseVisualStyleBackColor = false;
             this.LadyCheckButton9.Visible = false;
+            this.LadyCheckButton9.Click += new System.EventHandler(this.LadyCheckButton9_Click);
             // 
             // RemoveFromTeamButton9
             // 
@@ -1121,6 +1130,7 @@
             this.LadyCheckButton10.Text = "Sprawdź";
             this.LadyCheckButton10.UseVisualStyleBackColor = false;
             this.LadyCheckButton10.Visible = false;
+            this.LadyCheckButton10.Click += new System.EventHandler(this.LadyCheckButton10_Click);
             // 
             // RemoveFromTeamButton10
             // 
