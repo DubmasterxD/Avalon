@@ -242,5 +242,11 @@
   <ItemGroup>
     <None Include="Resources\levelScoreBckg.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HighlightedMerlinCard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ShotCard.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

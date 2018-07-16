@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -47,6 +48,8 @@ namespace AvalonSerwer
         int failed;
         int voted;
         int failedVotes;
+        int version;
+        string link;
 
         public Serwer()
         {
@@ -58,6 +61,8 @@ namespace AvalonSerwer
             numberOfPlayers = 0;
             gameRunning = false;
             numberOfEvilAdds = 0;
+            version = 2;
+            link = "https://drive.google.com/open?id=1gMciemqWC71ZsD5eRcbqAr2sEo5SQAbZ";
         }
 
         private void ServerStartButton_Click(object sender, EventArgs e)
@@ -119,6 +124,9 @@ namespace AvalonSerwer
                             bw.Write("end");
                             bw.Write("gamerunning");
                             bw.Write(gameRunning.ToString());
+                            bw.Write("version");
+                            bw.Write(version.ToString());
+                            bw.Write(link);
                             break;
                         case "takeseat":
                             int askingSeat = Convert.ToInt16(br.ReadString());
@@ -387,7 +395,7 @@ namespace AvalonSerwer
                                 }
                                 else
                                 {
-                                    freeRoles[i] = "Evil";
+                                    freeRoles[i] = "Zły";
                                 }
                             }
                             int k = 0;
@@ -408,9 +416,10 @@ namespace AvalonSerwer
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
-                                        if (roles[j] == "Skrytobójca" || roles[j] == "Oberon" || roles[j] == "Morgana" || roles[j] == "Evil")
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Oberon" || roles[j] == "Morgana" || roles[j] == "Zły")
                                         {
                                             SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                            SendToPlayer(roles[j], seatsTaken[i]);
                                         }
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
@@ -422,6 +431,7 @@ namespace AvalonSerwer
                                         if (roles[j] == "Merlin" || roles[j] == "Morgana")
                                         {
                                             SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                            SendToPlayer(roles[j], seatsTaken[i]);
                                         }
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
@@ -430,9 +440,10 @@ namespace AvalonSerwer
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
-                                        if (roles[j] == "Mordred" || roles[j] == "Morgana" || roles[j] == "Evil")
+                                        if (roles[j] == "Mordred" || roles[j] == "Morgana" || roles[j] == "Zły")
                                         {
                                             SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                            SendToPlayer(roles[j], seatsTaken[i]);
                                         }
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
@@ -441,9 +452,10 @@ namespace AvalonSerwer
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
-                                        if (roles[j] == "Skrytobójca" || roles[j] == "Morgana" || roles[j] == "Evil")
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Morgana" || roles[j] == "Zły")
                                         {
                                             SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                            SendToPlayer(roles[j], seatsTaken[i]);
                                         }
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
@@ -452,22 +464,24 @@ namespace AvalonSerwer
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
-                                        if (roles[j] == "Skrytobójca" || roles[j] == "Mordred" || roles[j] == "Evil")
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Mordred" || roles[j] == "Zły")
                                         {
                                             SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                            SendToPlayer(roles[j], seatsTaken[i]);
                                         }
                                     }
                                     SendToPlayer("end", seatsTaken[i]);
                                 }
-                                else if (roles[i] == "Evil")
+                                else if (roles[i] == "Zły")
                                 {
                                     for (int j = 0; j < numberOfPlayers; j++)
                                     {
-                                        if (roles[j] == "Skrytobójca" || roles[j] == "Mordred" || roles[j] == "Morgana" || roles[j] == "Evil")
+                                        if (roles[j] == "Skrytobójca" || roles[j] == "Mordred" || roles[j] == "Morgana" || roles[j] == "Zły")
                                         {
                                             if (i != j)
                                             {
                                                 SendToPlayer(seatsTaken[j].ToString(), seatsTaken[i]);
+                                                SendToPlayer(roles[j], seatsTaken[i]);
                                             }
                                         }
                                     }
@@ -512,6 +526,8 @@ namespace AvalonSerwer
                         case "accept":
                             voted++;
                             vote[seat] = true;
+                            SendToAll("voted");
+                            SendToAll(seat.ToString());
                             if (voted == numberOfPlayers)
                             {
                                 CheckVotes();
@@ -520,6 +536,8 @@ namespace AvalonSerwer
                         case "against":
                             voted++;
                             vote[seat] = false;
+                            SendToAll("voted");
+                            SendToAll(seat.ToString());
                             if (voted == numberOfPlayers)
                             {
                                 CheckVotes();
@@ -564,6 +582,8 @@ namespace AvalonSerwer
                             {
                                 if(tmp==seatsTaken[i])
                                 {
+                                    SendToAll("shot");
+                                    SendToAll(tmp.ToString());
                                     if(roles[i]=="Merlin")
                                     {
                                         EvilWins();
@@ -665,7 +685,7 @@ namespace AvalonSerwer
             else
             {
                 currRound++;
-                if (currRound > 2)
+                if (currRound > 2 && withLady)
                 {
                     SendToAll("ladyTime");
                 }

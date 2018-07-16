@@ -93,6 +93,16 @@ namespace Avalon.Properties {
         /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HighlightedMerlinCard {
+            get {
+                object obj = ResourceManager.GetObject("HighlightedMerlinCard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap InTeam {
             get {
                 object obj = ResourceManager.GetObject("InTeam", resourceCulture);
@@ -506,6 +516,16 @@ namespace Avalon.Properties {
         internal static System.Drawing.Bitmap resultBckg {
             get {
                 object obj = ResourceManager.GetObject("resultBckg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ShotCard {
+            get {
+                object obj = ResourceManager.GetObject("ShotCard", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

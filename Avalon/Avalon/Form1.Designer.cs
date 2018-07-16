@@ -108,23 +108,14 @@
             this.RemoveFromTeamButton10 = new System.Windows.Forms.Button();
             this.AddToTeamButton10 = new System.Windows.Forms.Button();
             this.StartGameButton = new System.Windows.Forms.Button();
-            this.Mission1Table = new System.Windows.Forms.Label();
-            this.Mission2Table = new System.Windows.Forms.Label();
-            this.Mission3Table = new System.Windows.Forms.Label();
-            this.Mission4Table = new System.Windows.Forms.Label();
-            this.Mission5Table = new System.Windows.Forms.Label();
+            this.FailedVotes1 = new System.Windows.Forms.Label();
+            this.FailedVotes2 = new System.Windows.Forms.Label();
+            this.FailedVotes3 = new System.Windows.Forms.Label();
+            this.FailedVotes4 = new System.Windows.Forms.Label();
+            this.FailedVotes5 = new System.Windows.Forms.Label();
             this.GameResultImage = new System.Windows.Forms.PictureBox();
+            this.TeamMembersLeftLabel = new System.Windows.Forms.Label();
             this.PlayersInfoLabel = new System.Windows.Forms.Label();
-            this.NumberForMission5 = new System.Windows.Forms.Label();
-            this.NumberForMission4 = new System.Windows.Forms.Label();
-            this.NumberForMission3 = new System.Windows.Forms.Label();
-            this.NumberForMission2 = new System.Windows.Forms.Label();
-            this.NumberForMission1 = new System.Windows.Forms.Label();
-            this.MissionResultPic2 = new System.Windows.Forms.PictureBox();
-            this.MissionResultPic3 = new System.Windows.Forms.PictureBox();
-            this.MissionResultPic4 = new System.Windows.Forms.PictureBox();
-            this.MissionResultPic5 = new System.Windows.Forms.PictureBox();
-            this.MissionResultPic1 = new System.Windows.Forms.PictureBox();
             this.MaxSpecialEvilLabel = new System.Windows.Forms.Label();
             this.ParsifalChoiceImg = new System.Windows.Forms.PictureBox();
             this.LadyChoiceImg = new System.Windows.Forms.PictureBox();
@@ -133,11 +124,8 @@
             this.MordredChoiceImg = new System.Windows.Forms.PictureBox();
             this.NicknameLabel10 = new System.Windows.Forms.Label();
             this.InTeamIcon10 = new System.Windows.Forms.PictureBox();
-            this.ChoicePicture10 = new System.Windows.Forms.PictureBox();
-            this.LadyPicture10 = new System.Windows.Forms.PictureBox();
             this.CharacterPicture10 = new System.Windows.Forms.PictureBox();
             this.LeaderIcon10 = new System.Windows.Forms.PictureBox();
-            this.PlayerAreaPicture10 = new System.Windows.Forms.PictureBox();
             this.NicknameLabel9 = new System.Windows.Forms.Label();
             this.InTeamIcon9 = new System.Windows.Forms.PictureBox();
             this.ChoicePicture9 = new System.Windows.Forms.PictureBox();
@@ -204,30 +192,45 @@
             this.ExitButton = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture1 = new System.Windows.Forms.PictureBox();
             this.PlayerAreaPicture2 = new System.Windows.Forms.PictureBox();
+            this.NumberForMission1 = new System.Windows.Forms.Label();
+            this.MissionResultPic1 = new System.Windows.Forms.PictureBox();
+            this.Mission1Table = new System.Windows.Forms.Label();
+            this.MissionResultPic2 = new System.Windows.Forms.PictureBox();
+            this.NumberForMission2 = new System.Windows.Forms.Label();
+            this.Mission2Table = new System.Windows.Forms.Label();
+            this.NumberForMission3 = new System.Windows.Forms.Label();
+            this.NumberForMission4 = new System.Windows.Forms.Label();
+            this.MissionResultPic4 = new System.Windows.Forms.PictureBox();
+            this.MissionResultPic5 = new System.Windows.Forms.PictureBox();
+            this.Mission5Table = new System.Windows.Forms.Label();
+            this.NumberForMission5 = new System.Windows.Forms.Label();
+            this.Mission4Table = new System.Windows.Forms.Label();
+            this.MissionResultPic3 = new System.Windows.Forms.PictureBox();
+            this.Mission3Table = new System.Windows.Forms.Label();
+            this.ChoicePicture10 = new System.Windows.Forms.PictureBox();
+            this.LadyPicture10 = new System.Windows.Forms.PictureBox();
+            this.PlayerAreaPicture10 = new System.Windows.Forms.PictureBox();
             this.BackgroundImage = new System.Windows.Forms.PictureBox();
-            this.TeamMembersLeftLabel = new System.Windows.Forms.Label();
-            this.FailedVotes1 = new System.Windows.Forms.Label();
-            this.FailedVotes2 = new System.Windows.Forms.Label();
-            this.FailedVotes3 = new System.Windows.Forms.Label();
-            this.FailedVotes4 = new System.Windows.Forms.Label();
-            this.FailedVotes5 = new System.Windows.Forms.Label();
+            this.WhoVotedLabel = new System.Windows.Forms.Label();
+            this.RoleLabel1 = new System.Windows.Forms.Label();
+            this.RoleLabel2 = new System.Windows.Forms.Label();
+            this.RoleLabel3 = new System.Windows.Forms.Label();
+            this.RoleLabel4 = new System.Windows.Forms.Label();
+            this.RoleLabel5 = new System.Windows.Forms.Label();
+            this.RoleLabel6 = new System.Windows.Forms.Label();
+            this.RoleLabel7 = new System.Windows.Forms.Label();
+            this.RoleLabel8 = new System.Windows.Forms.Label();
+            this.RoleLabel10 = new System.Windows.Forms.Label();
+            this.RoleLabel9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.GameResultImage)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParsifalChoiceImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LadyChoiceImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OberonChoiceImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MorganaChoiceImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MordredChoiceImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InTeamIcon10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChoicePicture10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LadyPicture10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPicture10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeaderIcon10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.InTeamIcon9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChoicePicture9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LadyPicture9)).BeginInit();
@@ -285,6 +288,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExitButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChoicePicture10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LadyPicture10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -292,7 +303,7 @@
             // 
             this.ConnectButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.ConnectButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ConnectButton.Location = new System.Drawing.Point(638, 437);
+            this.ConnectButton.Location = new System.Drawing.Point(614, 406);
             this.ConnectButton.Name = "ConnectButton";
             this.ConnectButton.Size = new System.Drawing.Size(103, 34);
             this.ConnectButton.TabIndex = 3;
@@ -306,7 +317,7 @@
             this.IPLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.IPLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.IPLabel.ForeColor = System.Drawing.Color.White;
-            this.IPLabel.Location = new System.Drawing.Point(498, 345);
+            this.IPLabel.Location = new System.Drawing.Point(474, 314);
             this.IPLabel.Name = "IPLabel";
             this.IPLabel.Size = new System.Drawing.Size(32, 20);
             this.IPLabel.TabIndex = 4;
@@ -318,7 +329,7 @@
             this.PortLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.PortLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PortLabel.ForeColor = System.Drawing.Color.White;
-            this.PortLabel.Location = new System.Drawing.Point(692, 345);
+            this.PortLabel.Location = new System.Drawing.Point(668, 314);
             this.PortLabel.Name = "PortLabel";
             this.PortLabel.Size = new System.Drawing.Size(46, 20);
             this.PortLabel.TabIndex = 5;
@@ -327,7 +338,7 @@
             // IPTextBox
             // 
             this.IPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.IPTextBox.Location = new System.Drawing.Point(536, 342);
+            this.IPTextBox.Location = new System.Drawing.Point(512, 311);
             this.IPTextBox.Name = "IPTextBox";
             this.IPTextBox.Size = new System.Drawing.Size(150, 26);
             this.IPTextBox.TabIndex = 6;
@@ -336,7 +347,7 @@
             // PortTextBox
             // 
             this.PortTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PortTextBox.Location = new System.Drawing.Point(744, 342);
+            this.PortTextBox.Location = new System.Drawing.Point(720, 311);
             this.PortTextBox.Name = "PortTextBox";
             this.PortTextBox.Size = new System.Drawing.Size(103, 26);
             this.PortTextBox.TabIndex = 7;
@@ -348,7 +359,7 @@
             this.NickLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.NickLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NickLabel.ForeColor = System.Drawing.Color.White;
-            this.NickLabel.Location = new System.Drawing.Point(532, 398);
+            this.NickLabel.Location = new System.Drawing.Point(508, 367);
             this.NickLabel.Name = "NickLabel";
             this.NickLabel.Size = new System.Drawing.Size(47, 20);
             this.NickLabel.TabIndex = 8;
@@ -357,17 +368,18 @@
             // NickTextBox
             // 
             this.NickTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NickTextBox.Location = new System.Drawing.Point(585, 395);
+            this.NickTextBox.Location = new System.Drawing.Point(561, 364);
             this.NickTextBox.Name = "NickTextBox";
             this.NickTextBox.Size = new System.Drawing.Size(212, 26);
             this.NickTextBox.TabIndex = 9;
+            this.NickTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NickTextBox_KeyDown);
             // 
             // NoNickLabel
             // 
             this.NoNickLabel.AutoSize = true;
             this.NoNickLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.NoNickLabel.ForeColor = System.Drawing.Color.Red;
-            this.NoNickLabel.Location = new System.Drawing.Point(660, 424);
+            this.NoNickLabel.Location = new System.Drawing.Point(637, 347);
             this.NoNickLabel.Name = "NoNickLabel";
             this.NoNickLabel.Size = new System.Drawing.Size(60, 13);
             this.NoNickLabel.TabIndex = 10;
@@ -454,7 +466,7 @@
             // 
             // AwayButton2
             // 
-            this.AwayButton2.Location = new System.Drawing.Point(455, 182);
+            this.AwayButton2.Location = new System.Drawing.Point(449, 182);
             this.AwayButton2.Name = "AwayButton2";
             this.AwayButton2.Size = new System.Drawing.Size(80, 23);
             this.AwayButton2.TabIndex = 46;
@@ -465,7 +477,7 @@
             // 
             // SitButton2
             // 
-            this.SitButton2.Location = new System.Drawing.Point(285, 182);
+            this.SitButton2.Location = new System.Drawing.Point(279, 182);
             this.SitButton2.Name = "SitButton2";
             this.SitButton2.Size = new System.Drawing.Size(80, 23);
             this.SitButton2.TabIndex = 45;
@@ -476,7 +488,7 @@
             // 
             // ChoiceAgainstButton2
             // 
-            this.ChoiceAgainstButton2.Location = new System.Drawing.Point(460, 121);
+            this.ChoiceAgainstButton2.Location = new System.Drawing.Point(454, 121);
             this.ChoiceAgainstButton2.Name = "ChoiceAgainstButton2";
             this.ChoiceAgainstButton2.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton2.TabIndex = 44;
@@ -487,7 +499,7 @@
             // 
             // ChoiceAcceptButton2
             // 
-            this.ChoiceAcceptButton2.Location = new System.Drawing.Point(460, 74);
+            this.ChoiceAcceptButton2.Location = new System.Drawing.Point(454, 74);
             this.ChoiceAcceptButton2.Name = "ChoiceAcceptButton2";
             this.ChoiceAcceptButton2.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton2.TabIndex = 43;
@@ -499,7 +511,7 @@
             // LadyCheckButton2
             // 
             this.LadyCheckButton2.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton2.Location = new System.Drawing.Point(290, 101);
+            this.LadyCheckButton2.Location = new System.Drawing.Point(284, 101);
             this.LadyCheckButton2.Name = "LadyCheckButton2";
             this.LadyCheckButton2.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton2.TabIndex = 41;
@@ -510,7 +522,7 @@
             // 
             // RemoveFromTeamButton2
             // 
-            this.RemoveFromTeamButton2.Location = new System.Drawing.Point(456, 12);
+            this.RemoveFromTeamButton2.Location = new System.Drawing.Point(450, 12);
             this.RemoveFromTeamButton2.Name = "RemoveFromTeamButton2";
             this.RemoveFromTeamButton2.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton2.TabIndex = 40;
@@ -521,7 +533,7 @@
             // 
             // AddToTeamButton2
             // 
-            this.AddToTeamButton2.Location = new System.Drawing.Point(510, 12);
+            this.AddToTeamButton2.Location = new System.Drawing.Point(504, 12);
             this.AddToTeamButton2.Name = "AddToTeamButton2";
             this.AddToTeamButton2.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton2.TabIndex = 39;
@@ -532,7 +544,7 @@
             // 
             // AwayButton3
             // 
-            this.AwayButton3.Location = new System.Drawing.Point(745, 182);
+            this.AwayButton3.Location = new System.Drawing.Point(728, 182);
             this.AwayButton3.Name = "AwayButton3";
             this.AwayButton3.Size = new System.Drawing.Size(80, 23);
             this.AwayButton3.TabIndex = 60;
@@ -543,7 +555,7 @@
             // 
             // SitButton3
             // 
-            this.SitButton3.Location = new System.Drawing.Point(575, 182);
+            this.SitButton3.Location = new System.Drawing.Point(558, 182);
             this.SitButton3.Name = "SitButton3";
             this.SitButton3.Size = new System.Drawing.Size(80, 23);
             this.SitButton3.TabIndex = 59;
@@ -554,7 +566,7 @@
             // 
             // ChoiceAgainstButton3
             // 
-            this.ChoiceAgainstButton3.Location = new System.Drawing.Point(750, 121);
+            this.ChoiceAgainstButton3.Location = new System.Drawing.Point(733, 121);
             this.ChoiceAgainstButton3.Name = "ChoiceAgainstButton3";
             this.ChoiceAgainstButton3.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton3.TabIndex = 58;
@@ -565,7 +577,7 @@
             // 
             // ChoiceAcceptButton3
             // 
-            this.ChoiceAcceptButton3.Location = new System.Drawing.Point(750, 74);
+            this.ChoiceAcceptButton3.Location = new System.Drawing.Point(733, 74);
             this.ChoiceAcceptButton3.Name = "ChoiceAcceptButton3";
             this.ChoiceAcceptButton3.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton3.TabIndex = 57;
@@ -577,7 +589,7 @@
             // LadyCheckButton3
             // 
             this.LadyCheckButton3.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton3.Location = new System.Drawing.Point(580, 101);
+            this.LadyCheckButton3.Location = new System.Drawing.Point(563, 101);
             this.LadyCheckButton3.Name = "LadyCheckButton3";
             this.LadyCheckButton3.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton3.TabIndex = 55;
@@ -588,7 +600,7 @@
             // 
             // RemoveFromTeamButton3
             // 
-            this.RemoveFromTeamButton3.Location = new System.Drawing.Point(746, 12);
+            this.RemoveFromTeamButton3.Location = new System.Drawing.Point(729, 12);
             this.RemoveFromTeamButton3.Name = "RemoveFromTeamButton3";
             this.RemoveFromTeamButton3.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton3.TabIndex = 54;
@@ -599,7 +611,7 @@
             // 
             // AddToTeamButton3
             // 
-            this.AddToTeamButton3.Location = new System.Drawing.Point(800, 12);
+            this.AddToTeamButton3.Location = new System.Drawing.Point(783, 12);
             this.AddToTeamButton3.Name = "AddToTeamButton3";
             this.AddToTeamButton3.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton3.TabIndex = 53;
@@ -610,7 +622,7 @@
             // 
             // AwayButton4
             // 
-            this.AwayButton4.Location = new System.Drawing.Point(1035, 182);
+            this.AwayButton4.Location = new System.Drawing.Point(1003, 182);
             this.AwayButton4.Name = "AwayButton4";
             this.AwayButton4.Size = new System.Drawing.Size(80, 23);
             this.AwayButton4.TabIndex = 74;
@@ -621,7 +633,7 @@
             // 
             // SitButton4
             // 
-            this.SitButton4.Location = new System.Drawing.Point(865, 182);
+            this.SitButton4.Location = new System.Drawing.Point(833, 182);
             this.SitButton4.Name = "SitButton4";
             this.SitButton4.Size = new System.Drawing.Size(80, 23);
             this.SitButton4.TabIndex = 73;
@@ -632,7 +644,7 @@
             // 
             // ChoiceAgainstButton4
             // 
-            this.ChoiceAgainstButton4.Location = new System.Drawing.Point(1040, 121);
+            this.ChoiceAgainstButton4.Location = new System.Drawing.Point(1008, 121);
             this.ChoiceAgainstButton4.Name = "ChoiceAgainstButton4";
             this.ChoiceAgainstButton4.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton4.TabIndex = 72;
@@ -643,7 +655,7 @@
             // 
             // ChoiceAcceptButton4
             // 
-            this.ChoiceAcceptButton4.Location = new System.Drawing.Point(1040, 74);
+            this.ChoiceAcceptButton4.Location = new System.Drawing.Point(1008, 74);
             this.ChoiceAcceptButton4.Name = "ChoiceAcceptButton4";
             this.ChoiceAcceptButton4.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton4.TabIndex = 71;
@@ -655,7 +667,7 @@
             // LadyCheckButton4
             // 
             this.LadyCheckButton4.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton4.Location = new System.Drawing.Point(870, 101);
+            this.LadyCheckButton4.Location = new System.Drawing.Point(838, 101);
             this.LadyCheckButton4.Name = "LadyCheckButton4";
             this.LadyCheckButton4.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton4.TabIndex = 69;
@@ -666,7 +678,7 @@
             // 
             // RemoveFromTeamButton4
             // 
-            this.RemoveFromTeamButton4.Location = new System.Drawing.Point(1036, 12);
+            this.RemoveFromTeamButton4.Location = new System.Drawing.Point(1004, 12);
             this.RemoveFromTeamButton4.Name = "RemoveFromTeamButton4";
             this.RemoveFromTeamButton4.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton4.TabIndex = 68;
@@ -677,7 +689,7 @@
             // 
             // AddToTeamButton4
             // 
-            this.AddToTeamButton4.Location = new System.Drawing.Point(1090, 12);
+            this.AddToTeamButton4.Location = new System.Drawing.Point(1058, 12);
             this.AddToTeamButton4.Name = "AddToTeamButton4";
             this.AddToTeamButton4.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton4.TabIndex = 67;
@@ -688,7 +700,7 @@
             // 
             // AwayButton5
             // 
-            this.AwayButton5.Location = new System.Drawing.Point(1318, 347);
+            this.AwayButton5.Location = new System.Drawing.Point(1279, 347);
             this.AwayButton5.Name = "AwayButton5";
             this.AwayButton5.Size = new System.Drawing.Size(80, 23);
             this.AwayButton5.TabIndex = 88;
@@ -699,7 +711,7 @@
             // 
             // SitButton5
             // 
-            this.SitButton5.Location = new System.Drawing.Point(1148, 347);
+            this.SitButton5.Location = new System.Drawing.Point(1109, 347);
             this.SitButton5.Name = "SitButton5";
             this.SitButton5.Size = new System.Drawing.Size(80, 23);
             this.SitButton5.TabIndex = 87;
@@ -710,7 +722,7 @@
             // 
             // ChoiceAgainstButton5
             // 
-            this.ChoiceAgainstButton5.Location = new System.Drawing.Point(1323, 286);
+            this.ChoiceAgainstButton5.Location = new System.Drawing.Point(1284, 286);
             this.ChoiceAgainstButton5.Name = "ChoiceAgainstButton5";
             this.ChoiceAgainstButton5.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton5.TabIndex = 86;
@@ -721,7 +733,7 @@
             // 
             // ChoiceAcceptButton5
             // 
-            this.ChoiceAcceptButton5.Location = new System.Drawing.Point(1323, 239);
+            this.ChoiceAcceptButton5.Location = new System.Drawing.Point(1284, 239);
             this.ChoiceAcceptButton5.Name = "ChoiceAcceptButton5";
             this.ChoiceAcceptButton5.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton5.TabIndex = 85;
@@ -733,7 +745,7 @@
             // LadyCheckButton5
             // 
             this.LadyCheckButton5.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton5.Location = new System.Drawing.Point(1153, 266);
+            this.LadyCheckButton5.Location = new System.Drawing.Point(1114, 266);
             this.LadyCheckButton5.Name = "LadyCheckButton5";
             this.LadyCheckButton5.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton5.TabIndex = 83;
@@ -744,7 +756,7 @@
             // 
             // RemoveFromTeamButton5
             // 
-            this.RemoveFromTeamButton5.Location = new System.Drawing.Point(1319, 177);
+            this.RemoveFromTeamButton5.Location = new System.Drawing.Point(1280, 177);
             this.RemoveFromTeamButton5.Name = "RemoveFromTeamButton5";
             this.RemoveFromTeamButton5.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton5.TabIndex = 82;
@@ -755,7 +767,7 @@
             // 
             // AddToTeamButton5
             // 
-            this.AddToTeamButton5.Location = new System.Drawing.Point(1373, 177);
+            this.AddToTeamButton5.Location = new System.Drawing.Point(1334, 177);
             this.AddToTeamButton5.Name = "AddToTeamButton5";
             this.AddToTeamButton5.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton5.TabIndex = 81;
@@ -766,7 +778,7 @@
             // 
             // AwayButton6
             // 
-            this.AwayButton6.Location = new System.Drawing.Point(1318, 614);
+            this.AwayButton6.Location = new System.Drawing.Point(1279, 614);
             this.AwayButton6.Name = "AwayButton6";
             this.AwayButton6.Size = new System.Drawing.Size(80, 23);
             this.AwayButton6.TabIndex = 102;
@@ -777,7 +789,7 @@
             // 
             // SitButton6
             // 
-            this.SitButton6.Location = new System.Drawing.Point(1148, 614);
+            this.SitButton6.Location = new System.Drawing.Point(1109, 614);
             this.SitButton6.Name = "SitButton6";
             this.SitButton6.Size = new System.Drawing.Size(80, 23);
             this.SitButton6.TabIndex = 101;
@@ -788,7 +800,7 @@
             // 
             // ChoiceAgainstButton6
             // 
-            this.ChoiceAgainstButton6.Location = new System.Drawing.Point(1323, 553);
+            this.ChoiceAgainstButton6.Location = new System.Drawing.Point(1284, 553);
             this.ChoiceAgainstButton6.Name = "ChoiceAgainstButton6";
             this.ChoiceAgainstButton6.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton6.TabIndex = 100;
@@ -799,7 +811,7 @@
             // 
             // ChoiceAcceptButton6
             // 
-            this.ChoiceAcceptButton6.Location = new System.Drawing.Point(1323, 506);
+            this.ChoiceAcceptButton6.Location = new System.Drawing.Point(1284, 506);
             this.ChoiceAcceptButton6.Name = "ChoiceAcceptButton6";
             this.ChoiceAcceptButton6.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton6.TabIndex = 99;
@@ -811,7 +823,7 @@
             // LadyCheckButton6
             // 
             this.LadyCheckButton6.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton6.Location = new System.Drawing.Point(1153, 533);
+            this.LadyCheckButton6.Location = new System.Drawing.Point(1114, 533);
             this.LadyCheckButton6.Name = "LadyCheckButton6";
             this.LadyCheckButton6.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton6.TabIndex = 97;
@@ -822,7 +834,7 @@
             // 
             // RemoveFromTeamButton6
             // 
-            this.RemoveFromTeamButton6.Location = new System.Drawing.Point(1319, 444);
+            this.RemoveFromTeamButton6.Location = new System.Drawing.Point(1280, 444);
             this.RemoveFromTeamButton6.Name = "RemoveFromTeamButton6";
             this.RemoveFromTeamButton6.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton6.TabIndex = 96;
@@ -833,7 +845,7 @@
             // 
             // AddToTeamButton6
             // 
-            this.AddToTeamButton6.Location = new System.Drawing.Point(1373, 444);
+            this.AddToTeamButton6.Location = new System.Drawing.Point(1334, 444);
             this.AddToTeamButton6.Name = "AddToTeamButton6";
             this.AddToTeamButton6.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton6.TabIndex = 95;
@@ -844,7 +856,7 @@
             // 
             // AwayButton7
             // 
-            this.AwayButton7.Location = new System.Drawing.Point(1035, 759);
+            this.AwayButton7.Location = new System.Drawing.Point(1003, 730);
             this.AwayButton7.Name = "AwayButton7";
             this.AwayButton7.Size = new System.Drawing.Size(80, 23);
             this.AwayButton7.TabIndex = 116;
@@ -855,7 +867,7 @@
             // 
             // SitButton7
             // 
-            this.SitButton7.Location = new System.Drawing.Point(865, 759);
+            this.SitButton7.Location = new System.Drawing.Point(833, 730);
             this.SitButton7.Name = "SitButton7";
             this.SitButton7.Size = new System.Drawing.Size(80, 23);
             this.SitButton7.TabIndex = 115;
@@ -866,7 +878,7 @@
             // 
             // ChoiceAgainstButton7
             // 
-            this.ChoiceAgainstButton7.Location = new System.Drawing.Point(1040, 698);
+            this.ChoiceAgainstButton7.Location = new System.Drawing.Point(1008, 669);
             this.ChoiceAgainstButton7.Name = "ChoiceAgainstButton7";
             this.ChoiceAgainstButton7.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton7.TabIndex = 114;
@@ -877,7 +889,7 @@
             // 
             // ChoiceAcceptButton7
             // 
-            this.ChoiceAcceptButton7.Location = new System.Drawing.Point(1040, 651);
+            this.ChoiceAcceptButton7.Location = new System.Drawing.Point(1008, 622);
             this.ChoiceAcceptButton7.Name = "ChoiceAcceptButton7";
             this.ChoiceAcceptButton7.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton7.TabIndex = 113;
@@ -889,7 +901,7 @@
             // LadyCheckButton7
             // 
             this.LadyCheckButton7.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton7.Location = new System.Drawing.Point(870, 678);
+            this.LadyCheckButton7.Location = new System.Drawing.Point(838, 649);
             this.LadyCheckButton7.Name = "LadyCheckButton7";
             this.LadyCheckButton7.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton7.TabIndex = 111;
@@ -900,7 +912,7 @@
             // 
             // RemoveFromTeamButton7
             // 
-            this.RemoveFromTeamButton7.Location = new System.Drawing.Point(1036, 589);
+            this.RemoveFromTeamButton7.Location = new System.Drawing.Point(1004, 560);
             this.RemoveFromTeamButton7.Name = "RemoveFromTeamButton7";
             this.RemoveFromTeamButton7.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton7.TabIndex = 110;
@@ -911,7 +923,7 @@
             // 
             // AddToTeamButton7
             // 
-            this.AddToTeamButton7.Location = new System.Drawing.Point(1090, 589);
+            this.AddToTeamButton7.Location = new System.Drawing.Point(1058, 560);
             this.AddToTeamButton7.Name = "AddToTeamButton7";
             this.AddToTeamButton7.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton7.TabIndex = 109;
@@ -922,7 +934,7 @@
             // 
             // AwayButton8
             // 
-            this.AwayButton8.Location = new System.Drawing.Point(745, 759);
+            this.AwayButton8.Location = new System.Drawing.Point(728, 730);
             this.AwayButton8.Name = "AwayButton8";
             this.AwayButton8.Size = new System.Drawing.Size(80, 23);
             this.AwayButton8.TabIndex = 130;
@@ -933,7 +945,7 @@
             // 
             // SitButton8
             // 
-            this.SitButton8.Location = new System.Drawing.Point(575, 759);
+            this.SitButton8.Location = new System.Drawing.Point(558, 730);
             this.SitButton8.Name = "SitButton8";
             this.SitButton8.Size = new System.Drawing.Size(80, 23);
             this.SitButton8.TabIndex = 129;
@@ -944,7 +956,7 @@
             // 
             // ChoiceAgainstButton8
             // 
-            this.ChoiceAgainstButton8.Location = new System.Drawing.Point(750, 698);
+            this.ChoiceAgainstButton8.Location = new System.Drawing.Point(733, 669);
             this.ChoiceAgainstButton8.Name = "ChoiceAgainstButton8";
             this.ChoiceAgainstButton8.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton8.TabIndex = 128;
@@ -955,7 +967,7 @@
             // 
             // ChoiceAcceptButton8
             // 
-            this.ChoiceAcceptButton8.Location = new System.Drawing.Point(750, 651);
+            this.ChoiceAcceptButton8.Location = new System.Drawing.Point(733, 622);
             this.ChoiceAcceptButton8.Name = "ChoiceAcceptButton8";
             this.ChoiceAcceptButton8.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton8.TabIndex = 127;
@@ -967,7 +979,7 @@
             // LadyCheckButton8
             // 
             this.LadyCheckButton8.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton8.Location = new System.Drawing.Point(580, 678);
+            this.LadyCheckButton8.Location = new System.Drawing.Point(563, 649);
             this.LadyCheckButton8.Name = "LadyCheckButton8";
             this.LadyCheckButton8.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton8.TabIndex = 125;
@@ -978,7 +990,7 @@
             // 
             // RemoveFromTeamButton8
             // 
-            this.RemoveFromTeamButton8.Location = new System.Drawing.Point(746, 589);
+            this.RemoveFromTeamButton8.Location = new System.Drawing.Point(729, 560);
             this.RemoveFromTeamButton8.Name = "RemoveFromTeamButton8";
             this.RemoveFromTeamButton8.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton8.TabIndex = 124;
@@ -989,7 +1001,7 @@
             // 
             // AddToTeamButton8
             // 
-            this.AddToTeamButton8.Location = new System.Drawing.Point(800, 589);
+            this.AddToTeamButton8.Location = new System.Drawing.Point(783, 560);
             this.AddToTeamButton8.Name = "AddToTeamButton8";
             this.AddToTeamButton8.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton8.TabIndex = 123;
@@ -1000,7 +1012,7 @@
             // 
             // AwayButton9
             // 
-            this.AwayButton9.Location = new System.Drawing.Point(455, 759);
+            this.AwayButton9.Location = new System.Drawing.Point(449, 730);
             this.AwayButton9.Name = "AwayButton9";
             this.AwayButton9.Size = new System.Drawing.Size(80, 23);
             this.AwayButton9.TabIndex = 144;
@@ -1011,7 +1023,7 @@
             // 
             // SitButton9
             // 
-            this.SitButton9.Location = new System.Drawing.Point(285, 759);
+            this.SitButton9.Location = new System.Drawing.Point(279, 730);
             this.SitButton9.Name = "SitButton9";
             this.SitButton9.Size = new System.Drawing.Size(80, 23);
             this.SitButton9.TabIndex = 143;
@@ -1022,7 +1034,7 @@
             // 
             // ChoiceAgainstButton9
             // 
-            this.ChoiceAgainstButton9.Location = new System.Drawing.Point(460, 698);
+            this.ChoiceAgainstButton9.Location = new System.Drawing.Point(454, 669);
             this.ChoiceAgainstButton9.Name = "ChoiceAgainstButton9";
             this.ChoiceAgainstButton9.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAgainstButton9.TabIndex = 142;
@@ -1033,7 +1045,7 @@
             // 
             // ChoiceAcceptButton9
             // 
-            this.ChoiceAcceptButton9.Location = new System.Drawing.Point(460, 651);
+            this.ChoiceAcceptButton9.Location = new System.Drawing.Point(454, 622);
             this.ChoiceAcceptButton9.Name = "ChoiceAcceptButton9";
             this.ChoiceAcceptButton9.Size = new System.Drawing.Size(70, 23);
             this.ChoiceAcceptButton9.TabIndex = 141;
@@ -1045,7 +1057,7 @@
             // LadyCheckButton9
             // 
             this.LadyCheckButton9.BackColor = System.Drawing.Color.Transparent;
-            this.LadyCheckButton9.Location = new System.Drawing.Point(290, 678);
+            this.LadyCheckButton9.Location = new System.Drawing.Point(284, 649);
             this.LadyCheckButton9.Name = "LadyCheckButton9";
             this.LadyCheckButton9.Size = new System.Drawing.Size(70, 30);
             this.LadyCheckButton9.TabIndex = 139;
@@ -1056,7 +1068,7 @@
             // 
             // RemoveFromTeamButton9
             // 
-            this.RemoveFromTeamButton9.Location = new System.Drawing.Point(456, 589);
+            this.RemoveFromTeamButton9.Location = new System.Drawing.Point(450, 560);
             this.RemoveFromTeamButton9.Name = "RemoveFromTeamButton9";
             this.RemoveFromTeamButton9.Size = new System.Drawing.Size(25, 36);
             this.RemoveFromTeamButton9.TabIndex = 138;
@@ -1067,7 +1079,7 @@
             // 
             // AddToTeamButton9
             // 
-            this.AddToTeamButton9.Location = new System.Drawing.Point(510, 589);
+            this.AddToTeamButton9.Location = new System.Drawing.Point(504, 560);
             this.AddToTeamButton9.Name = "AddToTeamButton9";
             this.AddToTeamButton9.Size = new System.Drawing.Size(25, 36);
             this.AddToTeamButton9.TabIndex = 137;
@@ -1156,7 +1168,7 @@
             // 
             // StartGameButton
             // 
-            this.StartGameButton.Location = new System.Drawing.Point(660, 533);
+            this.StartGameButton.Location = new System.Drawing.Point(604, 524);
             this.StartGameButton.Name = "StartGameButton";
             this.StartGameButton.Size = new System.Drawing.Size(80, 23);
             this.StartGameButton.TabIndex = 165;
@@ -1165,106 +1177,113 @@
             this.StartGameButton.Visible = false;
             this.StartGameButton.Click += new System.EventHandler(this.StartGameButton_Click);
             // 
-            // Mission1Table
+            // FailedVotes1
             // 
-            this.Mission1Table.AutoSize = true;
-            this.Mission1Table.BackColor = System.Drawing.Color.Transparent;
-            this.Mission1Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Mission1Table.ForeColor = System.Drawing.Color.Lime;
-            this.Mission1Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
-            this.Mission1Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission1Table.Location = new System.Drawing.Point(370, 412);
-            this.Mission1Table.MaximumSize = new System.Drawing.Size(80, 104);
-            this.Mission1Table.MinimumSize = new System.Drawing.Size(80, 104);
-            this.Mission1Table.Name = "Mission1Table";
-            this.Mission1Table.Size = new System.Drawing.Size(80, 104);
-            this.Mission1Table.TabIndex = 177;
-            this.Mission1Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.Mission1Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission1Table.Visible = false;
+            this.FailedVotes1.AutoSize = true;
+            this.FailedVotes1.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes1.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes1.Location = new System.Drawing.Point(985, 277);
+            this.FailedVotes1.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes1.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes1.Name = "FailedVotes1";
+            this.FailedVotes1.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes1.TabIndex = 186;
+            this.FailedVotes1.Text = "1";
+            this.FailedVotes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes1.Visible = false;
             // 
-            // Mission2Table
+            // FailedVotes2
             // 
-            this.Mission2Table.AutoSize = true;
-            this.Mission2Table.BackColor = System.Drawing.Color.Transparent;
-            this.Mission2Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Mission2Table.ForeColor = System.Drawing.Color.Red;
-            this.Mission2Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
-            this.Mission2Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission2Table.Location = new System.Drawing.Point(519, 412);
-            this.Mission2Table.MaximumSize = new System.Drawing.Size(80, 104);
-            this.Mission2Table.MinimumSize = new System.Drawing.Size(80, 104);
-            this.Mission2Table.Name = "Mission2Table";
-            this.Mission2Table.Size = new System.Drawing.Size(80, 104);
-            this.Mission2Table.TabIndex = 178;
-            this.Mission2Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.Mission2Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission2Table.Visible = false;
+            this.FailedVotes2.AutoSize = true;
+            this.FailedVotes2.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes2.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes2.Location = new System.Drawing.Point(985, 326);
+            this.FailedVotes2.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes2.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes2.Name = "FailedVotes2";
+            this.FailedVotes2.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes2.TabIndex = 187;
+            this.FailedVotes2.Text = "2";
+            this.FailedVotes2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes2.Visible = false;
             // 
-            // Mission3Table
+            // FailedVotes3
             // 
-            this.Mission3Table.AutoSize = true;
-            this.Mission3Table.BackColor = System.Drawing.Color.Transparent;
-            this.Mission3Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Mission3Table.ForeColor = System.Drawing.Color.Lime;
-            this.Mission3Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
-            this.Mission3Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission3Table.Location = new System.Drawing.Point(660, 412);
-            this.Mission3Table.MaximumSize = new System.Drawing.Size(80, 104);
-            this.Mission3Table.MinimumSize = new System.Drawing.Size(80, 104);
-            this.Mission3Table.Name = "Mission3Table";
-            this.Mission3Table.Size = new System.Drawing.Size(80, 104);
-            this.Mission3Table.TabIndex = 179;
-            this.Mission3Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.Mission3Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission3Table.Visible = false;
+            this.FailedVotes3.AutoSize = true;
+            this.FailedVotes3.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes3.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes3.Location = new System.Drawing.Point(985, 376);
+            this.FailedVotes3.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes3.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes3.Name = "FailedVotes3";
+            this.FailedVotes3.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes3.TabIndex = 188;
+            this.FailedVotes3.Text = "3";
+            this.FailedVotes3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes3.Visible = false;
             // 
-            // Mission4Table
+            // FailedVotes4
             // 
-            this.Mission4Table.AutoSize = true;
-            this.Mission4Table.BackColor = System.Drawing.Color.Transparent;
-            this.Mission4Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Mission4Table.ForeColor = System.Drawing.Color.Red;
-            this.Mission4Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
-            this.Mission4Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission4Table.Location = new System.Drawing.Point(803, 412);
-            this.Mission4Table.MaximumSize = new System.Drawing.Size(80, 104);
-            this.Mission4Table.MinimumSize = new System.Drawing.Size(80, 104);
-            this.Mission4Table.Name = "Mission4Table";
-            this.Mission4Table.Size = new System.Drawing.Size(80, 104);
-            this.Mission4Table.TabIndex = 180;
-            this.Mission4Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.Mission4Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission4Table.Visible = false;
+            this.FailedVotes4.AutoSize = true;
+            this.FailedVotes4.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes4.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes4.Location = new System.Drawing.Point(985, 426);
+            this.FailedVotes4.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes4.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes4.Name = "FailedVotes4";
+            this.FailedVotes4.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes4.TabIndex = 189;
+            this.FailedVotes4.Text = "4";
+            this.FailedVotes4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes4.Visible = false;
             // 
-            // Mission5Table
+            // FailedVotes5
             // 
-            this.Mission5Table.AutoSize = true;
-            this.Mission5Table.BackColor = System.Drawing.Color.Transparent;
-            this.Mission5Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Mission5Table.ForeColor = System.Drawing.Color.Lime;
-            this.Mission5Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
-            this.Mission5Table.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission5Table.Location = new System.Drawing.Point(950, 412);
-            this.Mission5Table.MaximumSize = new System.Drawing.Size(80, 104);
-            this.Mission5Table.MinimumSize = new System.Drawing.Size(80, 104);
-            this.Mission5Table.Name = "Mission5Table";
-            this.Mission5Table.Size = new System.Drawing.Size(80, 104);
-            this.Mission5Table.TabIndex = 181;
-            this.Mission5Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
-            this.Mission5Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Mission5Table.Visible = false;
+            this.FailedVotes5.AutoSize = true;
+            this.FailedVotes5.BackColor = System.Drawing.Color.Red;
+            this.FailedVotes5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.FailedVotes5.ForeColor = System.Drawing.Color.White;
+            this.FailedVotes5.Location = new System.Drawing.Point(985, 475);
+            this.FailedVotes5.MaximumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes5.MinimumSize = new System.Drawing.Size(30, 30);
+            this.FailedVotes5.Name = "FailedVotes5";
+            this.FailedVotes5.Size = new System.Drawing.Size(30, 30);
+            this.FailedVotes5.TabIndex = 190;
+            this.FailedVotes5.Text = "5";
+            this.FailedVotes5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FailedVotes5.Visible = false;
             // 
             // GameResultImage
             // 
             this.GameResultImage.BackColor = System.Drawing.Color.Transparent;
             this.GameResultImage.BackgroundImage = global::Avalon.Properties.Resources.resultBckg;
-            this.GameResultImage.Location = new System.Drawing.Point(361, 231);
+            this.GameResultImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GameResultImage.Location = new System.Drawing.Point(282, 218);
             this.GameResultImage.Name = "GameResultImage";
             this.GameResultImage.Size = new System.Drawing.Size(700, 300);
             this.GameResultImage.TabIndex = 183;
             this.GameResultImage.TabStop = false;
             this.GameResultImage.Visible = false;
+            // 
+            // TeamMembersLeftLabel
+            // 
+            this.TeamMembersLeftLabel.AutoSize = true;
+            this.TeamMembersLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.TeamMembersLeftLabel.ForeColor = System.Drawing.Color.White;
+            this.TeamMembersLeftLabel.Image = global::Avalon.Properties.Resources.InTeam;
+            this.TeamMembersLeftLabel.Location = new System.Drawing.Point(985, 228);
+            this.TeamMembersLeftLabel.MaximumSize = new System.Drawing.Size(25, 36);
+            this.TeamMembersLeftLabel.MinimumSize = new System.Drawing.Size(25, 36);
+            this.TeamMembersLeftLabel.Name = "TeamMembersLeftLabel";
+            this.TeamMembersLeftLabel.Size = new System.Drawing.Size(25, 36);
+            this.TeamMembersLeftLabel.TabIndex = 185;
+            this.TeamMembersLeftLabel.Text = "0";
+            this.TeamMembersLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TeamMembersLeftLabel.Visible = false;
             // 
             // PlayersInfoLabel
             // 
@@ -1273,7 +1292,7 @@
             this.PlayersInfoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.PlayersInfoLabel.ForeColor = System.Drawing.Color.Aquamarine;
             this.PlayersInfoLabel.Image = global::Avalon.Properties.Resources.noPlayersBckg;
-            this.PlayersInfoLabel.Location = new System.Drawing.Point(1071, 233);
+            this.PlayersInfoLabel.Location = new System.Drawing.Point(1016, 217);
             this.PlayersInfoLabel.MaximumSize = new System.Drawing.Size(72, 39);
             this.PlayersInfoLabel.MinimumSize = new System.Drawing.Size(72, 39);
             this.PlayersInfoLabel.Name = "PlayersInfoLabel";
@@ -1284,141 +1303,6 @@
             this.PlayersInfoLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.PlayersInfoLabel.Visible = false;
             // 
-            // NumberForMission5
-            // 
-            this.NumberForMission5.AutoSize = true;
-            this.NumberForMission5.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission5.ForeColor = System.Drawing.Color.Aquamarine;
-            this.NumberForMission5.Image = global::Avalon.Properties.Resources.noTeamBckg;
-            this.NumberForMission5.Location = new System.Drawing.Point(950, 261);
-            this.NumberForMission5.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission5.Name = "NumberForMission5";
-            this.NumberForMission5.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission5.TabIndex = 176;
-            this.NumberForMission5.Text = "Skład : 3";
-            this.NumberForMission5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission5.Visible = false;
-            // 
-            // NumberForMission4
-            // 
-            this.NumberForMission4.AutoSize = true;
-            this.NumberForMission4.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission4.ForeColor = System.Drawing.Color.Aquamarine;
-            this.NumberForMission4.Image = global::Avalon.Properties.Resources.noTeamBckg;
-            this.NumberForMission4.Location = new System.Drawing.Point(803, 261);
-            this.NumberForMission4.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission4.Name = "NumberForMission4";
-            this.NumberForMission4.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission4.TabIndex = 175;
-            this.NumberForMission4.Text = "Skład : 3";
-            this.NumberForMission4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission4.Visible = false;
-            // 
-            // NumberForMission3
-            // 
-            this.NumberForMission3.AutoSize = true;
-            this.NumberForMission3.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission3.ForeColor = System.Drawing.Color.Aquamarine;
-            this.NumberForMission3.Image = global::Avalon.Properties.Resources.noTeamBckg;
-            this.NumberForMission3.Location = new System.Drawing.Point(660, 261);
-            this.NumberForMission3.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission3.Name = "NumberForMission3";
-            this.NumberForMission3.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission3.TabIndex = 174;
-            this.NumberForMission3.Text = "Skład : 3";
-            this.NumberForMission3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission3.Visible = false;
-            // 
-            // NumberForMission2
-            // 
-            this.NumberForMission2.AutoSize = true;
-            this.NumberForMission2.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission2.ForeColor = System.Drawing.Color.Aquamarine;
-            this.NumberForMission2.Image = global::Avalon.Properties.Resources.noTeamBckg;
-            this.NumberForMission2.Location = new System.Drawing.Point(519, 261);
-            this.NumberForMission2.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission2.Name = "NumberForMission2";
-            this.NumberForMission2.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission2.TabIndex = 173;
-            this.NumberForMission2.Text = "Skład : 3";
-            this.NumberForMission2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission2.Visible = false;
-            // 
-            // NumberForMission1
-            // 
-            this.NumberForMission1.AutoSize = true;
-            this.NumberForMission1.BackColor = System.Drawing.Color.Transparent;
-            this.NumberForMission1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.NumberForMission1.ForeColor = System.Drawing.Color.Aquamarine;
-            this.NumberForMission1.Image = global::Avalon.Properties.Resources.noTeamBckg;
-            this.NumberForMission1.Location = new System.Drawing.Point(370, 261);
-            this.NumberForMission1.MinimumSize = new System.Drawing.Size(80, 0);
-            this.NumberForMission1.Name = "NumberForMission1";
-            this.NumberForMission1.Size = new System.Drawing.Size(80, 13);
-            this.NumberForMission1.TabIndex = 172;
-            this.NumberForMission1.Text = "Skład : 3";
-            this.NumberForMission1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.NumberForMission1.Visible = false;
-            // 
-            // MissionResultPic2
-            // 
-            this.MissionResultPic2.BackColor = System.Drawing.Color.Transparent;
-            this.MissionResultPic2.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.MissionResultPic2.Location = new System.Drawing.Point(519, 277);
-            this.MissionResultPic2.Name = "MissionResultPic2";
-            this.MissionResultPic2.Size = new System.Drawing.Size(80, 128);
-            this.MissionResultPic2.TabIndex = 171;
-            this.MissionResultPic2.TabStop = false;
-            this.MissionResultPic2.Visible = false;
-            // 
-            // MissionResultPic3
-            // 
-            this.MissionResultPic3.BackColor = System.Drawing.Color.Transparent;
-            this.MissionResultPic3.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.MissionResultPic3.Location = new System.Drawing.Point(660, 277);
-            this.MissionResultPic3.Name = "MissionResultPic3";
-            this.MissionResultPic3.Size = new System.Drawing.Size(80, 128);
-            this.MissionResultPic3.TabIndex = 170;
-            this.MissionResultPic3.TabStop = false;
-            this.MissionResultPic3.Visible = false;
-            // 
-            // MissionResultPic4
-            // 
-            this.MissionResultPic4.BackColor = System.Drawing.Color.Transparent;
-            this.MissionResultPic4.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.MissionResultPic4.Location = new System.Drawing.Point(803, 277);
-            this.MissionResultPic4.Name = "MissionResultPic4";
-            this.MissionResultPic4.Size = new System.Drawing.Size(80, 128);
-            this.MissionResultPic4.TabIndex = 169;
-            this.MissionResultPic4.TabStop = false;
-            this.MissionResultPic4.Visible = false;
-            // 
-            // MissionResultPic5
-            // 
-            this.MissionResultPic5.BackColor = System.Drawing.Color.Transparent;
-            this.MissionResultPic5.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.MissionResultPic5.Location = new System.Drawing.Point(950, 277);
-            this.MissionResultPic5.Name = "MissionResultPic5";
-            this.MissionResultPic5.Size = new System.Drawing.Size(80, 128);
-            this.MissionResultPic5.TabIndex = 168;
-            this.MissionResultPic5.TabStop = false;
-            this.MissionResultPic5.Visible = false;
-            // 
-            // MissionResultPic1
-            // 
-            this.MissionResultPic1.BackColor = System.Drawing.Color.Transparent;
-            this.MissionResultPic1.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
-            this.MissionResultPic1.Location = new System.Drawing.Point(370, 277);
-            this.MissionResultPic1.Name = "MissionResultPic1";
-            this.MissionResultPic1.Size = new System.Drawing.Size(80, 128);
-            this.MissionResultPic1.TabIndex = 167;
-            this.MissionResultPic1.TabStop = false;
-            this.MissionResultPic1.Visible = false;
-            // 
             // MaxSpecialEvilLabel
             // 
             this.MaxSpecialEvilLabel.AutoSize = true;
@@ -1426,7 +1310,7 @@
             this.MaxSpecialEvilLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MaxSpecialEvilLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.MaxSpecialEvilLabel.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.MaxSpecialEvilLabel.Location = new System.Drawing.Point(833, 457);
+            this.MaxSpecialEvilLabel.Location = new System.Drawing.Point(777, 427);
             this.MaxSpecialEvilLabel.Name = "MaxSpecialEvilLabel";
             this.MaxSpecialEvilLabel.Size = new System.Drawing.Size(49, 13);
             this.MaxSpecialEvilLabel.TabIndex = 166;
@@ -1437,7 +1321,7 @@
             // 
             this.ParsifalChoiceImg.BackColor = System.Drawing.Color.Transparent;
             this.ParsifalChoiceImg.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ParsifalChoiceImg.BackgroundImage")));
-            this.ParsifalChoiceImg.Location = new System.Drawing.Point(660, 266);
+            this.ParsifalChoiceImg.Location = new System.Drawing.Point(604, 237);
             this.ParsifalChoiceImg.Name = "ParsifalChoiceImg";
             this.ParsifalChoiceImg.Size = new System.Drawing.Size(80, 128);
             this.ParsifalChoiceImg.TabIndex = 164;
@@ -1449,7 +1333,7 @@
             // 
             this.LadyChoiceImg.BackColor = System.Drawing.Color.Transparent;
             this.LadyChoiceImg.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyChoiceImg.Location = new System.Drawing.Point(746, 267);
+            this.LadyChoiceImg.Location = new System.Drawing.Point(690, 237);
             this.LadyChoiceImg.Name = "LadyChoiceImg";
             this.LadyChoiceImg.Size = new System.Drawing.Size(80, 128);
             this.LadyChoiceImg.TabIndex = 163;
@@ -1461,7 +1345,7 @@
             // 
             this.OberonChoiceImg.BackColor = System.Drawing.Color.Transparent;
             this.OberonChoiceImg.BackgroundImage = global::Avalon.Properties.Resources.Oberon;
-            this.OberonChoiceImg.Location = new System.Drawing.Point(746, 401);
+            this.OberonChoiceImg.Location = new System.Drawing.Point(690, 371);
             this.OberonChoiceImg.Name = "OberonChoiceImg";
             this.OberonChoiceImg.Size = new System.Drawing.Size(80, 128);
             this.OberonChoiceImg.TabIndex = 162;
@@ -1473,7 +1357,7 @@
             // 
             this.MorganaChoiceImg.BackColor = System.Drawing.Color.Transparent;
             this.MorganaChoiceImg.BackgroundImage = global::Avalon.Properties.Resources.Morgana;
-            this.MorganaChoiceImg.Location = new System.Drawing.Point(660, 401);
+            this.MorganaChoiceImg.Location = new System.Drawing.Point(604, 371);
             this.MorganaChoiceImg.Name = "MorganaChoiceImg";
             this.MorganaChoiceImg.Size = new System.Drawing.Size(80, 128);
             this.MorganaChoiceImg.TabIndex = 161;
@@ -1485,7 +1369,7 @@
             // 
             this.MordredChoiceImg.BackColor = System.Drawing.Color.Transparent;
             this.MordredChoiceImg.BackgroundImage = global::Avalon.Properties.Resources.Mordred;
-            this.MordredChoiceImg.Location = new System.Drawing.Point(575, 401);
+            this.MordredChoiceImg.Location = new System.Drawing.Point(519, 371);
             this.MordredChoiceImg.Name = "MordredChoiceImg";
             this.MordredChoiceImg.Size = new System.Drawing.Size(80, 128);
             this.MordredChoiceImg.TabIndex = 160;
@@ -1522,28 +1406,6 @@
             this.InTeamIcon10.TabStop = false;
             this.InTeamIcon10.Visible = false;
             // 
-            // ChoicePicture10
-            // 
-            this.ChoicePicture10.BackColor = System.Drawing.Color.Transparent;
-            this.ChoicePicture10.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture10.Location = new System.Drawing.Point(180, 484);
-            this.ChoicePicture10.Name = "ChoicePicture10";
-            this.ChoicePicture10.Size = new System.Drawing.Size(80, 128);
-            this.ChoicePicture10.TabIndex = 149;
-            this.ChoicePicture10.TabStop = false;
-            this.ChoicePicture10.Visible = false;
-            // 
-            // LadyPicture10
-            // 
-            this.LadyPicture10.BackColor = System.Drawing.Color.Transparent;
-            this.LadyPicture10.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture10.Location = new System.Drawing.Point(10, 484);
-            this.LadyPicture10.Name = "LadyPicture10";
-            this.LadyPicture10.Size = new System.Drawing.Size(80, 128);
-            this.LadyPicture10.TabIndex = 148;
-            this.LadyPicture10.TabStop = false;
-            this.LadyPicture10.Visible = false;
-            // 
             // CharacterPicture10
             // 
             this.CharacterPicture10.BackColor = System.Drawing.Color.Transparent;
@@ -1566,17 +1428,6 @@
             this.LeaderIcon10.TabStop = false;
             this.LeaderIcon10.Visible = false;
             // 
-            // PlayerAreaPicture10
-            // 
-            this.PlayerAreaPicture10.BackColor = System.Drawing.Color.Transparent;
-            this.PlayerAreaPicture10.BackgroundImage = global::Avalon.Properties.Resources.player10Bckg;
-            this.PlayerAreaPicture10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture10.Location = new System.Drawing.Point(5, 437);
-            this.PlayerAreaPicture10.Name = "PlayerAreaPicture10";
-            this.PlayerAreaPicture10.Size = new System.Drawing.Size(260, 205);
-            this.PlayerAreaPicture10.TabIndex = 159;
-            this.PlayerAreaPicture10.TabStop = false;
-            // 
             // NicknameLabel9
             // 
             this.NicknameLabel9.AutoSize = true;
@@ -1584,7 +1435,7 @@
             this.NicknameLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel9.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel9.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel9.Location = new System.Drawing.Point(285, 764);
+            this.NicknameLabel9.Location = new System.Drawing.Point(279, 735);
             this.NicknameLabel9.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel9.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel9.Name = "NicknameLabel9";
@@ -1599,7 +1450,7 @@
             // 
             this.InTeamIcon9.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon9.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon9.Location = new System.Drawing.Point(483, 589);
+            this.InTeamIcon9.Location = new System.Drawing.Point(477, 560);
             this.InTeamIcon9.Name = "InTeamIcon9";
             this.InTeamIcon9.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon9.TabIndex = 136;
@@ -1610,7 +1461,7 @@
             // 
             this.ChoicePicture9.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture9.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture9.Location = new System.Drawing.Point(455, 629);
+            this.ChoicePicture9.Location = new System.Drawing.Point(449, 600);
             this.ChoicePicture9.Name = "ChoicePicture9";
             this.ChoicePicture9.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture9.TabIndex = 135;
@@ -1621,7 +1472,7 @@
             // 
             this.LadyPicture9.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture9.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture9.Location = new System.Drawing.Point(285, 629);
+            this.LadyPicture9.Location = new System.Drawing.Point(279, 600);
             this.LadyPicture9.Name = "LadyPicture9";
             this.LadyPicture9.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture9.TabIndex = 134;
@@ -1632,7 +1483,7 @@
             // 
             this.CharacterPicture9.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture9.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture9.Location = new System.Drawing.Point(370, 629);
+            this.CharacterPicture9.Location = new System.Drawing.Point(364, 600);
             this.CharacterPicture9.Name = "CharacterPicture9";
             this.CharacterPicture9.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture9.TabIndex = 133;
@@ -1643,7 +1494,7 @@
             // 
             this.LeaderIcon9.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon9.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon9.Location = new System.Drawing.Point(395, 587);
+            this.LeaderIcon9.Location = new System.Drawing.Point(389, 558);
             this.LeaderIcon9.Name = "LeaderIcon9";
             this.LeaderIcon9.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon9.TabIndex = 132;
@@ -1655,7 +1506,7 @@
             this.PlayerAreaPicture9.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture9.BackgroundImage = global::Avalon.Properties.Resources.player9Bckg;
             this.PlayerAreaPicture9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture9.Location = new System.Drawing.Point(280, 582);
+            this.PlayerAreaPicture9.Location = new System.Drawing.Point(274, 553);
             this.PlayerAreaPicture9.Name = "PlayerAreaPicture9";
             this.PlayerAreaPicture9.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture9.TabIndex = 145;
@@ -1668,7 +1519,7 @@
             this.NicknameLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel8.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel8.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel8.Location = new System.Drawing.Point(575, 764);
+            this.NicknameLabel8.Location = new System.Drawing.Point(558, 735);
             this.NicknameLabel8.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel8.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel8.Name = "NicknameLabel8";
@@ -1683,7 +1534,7 @@
             // 
             this.InTeamIcon8.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon8.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon8.Location = new System.Drawing.Point(773, 589);
+            this.InTeamIcon8.Location = new System.Drawing.Point(756, 560);
             this.InTeamIcon8.Name = "InTeamIcon8";
             this.InTeamIcon8.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon8.TabIndex = 122;
@@ -1694,7 +1545,7 @@
             // 
             this.ChoicePicture8.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture8.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture8.Location = new System.Drawing.Point(745, 629);
+            this.ChoicePicture8.Location = new System.Drawing.Point(728, 600);
             this.ChoicePicture8.Name = "ChoicePicture8";
             this.ChoicePicture8.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture8.TabIndex = 121;
@@ -1705,7 +1556,7 @@
             // 
             this.LadyPicture8.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture8.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture8.Location = new System.Drawing.Point(575, 629);
+            this.LadyPicture8.Location = new System.Drawing.Point(558, 600);
             this.LadyPicture8.Name = "LadyPicture8";
             this.LadyPicture8.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture8.TabIndex = 120;
@@ -1716,7 +1567,7 @@
             // 
             this.CharacterPicture8.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture8.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture8.Location = new System.Drawing.Point(660, 629);
+            this.CharacterPicture8.Location = new System.Drawing.Point(643, 600);
             this.CharacterPicture8.Name = "CharacterPicture8";
             this.CharacterPicture8.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture8.TabIndex = 119;
@@ -1727,7 +1578,7 @@
             // 
             this.LeaderIcon8.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon8.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon8.Location = new System.Drawing.Point(685, 587);
+            this.LeaderIcon8.Location = new System.Drawing.Point(668, 558);
             this.LeaderIcon8.Name = "LeaderIcon8";
             this.LeaderIcon8.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon8.TabIndex = 118;
@@ -1739,7 +1590,7 @@
             this.PlayerAreaPicture8.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture8.BackgroundImage = global::Avalon.Properties.Resources.player8Bckg;
             this.PlayerAreaPicture8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture8.Location = new System.Drawing.Point(570, 582);
+            this.PlayerAreaPicture8.Location = new System.Drawing.Point(553, 553);
             this.PlayerAreaPicture8.Name = "PlayerAreaPicture8";
             this.PlayerAreaPicture8.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture8.TabIndex = 131;
@@ -1752,7 +1603,7 @@
             this.NicknameLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel7.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel7.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel7.Location = new System.Drawing.Point(865, 764);
+            this.NicknameLabel7.Location = new System.Drawing.Point(833, 735);
             this.NicknameLabel7.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel7.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel7.Name = "NicknameLabel7";
@@ -1767,7 +1618,7 @@
             // 
             this.InTeamIcon7.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon7.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon7.Location = new System.Drawing.Point(1063, 589);
+            this.InTeamIcon7.Location = new System.Drawing.Point(1031, 560);
             this.InTeamIcon7.Name = "InTeamIcon7";
             this.InTeamIcon7.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon7.TabIndex = 108;
@@ -1778,7 +1629,7 @@
             // 
             this.ChoicePicture7.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture7.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture7.Location = new System.Drawing.Point(1035, 629);
+            this.ChoicePicture7.Location = new System.Drawing.Point(1003, 600);
             this.ChoicePicture7.Name = "ChoicePicture7";
             this.ChoicePicture7.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture7.TabIndex = 107;
@@ -1789,7 +1640,7 @@
             // 
             this.LadyPicture7.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture7.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture7.Location = new System.Drawing.Point(865, 629);
+            this.LadyPicture7.Location = new System.Drawing.Point(833, 600);
             this.LadyPicture7.Name = "LadyPicture7";
             this.LadyPicture7.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture7.TabIndex = 106;
@@ -1800,7 +1651,7 @@
             // 
             this.CharacterPicture7.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture7.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture7.Location = new System.Drawing.Point(950, 629);
+            this.CharacterPicture7.Location = new System.Drawing.Point(918, 600);
             this.CharacterPicture7.Name = "CharacterPicture7";
             this.CharacterPicture7.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture7.TabIndex = 105;
@@ -1811,7 +1662,7 @@
             // 
             this.LeaderIcon7.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon7.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon7.Location = new System.Drawing.Point(975, 587);
+            this.LeaderIcon7.Location = new System.Drawing.Point(943, 558);
             this.LeaderIcon7.Name = "LeaderIcon7";
             this.LeaderIcon7.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon7.TabIndex = 104;
@@ -1823,7 +1674,7 @@
             this.PlayerAreaPicture7.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture7.BackgroundImage = global::Avalon.Properties.Resources.player7Bckg;
             this.PlayerAreaPicture7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture7.Location = new System.Drawing.Point(860, 582);
+            this.PlayerAreaPicture7.Location = new System.Drawing.Point(828, 553);
             this.PlayerAreaPicture7.Name = "PlayerAreaPicture7";
             this.PlayerAreaPicture7.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture7.TabIndex = 117;
@@ -1836,7 +1687,7 @@
             this.NicknameLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel6.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel6.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel6.Location = new System.Drawing.Point(1148, 619);
+            this.NicknameLabel6.Location = new System.Drawing.Point(1109, 619);
             this.NicknameLabel6.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel6.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel6.Name = "NicknameLabel6";
@@ -1851,7 +1702,7 @@
             // 
             this.InTeamIcon6.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon6.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon6.Location = new System.Drawing.Point(1346, 444);
+            this.InTeamIcon6.Location = new System.Drawing.Point(1307, 444);
             this.InTeamIcon6.Name = "InTeamIcon6";
             this.InTeamIcon6.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon6.TabIndex = 94;
@@ -1862,7 +1713,7 @@
             // 
             this.ChoicePicture6.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture6.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture6.Location = new System.Drawing.Point(1318, 484);
+            this.ChoicePicture6.Location = new System.Drawing.Point(1279, 484);
             this.ChoicePicture6.Name = "ChoicePicture6";
             this.ChoicePicture6.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture6.TabIndex = 93;
@@ -1873,7 +1724,7 @@
             // 
             this.LadyPicture6.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture6.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture6.Location = new System.Drawing.Point(1148, 484);
+            this.LadyPicture6.Location = new System.Drawing.Point(1109, 484);
             this.LadyPicture6.Name = "LadyPicture6";
             this.LadyPicture6.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture6.TabIndex = 92;
@@ -1884,7 +1735,7 @@
             // 
             this.CharacterPicture6.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture6.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture6.Location = new System.Drawing.Point(1233, 484);
+            this.CharacterPicture6.Location = new System.Drawing.Point(1194, 484);
             this.CharacterPicture6.Name = "CharacterPicture6";
             this.CharacterPicture6.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture6.TabIndex = 91;
@@ -1895,7 +1746,7 @@
             // 
             this.LeaderIcon6.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon6.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon6.Location = new System.Drawing.Point(1258, 442);
+            this.LeaderIcon6.Location = new System.Drawing.Point(1219, 442);
             this.LeaderIcon6.Name = "LeaderIcon6";
             this.LeaderIcon6.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon6.TabIndex = 90;
@@ -1907,7 +1758,7 @@
             this.PlayerAreaPicture6.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture6.BackgroundImage = global::Avalon.Properties.Resources.player6Bckg;
             this.PlayerAreaPicture6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture6.Location = new System.Drawing.Point(1143, 437);
+            this.PlayerAreaPicture6.Location = new System.Drawing.Point(1104, 437);
             this.PlayerAreaPicture6.Name = "PlayerAreaPicture6";
             this.PlayerAreaPicture6.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture6.TabIndex = 103;
@@ -1920,7 +1771,7 @@
             this.NicknameLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel5.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel5.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel5.Location = new System.Drawing.Point(1148, 352);
+            this.NicknameLabel5.Location = new System.Drawing.Point(1109, 352);
             this.NicknameLabel5.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel5.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel5.Name = "NicknameLabel5";
@@ -1935,7 +1786,7 @@
             // 
             this.InTeamIcon5.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon5.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon5.Location = new System.Drawing.Point(1346, 177);
+            this.InTeamIcon5.Location = new System.Drawing.Point(1307, 177);
             this.InTeamIcon5.Name = "InTeamIcon5";
             this.InTeamIcon5.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon5.TabIndex = 80;
@@ -1946,7 +1797,7 @@
             // 
             this.ChoicePicture5.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture5.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture5.Location = new System.Drawing.Point(1318, 217);
+            this.ChoicePicture5.Location = new System.Drawing.Point(1279, 217);
             this.ChoicePicture5.Name = "ChoicePicture5";
             this.ChoicePicture5.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture5.TabIndex = 79;
@@ -1957,7 +1808,7 @@
             // 
             this.LadyPicture5.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture5.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture5.Location = new System.Drawing.Point(1148, 217);
+            this.LadyPicture5.Location = new System.Drawing.Point(1109, 217);
             this.LadyPicture5.Name = "LadyPicture5";
             this.LadyPicture5.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture5.TabIndex = 78;
@@ -1968,7 +1819,7 @@
             // 
             this.CharacterPicture5.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture5.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture5.Location = new System.Drawing.Point(1233, 217);
+            this.CharacterPicture5.Location = new System.Drawing.Point(1194, 217);
             this.CharacterPicture5.Name = "CharacterPicture5";
             this.CharacterPicture5.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture5.TabIndex = 77;
@@ -1979,7 +1830,7 @@
             // 
             this.LeaderIcon5.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon5.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon5.Location = new System.Drawing.Point(1258, 175);
+            this.LeaderIcon5.Location = new System.Drawing.Point(1219, 175);
             this.LeaderIcon5.Name = "LeaderIcon5";
             this.LeaderIcon5.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon5.TabIndex = 76;
@@ -1991,7 +1842,7 @@
             this.PlayerAreaPicture5.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture5.BackgroundImage = global::Avalon.Properties.Resources.player5Bckg;
             this.PlayerAreaPicture5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture5.Location = new System.Drawing.Point(1143, 170);
+            this.PlayerAreaPicture5.Location = new System.Drawing.Point(1104, 170);
             this.PlayerAreaPicture5.Name = "PlayerAreaPicture5";
             this.PlayerAreaPicture5.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture5.TabIndex = 89;
@@ -2004,7 +1855,7 @@
             this.NicknameLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel4.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel4.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel4.Location = new System.Drawing.Point(865, 187);
+            this.NicknameLabel4.Location = new System.Drawing.Point(833, 187);
             this.NicknameLabel4.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel4.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel4.Name = "NicknameLabel4";
@@ -2019,7 +1870,7 @@
             // 
             this.InTeamIcon4.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon4.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon4.Location = new System.Drawing.Point(1063, 12);
+            this.InTeamIcon4.Location = new System.Drawing.Point(1031, 12);
             this.InTeamIcon4.Name = "InTeamIcon4";
             this.InTeamIcon4.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon4.TabIndex = 66;
@@ -2030,7 +1881,7 @@
             // 
             this.ChoicePicture4.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture4.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture4.Location = new System.Drawing.Point(1035, 52);
+            this.ChoicePicture4.Location = new System.Drawing.Point(1003, 52);
             this.ChoicePicture4.Name = "ChoicePicture4";
             this.ChoicePicture4.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture4.TabIndex = 65;
@@ -2041,7 +1892,7 @@
             // 
             this.LadyPicture4.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture4.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture4.Location = new System.Drawing.Point(865, 52);
+            this.LadyPicture4.Location = new System.Drawing.Point(833, 52);
             this.LadyPicture4.Name = "LadyPicture4";
             this.LadyPicture4.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture4.TabIndex = 64;
@@ -2052,7 +1903,7 @@
             // 
             this.CharacterPicture4.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture4.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture4.Location = new System.Drawing.Point(950, 52);
+            this.CharacterPicture4.Location = new System.Drawing.Point(918, 52);
             this.CharacterPicture4.Name = "CharacterPicture4";
             this.CharacterPicture4.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture4.TabIndex = 63;
@@ -2063,7 +1914,7 @@
             // 
             this.LeaderIcon4.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon4.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon4.Location = new System.Drawing.Point(975, 10);
+            this.LeaderIcon4.Location = new System.Drawing.Point(943, 10);
             this.LeaderIcon4.Name = "LeaderIcon4";
             this.LeaderIcon4.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon4.TabIndex = 62;
@@ -2075,7 +1926,7 @@
             this.PlayerAreaPicture4.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture4.BackgroundImage = global::Avalon.Properties.Resources.player4Bckg;
             this.PlayerAreaPicture4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture4.Location = new System.Drawing.Point(860, 5);
+            this.PlayerAreaPicture4.Location = new System.Drawing.Point(828, 5);
             this.PlayerAreaPicture4.Name = "PlayerAreaPicture4";
             this.PlayerAreaPicture4.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture4.TabIndex = 75;
@@ -2088,7 +1939,7 @@
             this.NicknameLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel3.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel3.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel3.Location = new System.Drawing.Point(575, 187);
+            this.NicknameLabel3.Location = new System.Drawing.Point(558, 187);
             this.NicknameLabel3.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel3.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel3.Name = "NicknameLabel3";
@@ -2103,7 +1954,7 @@
             // 
             this.InTeamIcon3.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon3.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon3.Location = new System.Drawing.Point(773, 12);
+            this.InTeamIcon3.Location = new System.Drawing.Point(756, 12);
             this.InTeamIcon3.Name = "InTeamIcon3";
             this.InTeamIcon3.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon3.TabIndex = 52;
@@ -2114,7 +1965,7 @@
             // 
             this.ChoicePicture3.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture3.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture3.Location = new System.Drawing.Point(745, 52);
+            this.ChoicePicture3.Location = new System.Drawing.Point(728, 52);
             this.ChoicePicture3.Name = "ChoicePicture3";
             this.ChoicePicture3.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture3.TabIndex = 51;
@@ -2125,7 +1976,7 @@
             // 
             this.LadyPicture3.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture3.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture3.Location = new System.Drawing.Point(575, 52);
+            this.LadyPicture3.Location = new System.Drawing.Point(558, 52);
             this.LadyPicture3.Name = "LadyPicture3";
             this.LadyPicture3.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture3.TabIndex = 50;
@@ -2136,7 +1987,7 @@
             // 
             this.CharacterPicture3.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture3.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture3.Location = new System.Drawing.Point(660, 52);
+            this.CharacterPicture3.Location = new System.Drawing.Point(643, 52);
             this.CharacterPicture3.Name = "CharacterPicture3";
             this.CharacterPicture3.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture3.TabIndex = 49;
@@ -2147,7 +1998,7 @@
             // 
             this.LeaderIcon3.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon3.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon3.Location = new System.Drawing.Point(685, 10);
+            this.LeaderIcon3.Location = new System.Drawing.Point(668, 10);
             this.LeaderIcon3.Name = "LeaderIcon3";
             this.LeaderIcon3.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon3.TabIndex = 48;
@@ -2159,7 +2010,7 @@
             this.PlayerAreaPicture3.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture3.BackgroundImage = global::Avalon.Properties.Resources.player3Bckg;
             this.PlayerAreaPicture3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture3.Location = new System.Drawing.Point(570, 5);
+            this.PlayerAreaPicture3.Location = new System.Drawing.Point(553, 5);
             this.PlayerAreaPicture3.Name = "PlayerAreaPicture3";
             this.PlayerAreaPicture3.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture3.TabIndex = 61;
@@ -2172,7 +2023,7 @@
             this.NicknameLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.NicknameLabel2.ForeColor = System.Drawing.Color.White;
             this.NicknameLabel2.Image = global::Avalon.Properties.Resources.nickBckg;
-            this.NicknameLabel2.Location = new System.Drawing.Point(285, 187);
+            this.NicknameLabel2.Location = new System.Drawing.Point(279, 187);
             this.NicknameLabel2.MaximumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel2.MinimumSize = new System.Drawing.Size(165, 13);
             this.NicknameLabel2.Name = "NicknameLabel2";
@@ -2187,7 +2038,7 @@
             // 
             this.InTeamIcon2.BackColor = System.Drawing.Color.Transparent;
             this.InTeamIcon2.BackgroundImage = global::Avalon.Properties.Resources.InTeam;
-            this.InTeamIcon2.Location = new System.Drawing.Point(483, 12);
+            this.InTeamIcon2.Location = new System.Drawing.Point(477, 12);
             this.InTeamIcon2.Name = "InTeamIcon2";
             this.InTeamIcon2.Size = new System.Drawing.Size(25, 36);
             this.InTeamIcon2.TabIndex = 38;
@@ -2198,7 +2049,7 @@
             // 
             this.ChoicePicture2.BackColor = System.Drawing.Color.Transparent;
             this.ChoicePicture2.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
-            this.ChoicePicture2.Location = new System.Drawing.Point(455, 52);
+            this.ChoicePicture2.Location = new System.Drawing.Point(449, 52);
             this.ChoicePicture2.Name = "ChoicePicture2";
             this.ChoicePicture2.Size = new System.Drawing.Size(80, 128);
             this.ChoicePicture2.TabIndex = 37;
@@ -2209,7 +2060,7 @@
             // 
             this.LadyPicture2.BackColor = System.Drawing.Color.Transparent;
             this.LadyPicture2.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
-            this.LadyPicture2.Location = new System.Drawing.Point(285, 52);
+            this.LadyPicture2.Location = new System.Drawing.Point(279, 52);
             this.LadyPicture2.Name = "LadyPicture2";
             this.LadyPicture2.Size = new System.Drawing.Size(80, 128);
             this.LadyPicture2.TabIndex = 36;
@@ -2220,7 +2071,7 @@
             // 
             this.CharacterPicture2.BackColor = System.Drawing.Color.Transparent;
             this.CharacterPicture2.BackgroundImage = global::Avalon.Properties.Resources.Postacbckg;
-            this.CharacterPicture2.Location = new System.Drawing.Point(370, 52);
+            this.CharacterPicture2.Location = new System.Drawing.Point(364, 52);
             this.CharacterPicture2.Name = "CharacterPicture2";
             this.CharacterPicture2.Size = new System.Drawing.Size(80, 128);
             this.CharacterPicture2.TabIndex = 35;
@@ -2231,7 +2082,7 @@
             // 
             this.LeaderIcon2.BackColor = System.Drawing.Color.Transparent;
             this.LeaderIcon2.BackgroundImage = global::Avalon.Properties.Resources.Lider;
-            this.LeaderIcon2.Location = new System.Drawing.Point(395, 10);
+            this.LeaderIcon2.Location = new System.Drawing.Point(389, 10);
             this.LeaderIcon2.Name = "LeaderIcon2";
             this.LeaderIcon2.Size = new System.Drawing.Size(29, 40);
             this.LeaderIcon2.TabIndex = 34;
@@ -2314,7 +2165,7 @@
             // Connectbckg
             // 
             this.Connectbckg.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.Connectbckg.Location = new System.Drawing.Point(483, 315);
+            this.Connectbckg.Location = new System.Drawing.Point(459, 284);
             this.Connectbckg.Name = "Connectbckg";
             this.Connectbckg.Size = new System.Drawing.Size(400, 180);
             this.Connectbckg.TabIndex = 2;
@@ -2324,7 +2175,7 @@
             // 
             this.MinimizeButton.BackColor = System.Drawing.Color.Transparent;
             this.MinimizeButton.BackgroundImage = global::Avalon.Properties.Resources.minimizeBckg;
-            this.MinimizeButton.Location = new System.Drawing.Point(1274, 0);
+            this.MinimizeButton.Location = new System.Drawing.Point(1232, 0);
             this.MinimizeButton.Name = "MinimizeButton";
             this.MinimizeButton.Size = new System.Drawing.Size(67, 56);
             this.MinimizeButton.TabIndex = 1;
@@ -2337,7 +2188,7 @@
             // 
             this.ExitButton.BackColor = System.Drawing.Color.Transparent;
             this.ExitButton.BackgroundImage = global::Avalon.Properties.Resources.xBckg;
-            this.ExitButton.Location = new System.Drawing.Point(1341, 0);
+            this.ExitButton.Location = new System.Drawing.Point(1299, 0);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(67, 56);
             this.ExitButton.TabIndex = 0;
@@ -2362,154 +2213,465 @@
             this.PlayerAreaPicture2.BackColor = System.Drawing.Color.Transparent;
             this.PlayerAreaPicture2.BackgroundImage = global::Avalon.Properties.Resources.player2Bckg;
             this.PlayerAreaPicture2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PlayerAreaPicture2.Location = new System.Drawing.Point(280, 5);
+            this.PlayerAreaPicture2.Location = new System.Drawing.Point(274, 5);
             this.PlayerAreaPicture2.Name = "PlayerAreaPicture2";
             this.PlayerAreaPicture2.Size = new System.Drawing.Size(260, 205);
             this.PlayerAreaPicture2.TabIndex = 47;
             this.PlayerAreaPicture2.TabStop = false;
             // 
+            // NumberForMission1
+            // 
+            this.NumberForMission1.AutoSize = true;
+            this.NumberForMission1.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission1.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission1.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission1.Location = new System.Drawing.Point(326, 231);
+            this.NumberForMission1.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission1.Name = "NumberForMission1";
+            this.NumberForMission1.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission1.TabIndex = 172;
+            this.NumberForMission1.Text = "Skład : 3";
+            this.NumberForMission1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission1.Visible = false;
+            // 
+            // MissionResultPic1
+            // 
+            this.MissionResultPic1.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic1.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic1.Location = new System.Drawing.Point(326, 247);
+            this.MissionResultPic1.Name = "MissionResultPic1";
+            this.MissionResultPic1.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic1.TabIndex = 167;
+            this.MissionResultPic1.TabStop = false;
+            this.MissionResultPic1.Visible = false;
+            // 
+            // Mission1Table
+            // 
+            this.Mission1Table.AutoSize = true;
+            this.Mission1Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission1Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission1Table.ForeColor = System.Drawing.Color.Lime;
+            this.Mission1Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission1Table.Location = new System.Drawing.Point(299, 382);
+            this.Mission1Table.MaximumSize = new System.Drawing.Size(130, 104);
+            this.Mission1Table.MinimumSize = new System.Drawing.Size(130, 104);
+            this.Mission1Table.Name = "Mission1Table";
+            this.Mission1Table.Size = new System.Drawing.Size(130, 104);
+            this.Mission1Table.TabIndex = 177;
+            this.Mission1Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission1Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission1Table.Visible = false;
+            // 
+            // MissionResultPic2
+            // 
+            this.MissionResultPic2.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic2.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic2.Location = new System.Drawing.Point(459, 247);
+            this.MissionResultPic2.Name = "MissionResultPic2";
+            this.MissionResultPic2.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic2.TabIndex = 171;
+            this.MissionResultPic2.TabStop = false;
+            this.MissionResultPic2.Visible = false;
+            // 
+            // NumberForMission2
+            // 
+            this.NumberForMission2.AutoSize = true;
+            this.NumberForMission2.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission2.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission2.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission2.Location = new System.Drawing.Point(459, 231);
+            this.NumberForMission2.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission2.Name = "NumberForMission2";
+            this.NumberForMission2.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission2.TabIndex = 173;
+            this.NumberForMission2.Text = "Skład : 3";
+            this.NumberForMission2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission2.Visible = false;
+            // 
+            // Mission2Table
+            // 
+            this.Mission2Table.AutoSize = true;
+            this.Mission2Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission2Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission2Table.ForeColor = System.Drawing.Color.OrangeRed;
+            this.Mission2Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission2Table.Location = new System.Drawing.Point(438, 382);
+            this.Mission2Table.MaximumSize = new System.Drawing.Size(130, 104);
+            this.Mission2Table.MinimumSize = new System.Drawing.Size(130, 104);
+            this.Mission2Table.Name = "Mission2Table";
+            this.Mission2Table.Size = new System.Drawing.Size(130, 104);
+            this.Mission2Table.TabIndex = 178;
+            this.Mission2Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission2Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission2Table.Visible = false;
+            // 
+            // NumberForMission3
+            // 
+            this.NumberForMission3.AutoSize = true;
+            this.NumberForMission3.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission3.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission3.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission3.Location = new System.Drawing.Point(594, 231);
+            this.NumberForMission3.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission3.Name = "NumberForMission3";
+            this.NumberForMission3.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission3.TabIndex = 174;
+            this.NumberForMission3.Text = "Skład : 3";
+            this.NumberForMission3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission3.Visible = false;
+            // 
+            // NumberForMission4
+            // 
+            this.NumberForMission4.AutoSize = true;
+            this.NumberForMission4.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission4.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission4.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission4.Location = new System.Drawing.Point(733, 231);
+            this.NumberForMission4.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission4.Name = "NumberForMission4";
+            this.NumberForMission4.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission4.TabIndex = 175;
+            this.NumberForMission4.Text = "Skład : 3";
+            this.NumberForMission4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission4.Visible = false;
+            // 
+            // MissionResultPic4
+            // 
+            this.MissionResultPic4.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic4.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic4.Location = new System.Drawing.Point(733, 247);
+            this.MissionResultPic4.Name = "MissionResultPic4";
+            this.MissionResultPic4.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic4.TabIndex = 169;
+            this.MissionResultPic4.TabStop = false;
+            this.MissionResultPic4.Visible = false;
+            // 
+            // MissionResultPic5
+            // 
+            this.MissionResultPic5.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic5.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic5.Location = new System.Drawing.Point(865, 247);
+            this.MissionResultPic5.Name = "MissionResultPic5";
+            this.MissionResultPic5.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic5.TabIndex = 168;
+            this.MissionResultPic5.TabStop = false;
+            this.MissionResultPic5.Visible = false;
+            // 
+            // Mission5Table
+            // 
+            this.Mission5Table.AutoSize = true;
+            this.Mission5Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission5Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission5Table.ForeColor = System.Drawing.Color.Lime;
+            this.Mission5Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission5Table.Location = new System.Drawing.Point(842, 382);
+            this.Mission5Table.MaximumSize = new System.Drawing.Size(130, 104);
+            this.Mission5Table.MinimumSize = new System.Drawing.Size(130, 104);
+            this.Mission5Table.Name = "Mission5Table";
+            this.Mission5Table.Size = new System.Drawing.Size(130, 104);
+            this.Mission5Table.TabIndex = 181;
+            this.Mission5Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission5Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission5Table.Visible = false;
+            // 
+            // NumberForMission5
+            // 
+            this.NumberForMission5.AutoSize = true;
+            this.NumberForMission5.BackColor = System.Drawing.Color.Transparent;
+            this.NumberForMission5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.NumberForMission5.ForeColor = System.Drawing.Color.Aquamarine;
+            this.NumberForMission5.Image = global::Avalon.Properties.Resources.noTeamBckg;
+            this.NumberForMission5.Location = new System.Drawing.Point(865, 231);
+            this.NumberForMission5.MinimumSize = new System.Drawing.Size(80, 0);
+            this.NumberForMission5.Name = "NumberForMission5";
+            this.NumberForMission5.Size = new System.Drawing.Size(80, 13);
+            this.NumberForMission5.TabIndex = 176;
+            this.NumberForMission5.Text = "Skład : 3";
+            this.NumberForMission5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.NumberForMission5.Visible = false;
+            // 
+            // Mission4Table
+            // 
+            this.Mission4Table.AutoSize = true;
+            this.Mission4Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission4Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission4Table.ForeColor = System.Drawing.Color.OrangeRed;
+            this.Mission4Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission4Table.Location = new System.Drawing.Point(707, 382);
+            this.Mission4Table.MaximumSize = new System.Drawing.Size(130, 104);
+            this.Mission4Table.MinimumSize = new System.Drawing.Size(130, 104);
+            this.Mission4Table.Name = "Mission4Table";
+            this.Mission4Table.Size = new System.Drawing.Size(130, 104);
+            this.Mission4Table.TabIndex = 180;
+            this.Mission4Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission4Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission4Table.Visible = false;
+            // 
+            // MissionResultPic3
+            // 
+            this.MissionResultPic3.BackColor = System.Drawing.Color.Transparent;
+            this.MissionResultPic3.BackgroundImage = global::Avalon.Properties.Resources.VoteBack;
+            this.MissionResultPic3.Location = new System.Drawing.Point(594, 247);
+            this.MissionResultPic3.Name = "MissionResultPic3";
+            this.MissionResultPic3.Size = new System.Drawing.Size(80, 128);
+            this.MissionResultPic3.TabIndex = 170;
+            this.MissionResultPic3.TabStop = false;
+            this.MissionResultPic3.Visible = false;
+            // 
+            // Mission3Table
+            // 
+            this.Mission3Table.AutoSize = true;
+            this.Mission3Table.BackColor = System.Drawing.Color.Transparent;
+            this.Mission3Table.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.Mission3Table.ForeColor = System.Drawing.Color.Lime;
+            this.Mission3Table.Image = global::Avalon.Properties.Resources.levelScoreBckg;
+            this.Mission3Table.Location = new System.Drawing.Point(574, 382);
+            this.Mission3Table.MaximumSize = new System.Drawing.Size(130, 104);
+            this.Mission3Table.MinimumSize = new System.Drawing.Size(130, 104);
+            this.Mission3Table.Name = "Mission3Table";
+            this.Mission3Table.Size = new System.Drawing.Size(130, 104);
+            this.Mission3Table.TabIndex = 179;
+            this.Mission3Table.Text = "Sukcesy : 2\r\nPorażki : 1\r\nSkład:\r\nGracz1\r\nGracz2\r\nGracz3\r\nGracz4\r\nGracz5";
+            this.Mission3Table.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Mission3Table.Visible = false;
+            // 
+            // ChoicePicture10
+            // 
+            this.ChoicePicture10.BackColor = System.Drawing.Color.Transparent;
+            this.ChoicePicture10.BackgroundImage = global::Avalon.Properties.Resources.VoteTeam;
+            this.ChoicePicture10.Location = new System.Drawing.Point(180, 484);
+            this.ChoicePicture10.Name = "ChoicePicture10";
+            this.ChoicePicture10.Size = new System.Drawing.Size(80, 128);
+            this.ChoicePicture10.TabIndex = 149;
+            this.ChoicePicture10.TabStop = false;
+            this.ChoicePicture10.Visible = false;
+            // 
+            // LadyPicture10
+            // 
+            this.LadyPicture10.BackColor = System.Drawing.Color.Transparent;
+            this.LadyPicture10.BackgroundImage = global::Avalon.Properties.Resources.PaniJeziora;
+            this.LadyPicture10.Location = new System.Drawing.Point(10, 484);
+            this.LadyPicture10.Name = "LadyPicture10";
+            this.LadyPicture10.Size = new System.Drawing.Size(80, 128);
+            this.LadyPicture10.TabIndex = 148;
+            this.LadyPicture10.TabStop = false;
+            this.LadyPicture10.Visible = false;
+            // 
+            // PlayerAreaPicture10
+            // 
+            this.PlayerAreaPicture10.BackColor = System.Drawing.Color.Transparent;
+            this.PlayerAreaPicture10.BackgroundImage = global::Avalon.Properties.Resources.player10Bckg;
+            this.PlayerAreaPicture10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PlayerAreaPicture10.Location = new System.Drawing.Point(5, 437);
+            this.PlayerAreaPicture10.Name = "PlayerAreaPicture10";
+            this.PlayerAreaPicture10.Size = new System.Drawing.Size(260, 205);
+            this.PlayerAreaPicture10.TabIndex = 159;
+            this.PlayerAreaPicture10.TabStop = false;
+            // 
             // BackgroundImage
             // 
             this.BackgroundImage.BackgroundImage = global::Avalon.Properties.Resources.bckg;
+            this.BackgroundImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BackgroundImage.Location = new System.Drawing.Point(0, 0);
             this.BackgroundImage.Name = "BackgroundImage";
-            this.BackgroundImage.Size = new System.Drawing.Size(1408, 792);
+            this.BackgroundImage.Size = new System.Drawing.Size(1366, 768);
             this.BackgroundImage.TabIndex = 184;
             this.BackgroundImage.TabStop = false;
             // 
-            // TeamMembersLeftLabel
+            // WhoVotedLabel
             // 
-            this.TeamMembersLeftLabel.AutoSize = true;
-            this.TeamMembersLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.TeamMembersLeftLabel.ForeColor = System.Drawing.Color.White;
-            this.TeamMembersLeftLabel.Image = global::Avalon.Properties.Resources.InTeam;
-            this.TeamMembersLeftLabel.Location = new System.Drawing.Point(1095, 309);
-            this.TeamMembersLeftLabel.MaximumSize = new System.Drawing.Size(25, 36);
-            this.TeamMembersLeftLabel.MinimumSize = new System.Drawing.Size(25, 36);
-            this.TeamMembersLeftLabel.Name = "TeamMembersLeftLabel";
-            this.TeamMembersLeftLabel.Size = new System.Drawing.Size(25, 36);
-            this.TeamMembersLeftLabel.TabIndex = 185;
-            this.TeamMembersLeftLabel.Text = "0";
-            this.TeamMembersLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.TeamMembersLeftLabel.Visible = false;
+            this.WhoVotedLabel.AutoSize = true;
+            this.WhoVotedLabel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.WhoVotedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.WhoVotedLabel.ForeColor = System.Drawing.Color.White;
+            this.WhoVotedLabel.Location = new System.Drawing.Point(1318, 628);
+            this.WhoVotedLabel.MaximumSize = new System.Drawing.Size(46, 132);
+            this.WhoVotedLabel.MinimumSize = new System.Drawing.Size(46, 132);
+            this.WhoVotedLabel.Name = "WhoVotedLabel";
+            this.WhoVotedLabel.Size = new System.Drawing.Size(46, 132);
+            this.WhoVotedLabel.TabIndex = 191;
             // 
-            // FailedVotes1
+            // RoleLabel1
             // 
-            this.FailedVotes1.AutoSize = true;
-            this.FailedVotes1.BackColor = System.Drawing.Color.Red;
-            this.FailedVotes1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FailedVotes1.ForeColor = System.Drawing.Color.White;
-            this.FailedVotes1.Location = new System.Drawing.Point(1093, 363);
-            this.FailedVotes1.MaximumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes1.MinimumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes1.Name = "FailedVotes1";
-            this.FailedVotes1.Size = new System.Drawing.Size(30, 30);
-            this.FailedVotes1.TabIndex = 186;
-            this.FailedVotes1.Text = "1";
-            this.FailedVotes1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FailedVotes1.Visible = false;
+            this.RoleLabel1.AutoSize = true;
+            this.RoleLabel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel1.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel1.Location = new System.Drawing.Point(93, 343);
+            this.RoleLabel1.Name = "RoleLabel1";
+            this.RoleLabel1.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel1.TabIndex = 192;
+            this.RoleLabel1.Text = "label1";
+            this.RoleLabel1.Visible = false;
             // 
-            // FailedVotes2
+            // RoleLabel2
             // 
-            this.FailedVotes2.AutoSize = true;
-            this.FailedVotes2.BackColor = System.Drawing.Color.Red;
-            this.FailedVotes2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FailedVotes2.ForeColor = System.Drawing.Color.White;
-            this.FailedVotes2.Location = new System.Drawing.Point(1093, 407);
-            this.FailedVotes2.MaximumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes2.MinimumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes2.Name = "FailedVotes2";
-            this.FailedVotes2.Size = new System.Drawing.Size(30, 30);
-            this.FailedVotes2.TabIndex = 187;
-            this.FailedVotes2.Text = "2";
-            this.FailedVotes2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FailedVotes2.Visible = false;
+            this.RoleLabel2.AutoSize = true;
+            this.RoleLabel2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel2.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel2.Location = new System.Drawing.Point(362, 177);
+            this.RoleLabel2.Name = "RoleLabel2";
+            this.RoleLabel2.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel2.TabIndex = 193;
+            this.RoleLabel2.Text = "label1";
+            this.RoleLabel2.Visible = false;
             // 
-            // FailedVotes3
+            // RoleLabel3
             // 
-            this.FailedVotes3.AutoSize = true;
-            this.FailedVotes3.BackColor = System.Drawing.Color.Red;
-            this.FailedVotes3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FailedVotes3.ForeColor = System.Drawing.Color.White;
-            this.FailedVotes3.Location = new System.Drawing.Point(1093, 452);
-            this.FailedVotes3.MaximumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes3.MinimumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes3.Name = "FailedVotes3";
-            this.FailedVotes3.Size = new System.Drawing.Size(30, 30);
-            this.FailedVotes3.TabIndex = 188;
-            this.FailedVotes3.Text = "3";
-            this.FailedVotes3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FailedVotes3.Visible = false;
+            this.RoleLabel3.AutoSize = true;
+            this.RoleLabel3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel3.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel3.Location = new System.Drawing.Point(641, 178);
+            this.RoleLabel3.Name = "RoleLabel3";
+            this.RoleLabel3.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel3.TabIndex = 193;
+            this.RoleLabel3.Text = "label1";
+            this.RoleLabel3.Visible = false;
             // 
-            // FailedVotes4
+            // RoleLabel4
             // 
-            this.FailedVotes4.AutoSize = true;
-            this.FailedVotes4.BackColor = System.Drawing.Color.Red;
-            this.FailedVotes4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FailedVotes4.ForeColor = System.Drawing.Color.White;
-            this.FailedVotes4.Location = new System.Drawing.Point(1093, 496);
-            this.FailedVotes4.MaximumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes4.MinimumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes4.Name = "FailedVotes4";
-            this.FailedVotes4.Size = new System.Drawing.Size(30, 30);
-            this.FailedVotes4.TabIndex = 189;
-            this.FailedVotes4.Text = "4";
-            this.FailedVotes4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FailedVotes4.Visible = false;
+            this.RoleLabel4.AutoSize = true;
+            this.RoleLabel4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel4.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel4.Location = new System.Drawing.Point(916, 177);
+            this.RoleLabel4.Name = "RoleLabel4";
+            this.RoleLabel4.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel4.TabIndex = 193;
+            this.RoleLabel4.Text = "label1";
+            this.RoleLabel4.Visible = false;
             // 
-            // FailedVotes5
+            // RoleLabel5
             // 
-            this.FailedVotes5.AutoSize = true;
-            this.FailedVotes5.BackColor = System.Drawing.Color.Red;
-            this.FailedVotes5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.FailedVotes5.ForeColor = System.Drawing.Color.White;
-            this.FailedVotes5.Location = new System.Drawing.Point(1093, 537);
-            this.FailedVotes5.MaximumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes5.MinimumSize = new System.Drawing.Size(30, 30);
-            this.FailedVotes5.Name = "FailedVotes5";
-            this.FailedVotes5.Size = new System.Drawing.Size(30, 30);
-            this.FailedVotes5.TabIndex = 190;
-            this.FailedVotes5.Text = "5";
-            this.FailedVotes5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.FailedVotes5.Visible = false;
+            this.RoleLabel5.AutoSize = true;
+            this.RoleLabel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel5.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel5.Location = new System.Drawing.Point(1192, 342);
+            this.RoleLabel5.Name = "RoleLabel5";
+            this.RoleLabel5.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel5.TabIndex = 193;
+            this.RoleLabel5.Text = "label1";
+            this.RoleLabel5.Visible = false;
+            // 
+            // RoleLabel6
+            // 
+            this.RoleLabel6.AutoSize = true;
+            this.RoleLabel6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel6.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel6.Location = new System.Drawing.Point(1192, 610);
+            this.RoleLabel6.Name = "RoleLabel6";
+            this.RoleLabel6.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel6.TabIndex = 193;
+            this.RoleLabel6.Text = "label1";
+            this.RoleLabel6.Visible = false;
+            // 
+            // RoleLabel7
+            // 
+            this.RoleLabel7.AutoSize = true;
+            this.RoleLabel7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel7.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel7.Location = new System.Drawing.Point(916, 726);
+            this.RoleLabel7.Name = "RoleLabel7";
+            this.RoleLabel7.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel7.TabIndex = 193;
+            this.RoleLabel7.Text = "label1";
+            this.RoleLabel7.Visible = false;
+            // 
+            // RoleLabel8
+            // 
+            this.RoleLabel8.AutoSize = true;
+            this.RoleLabel8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel8.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel8.Location = new System.Drawing.Point(641, 726);
+            this.RoleLabel8.Name = "RoleLabel8";
+            this.RoleLabel8.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel8.TabIndex = 193;
+            this.RoleLabel8.Text = "label1";
+            this.RoleLabel8.Visible = false;
+            // 
+            // RoleLabel10
+            // 
+            this.RoleLabel10.AutoSize = true;
+            this.RoleLabel10.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel10.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel10.Location = new System.Drawing.Point(93, 610);
+            this.RoleLabel10.Name = "RoleLabel10";
+            this.RoleLabel10.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel10.TabIndex = 193;
+            this.RoleLabel10.Text = "label1";
+            this.RoleLabel10.Visible = false;
+            // 
+            // RoleLabel9
+            // 
+            this.RoleLabel9.AutoSize = true;
+            this.RoleLabel9.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RoleLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.RoleLabel9.ForeColor = System.Drawing.Color.White;
+            this.RoleLabel9.Location = new System.Drawing.Point(362, 726);
+            this.RoleLabel9.Name = "RoleLabel9";
+            this.RoleLabel9.Size = new System.Drawing.Size(25, 9);
+            this.RoleLabel9.TabIndex = 193;
+            this.RoleLabel9.Text = "label1";
+            this.RoleLabel9.Visible = false;
             // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1408, 792);
+            this.ClientSize = new System.Drawing.Size(1366, 768);
             this.ControlBox = false;
-            this.Controls.Add(this.GameResultImage);
-            this.Controls.Add(this.LadyCheckButton10);
-            this.Controls.Add(this.ChoiceAgainstButton10);
-            this.Controls.Add(this.ChoiceAcceptButton10);
-            this.Controls.Add(this.LadyCheckButton9);
-            this.Controls.Add(this.ChoiceAgainstButton9);
-            this.Controls.Add(this.ChoiceAcceptButton9);
-            this.Controls.Add(this.LadyCheckButton8);
-            this.Controls.Add(this.ChoiceAgainstButton8);
-            this.Controls.Add(this.ChoiceAcceptButton8);
-            this.Controls.Add(this.LadyCheckButton7);
-            this.Controls.Add(this.ChoiceAgainstButton7);
-            this.Controls.Add(this.ChoiceAcceptButton7);
-            this.Controls.Add(this.LadyCheckButton6);
-            this.Controls.Add(this.ChoiceAgainstButton6);
-            this.Controls.Add(this.ChoiceAcceptButton6);
+            this.Controls.Add(this.RoleLabel10);
+            this.Controls.Add(this.RoleLabel9);
+            this.Controls.Add(this.RoleLabel8);
+            this.Controls.Add(this.RoleLabel7);
+            this.Controls.Add(this.RoleLabel6);
+            this.Controls.Add(this.RoleLabel5);
+            this.Controls.Add(this.RoleLabel4);
+            this.Controls.Add(this.RoleLabel3);
+            this.Controls.Add(this.RoleLabel2);
+            this.Controls.Add(this.RoleLabel1);
+            this.Controls.Add(this.ChoiceAgainstButton1);
+            this.Controls.Add(this.ChoiceAcceptButton1);
+            this.Controls.Add(this.LadyCheckButton1);
+            this.Controls.Add(this.ChoiceAgainstButton2);
+            this.Controls.Add(this.ChoiceAcceptButton2);
+            this.Controls.Add(this.LadyCheckButton2);
+            this.Controls.Add(this.LadyCheckButton4);
+            this.Controls.Add(this.ChoiceAgainstButton3);
+            this.Controls.Add(this.ChoiceAcceptButton3);
+            this.Controls.Add(this.LadyCheckButton3);
+            this.Controls.Add(this.ChoiceAgainstButton4);
+            this.Controls.Add(this.ChoiceAcceptButton4);
             this.Controls.Add(this.ChoiceAgainstButton5);
             this.Controls.Add(this.ChoiceAcceptButton5);
             this.Controls.Add(this.LadyCheckButton5);
-            this.Controls.Add(this.LadyCheckButton1);
-            this.Controls.Add(this.LadyCheckButton2);
-            this.Controls.Add(this.LadyCheckButton4);
-            this.Controls.Add(this.ChoiceAcceptButton4);
-            this.Controls.Add(this.ChoiceAgainstButton4);
-            this.Controls.Add(this.LadyCheckButton3);
-            this.Controls.Add(this.ChoiceAcceptButton3);
-            this.Controls.Add(this.ChoiceAgainstButton3);
-            this.Controls.Add(this.ChoiceAcceptButton2);
-            this.Controls.Add(this.ChoiceAgainstButton2);
-            this.Controls.Add(this.ChoiceAcceptButton1);
-            this.Controls.Add(this.ChoiceAgainstButton1);
+            this.Controls.Add(this.ChoiceAgainstButton6);
+            this.Controls.Add(this.ChoiceAcceptButton6);
+            this.Controls.Add(this.LadyCheckButton6);
+            this.Controls.Add(this.ChoiceAgainstButton7);
+            this.Controls.Add(this.ChoiceAcceptButton7);
+            this.Controls.Add(this.LadyCheckButton7);
+            this.Controls.Add(this.ChoiceAgainstButton8);
+            this.Controls.Add(this.ChoiceAcceptButton8);
+            this.Controls.Add(this.LadyCheckButton8);
+            this.Controls.Add(this.ChoiceAgainstButton9);
+            this.Controls.Add(this.ChoiceAcceptButton9);
+            this.Controls.Add(this.LadyCheckButton9);
+            this.Controls.Add(this.ChoiceAgainstButton10);
+            this.Controls.Add(this.ChoiceAcceptButton10);
+            this.Controls.Add(this.LadyCheckButton10);
+            this.Controls.Add(this.GameResultImage);
             this.Controls.Add(this.FailedVotes5);
             this.Controls.Add(this.FailedVotes4);
             this.Controls.Add(this.FailedVotes3);
@@ -2530,96 +2692,70 @@
             this.Controls.Add(this.RemoveFromTeamButton10);
             this.Controls.Add(this.AddToTeamButton10);
             this.Controls.Add(this.InTeamIcon10);
-            this.Controls.Add(this.ChoicePicture10);
-            this.Controls.Add(this.LadyPicture10);
             this.Controls.Add(this.CharacterPicture10);
             this.Controls.Add(this.LeaderIcon10);
-            this.Controls.Add(this.PlayerAreaPicture10);
             this.Controls.Add(this.AwayButton9);
             this.Controls.Add(this.SitButton9);
             this.Controls.Add(this.NicknameLabel9);
             this.Controls.Add(this.RemoveFromTeamButton9);
             this.Controls.Add(this.AddToTeamButton9);
             this.Controls.Add(this.InTeamIcon9);
-            this.Controls.Add(this.ChoicePicture9);
-            this.Controls.Add(this.LadyPicture9);
             this.Controls.Add(this.CharacterPicture9);
             this.Controls.Add(this.LeaderIcon9);
-            this.Controls.Add(this.PlayerAreaPicture9);
             this.Controls.Add(this.AwayButton8);
             this.Controls.Add(this.SitButton8);
             this.Controls.Add(this.NicknameLabel8);
             this.Controls.Add(this.RemoveFromTeamButton8);
             this.Controls.Add(this.AddToTeamButton8);
             this.Controls.Add(this.InTeamIcon8);
-            this.Controls.Add(this.ChoicePicture8);
-            this.Controls.Add(this.LadyPicture8);
             this.Controls.Add(this.CharacterPicture8);
             this.Controls.Add(this.LeaderIcon8);
-            this.Controls.Add(this.PlayerAreaPicture8);
             this.Controls.Add(this.AwayButton7);
             this.Controls.Add(this.SitButton7);
             this.Controls.Add(this.NicknameLabel7);
             this.Controls.Add(this.RemoveFromTeamButton7);
             this.Controls.Add(this.AddToTeamButton7);
             this.Controls.Add(this.InTeamIcon7);
-            this.Controls.Add(this.ChoicePicture7);
-            this.Controls.Add(this.LadyPicture7);
             this.Controls.Add(this.CharacterPicture7);
             this.Controls.Add(this.LeaderIcon7);
-            this.Controls.Add(this.PlayerAreaPicture7);
             this.Controls.Add(this.AwayButton6);
             this.Controls.Add(this.SitButton6);
             this.Controls.Add(this.NicknameLabel6);
             this.Controls.Add(this.RemoveFromTeamButton6);
             this.Controls.Add(this.AddToTeamButton6);
             this.Controls.Add(this.InTeamIcon6);
-            this.Controls.Add(this.ChoicePicture6);
-            this.Controls.Add(this.LadyPicture6);
             this.Controls.Add(this.CharacterPicture6);
             this.Controls.Add(this.LeaderIcon6);
-            this.Controls.Add(this.PlayerAreaPicture6);
             this.Controls.Add(this.AwayButton5);
             this.Controls.Add(this.SitButton5);
             this.Controls.Add(this.NicknameLabel5);
             this.Controls.Add(this.RemoveFromTeamButton5);
             this.Controls.Add(this.AddToTeamButton5);
             this.Controls.Add(this.InTeamIcon5);
-            this.Controls.Add(this.ChoicePicture5);
-            this.Controls.Add(this.LadyPicture5);
             this.Controls.Add(this.CharacterPicture5);
             this.Controls.Add(this.LeaderIcon5);
-            this.Controls.Add(this.PlayerAreaPicture5);
             this.Controls.Add(this.AwayButton4);
             this.Controls.Add(this.SitButton4);
             this.Controls.Add(this.NicknameLabel4);
             this.Controls.Add(this.RemoveFromTeamButton4);
             this.Controls.Add(this.AddToTeamButton4);
             this.Controls.Add(this.InTeamIcon4);
-            this.Controls.Add(this.ChoicePicture4);
-            this.Controls.Add(this.LadyPicture4);
             this.Controls.Add(this.CharacterPicture4);
             this.Controls.Add(this.LeaderIcon4);
-            this.Controls.Add(this.PlayerAreaPicture4);
             this.Controls.Add(this.AwayButton3);
             this.Controls.Add(this.SitButton3);
             this.Controls.Add(this.NicknameLabel3);
             this.Controls.Add(this.RemoveFromTeamButton3);
             this.Controls.Add(this.AddToTeamButton3);
             this.Controls.Add(this.InTeamIcon3);
-            this.Controls.Add(this.ChoicePicture3);
-            this.Controls.Add(this.LadyPicture3);
             this.Controls.Add(this.CharacterPicture3);
             this.Controls.Add(this.LeaderIcon3);
-            this.Controls.Add(this.PlayerAreaPicture3);
             this.Controls.Add(this.AwayButton2);
             this.Controls.Add(this.SitButton2);
             this.Controls.Add(this.NicknameLabel2);
             this.Controls.Add(this.RemoveFromTeamButton2);
             this.Controls.Add(this.AddToTeamButton2);
             this.Controls.Add(this.InTeamIcon2);
-            this.Controls.Add(this.ChoicePicture2);
-            this.Controls.Add(this.LadyPicture2);
             this.Controls.Add(this.CharacterPicture2);
             this.Controls.Add(this.LeaderIcon2);
             this.Controls.Add(this.AwayButton1);
@@ -2628,8 +2764,6 @@
             this.Controls.Add(this.RemoveFromTeamButton1);
             this.Controls.Add(this.AddToTeamButton1);
             this.Controls.Add(this.InTeamIcon1);
-            this.Controls.Add(this.ChoicePicture1);
-            this.Controls.Add(this.LadyPicture1);
             this.Controls.Add(this.CharacterPicture1);
             this.Controls.Add(this.LeaderIcon1);
             this.Controls.Add(this.NoNickLabel);
@@ -2643,8 +2777,6 @@
             this.Controls.Add(this.Connectbckg);
             this.Controls.Add(this.MinimizeButton);
             this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.PlayerAreaPicture1);
-            this.Controls.Add(this.PlayerAreaPicture2);
             this.Controls.Add(this.NumberForMission1);
             this.Controls.Add(this.MissionResultPic1);
             this.Controls.Add(this.Mission1Table);
@@ -2660,6 +2792,37 @@
             this.Controls.Add(this.Mission4Table);
             this.Controls.Add(this.MissionResultPic3);
             this.Controls.Add(this.Mission3Table);
+            this.Controls.Add(this.LadyPicture10);
+            this.Controls.Add(this.ChoicePicture10);
+            this.Controls.Add(this.LadyPicture9);
+            this.Controls.Add(this.LadyPicture8);
+            this.Controls.Add(this.ChoicePicture9);
+            this.Controls.Add(this.ChoicePicture8);
+            this.Controls.Add(this.LadyPicture7);
+            this.Controls.Add(this.ChoicePicture7);
+            this.Controls.Add(this.LadyPicture6);
+            this.Controls.Add(this.ChoicePicture6);
+            this.Controls.Add(this.LadyPicture5);
+            this.Controls.Add(this.ChoicePicture5);
+            this.Controls.Add(this.LadyPicture4);
+            this.Controls.Add(this.ChoicePicture4);
+            this.Controls.Add(this.LadyPicture3);
+            this.Controls.Add(this.ChoicePicture3);
+            this.Controls.Add(this.LadyPicture2);
+            this.Controls.Add(this.ChoicePicture2);
+            this.Controls.Add(this.LadyPicture1);
+            this.Controls.Add(this.ChoicePicture1);
+            this.Controls.Add(this.PlayerAreaPicture10);
+            this.Controls.Add(this.PlayerAreaPicture9);
+            this.Controls.Add(this.PlayerAreaPicture8);
+            this.Controls.Add(this.PlayerAreaPicture7);
+            this.Controls.Add(this.PlayerAreaPicture6);
+            this.Controls.Add(this.PlayerAreaPicture5);
+            this.Controls.Add(this.PlayerAreaPicture4);
+            this.Controls.Add(this.PlayerAreaPicture3);
+            this.Controls.Add(this.PlayerAreaPicture2);
+            this.Controls.Add(this.PlayerAreaPicture1);
+            this.Controls.Add(this.WhoVotedLabel);
             this.Controls.Add(this.BackgroundImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2667,22 +2830,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Avalon";
             ((System.ComponentModel.ISupportInitialize)(this.GameResultImage)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ParsifalChoiceImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LadyChoiceImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OberonChoiceImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MorganaChoiceImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MordredChoiceImg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InTeamIcon10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ChoicePicture10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LadyPicture10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharacterPicture10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LeaderIcon10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.InTeamIcon9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ChoicePicture9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LadyPicture9)).EndInit();
@@ -2740,6 +2895,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ExitButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MissionResultPic3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ChoicePicture10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LadyPicture10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlayerAreaPicture10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BackgroundImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2930,6 +3093,17 @@
         private System.Windows.Forms.Label FailedVotes3;
         private System.Windows.Forms.Label FailedVotes4;
         private System.Windows.Forms.Label FailedVotes5;
+        private System.Windows.Forms.Label WhoVotedLabel;
+        private System.Windows.Forms.Label RoleLabel1;
+        private System.Windows.Forms.Label RoleLabel2;
+        private System.Windows.Forms.Label RoleLabel3;
+        private System.Windows.Forms.Label RoleLabel4;
+        private System.Windows.Forms.Label RoleLabel5;
+        private System.Windows.Forms.Label RoleLabel6;
+        private System.Windows.Forms.Label RoleLabel7;
+        private System.Windows.Forms.Label RoleLabel8;
+        private System.Windows.Forms.Label RoleLabel10;
+        private System.Windows.Forms.Label RoleLabel9;
     }
 }
 

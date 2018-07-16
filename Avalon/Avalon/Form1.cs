@@ -33,6 +33,9 @@ namespace Avalon
         bool assassin;
         bool lady;
         bool canAssassin;
+        bool merlin;
+        int version;
+        bool[] wasLady;
 
         public Game()
         {
@@ -41,6 +44,8 @@ namespace Avalon
             stage = 0;
             info = new int[7];
             seatsTaken = new bool[10];
+            NickTextBox.MaxLength = 11;
+            version = 2;
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
@@ -145,18 +150,21 @@ namespace Avalon
                             AddSelected(br.ReadString(), br.ReadString());
                             break;
                         case "gameStarted":
+                            merlin = false;
                             stage = 2;
                             inTeam = 0;
                             round = 1;
+                            wasLady = new bool[10];
                             ChangeLeader(Convert.ToInt16(br.ReadString()));
                             if (br.ReadString() == "true")
                             {
                                 ChangeLady(Convert.ToInt16(br.ReadString()));
                             }
-                            ChooseSeatToSetRole(br.ReadString(), mySeat);
+                            string myRole = br.ReadString();
+                            ChooseSeatToSetRole(myRole, mySeat);
                             while ((tmp = br.ReadString()) != "end")
                             {
-                                HighlightCharacter(Convert.ToInt16(tmp));
+                                HighlightCharacter(myRole, Convert.ToInt16(tmp), br.ReadString());
                             }
                             ChooseStageToGameStage();
                             MissionHighlight(1);
@@ -265,9 +273,25 @@ namespace Avalon
                                 LadyResult(Convert.ToInt16(br.ReadString()), false);
                             }
                             break;
+                        case "shot":
+                            Shot(Convert.ToInt16(br.ReadString()));
+                            break;
+                        case "version":
+                            if (version < Convert.ToInt16(br.ReadString()))
+                            {
+                                if (MessageBox.Show("Nowa wersja jest do pobrania, czy chcesz pobrać?", "nani?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                {
+                                    System.Diagnostics.Process.Start(br.ReadString());
+                                }
+                            }
+                            break;
+                        case "voted":
+                            Voted(Convert.ToInt16(br.ReadString()));
+                            break;
                         default:
                             break;
                     }
+                    FocusSth();
                 }
             }
             catch
@@ -287,6 +311,83 @@ namespace Avalon
                     MessageBox.Show("Serwer został wyłączony");
                 }
                 Application.Exit();
+            }
+        }
+
+        delegate void FocusSthDelegate();
+
+        private void FocusSth()
+        {
+            if(BackgroundImage.InvokeRequired)
+            {
+                FocusSthDelegate f = new FocusSthDelegate(FocusSth);
+                this.Invoke(f, new object[] { });
+            }
+            else
+            {
+                BackgroundImage.Focus();
+            }
+        }
+
+        delegate void VotedDelegate(int seat);
+
+        private void Voted(int seat)
+        {
+            if (WhoVotedLabel.InvokeRequired)
+            {
+                VotedDelegate f = new VotedDelegate(Voted);
+                this.Invoke(f, new object[] { seat });
+            }
+            else
+            {
+                WhoVotedLabel.Text += "\n#" + (seat + 1) + " voted";
+            }
+        }
+
+        delegate void ShotDelegate(int seat);
+
+        private void Shot(int seat)
+        {
+            if(CharacterPicture1.InvokeRequired || CharacterPicture2.InvokeRequired || CharacterPicture3.InvokeRequired || CharacterPicture4.InvokeRequired || CharacterPicture5.InvokeRequired || CharacterPicture6.InvokeRequired || CharacterPicture7.InvokeRequired || CharacterPicture8.InvokeRequired || CharacterPicture9.InvokeRequired || CharacterPicture10.InvokeRequired)
+            {
+                ShotDelegate f = new ShotDelegate(Shot);
+                this.Invoke(f, new object[] { seat });
+            }
+            else
+            {
+                switch(seat)
+                {
+                    case 0:
+                        CharacterPicture1.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 1:
+                        CharacterPicture2.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 2:
+                        CharacterPicture3.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 3:
+                        CharacterPicture4.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 4:
+                        CharacterPicture5.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 5:
+                        CharacterPicture6.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 6:
+                        CharacterPicture7.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 7:
+                        CharacterPicture8.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 8:
+                        CharacterPicture9.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                    case 9:
+                        CharacterPicture10.Image = Avalon.Properties.Resources.ShotCard;
+                        break;
+                }
             }
         }
 
@@ -422,78 +523,45 @@ namespace Avalon
             }
             else
             {
-                if (seatsTaken[0])
+                if (seatsTaken[0] && !wasLady[0])
                 {
                     LadyCheckButton1.Visible = true;
                 }
-                if (seatsTaken[1])
+                if (seatsTaken[1] && !wasLady[1])
                 {
                     LadyCheckButton2.Visible = true;
                 }
-                if (seatsTaken[2])
+                if (seatsTaken[2] && !wasLady[2])
                 {
                     LadyCheckButton3.Visible = true;
                 }
-                if (seatsTaken[3])
+                if (seatsTaken[3] && !wasLady[3])
                 {
                     LadyCheckButton4.Visible = true;
                 }
-                if (seatsTaken[4])
+                if (seatsTaken[4] && !wasLady[4])
                 {
                     LadyCheckButton5.Visible = true;
                 }
-                if (seatsTaken[5])
+                if (seatsTaken[5] && !wasLady[5])
                 {
                     LadyCheckButton6.Visible = true;
                 }
-                if (seatsTaken[6])
+                if (seatsTaken[6] && !wasLady[6])
                 {
                     LadyCheckButton7.Visible = true;
                 }
-                if (seatsTaken[7])
+                if (seatsTaken[7] && !wasLady[7])
                 {
                     LadyCheckButton8.Visible = true;
                 }
-                if (seatsTaken[8])
+                if (seatsTaken[8] && !wasLady[8])
                 {
                     LadyCheckButton9.Visible = true;
                 }
-                if (seatsTaken[9])
+                if (seatsTaken[9] && !wasLady[9])
                 {
                     LadyCheckButton10.Visible = true;
-                }
-                switch (mySeat)
-                {
-                    case 0:
-                        LadyCheckButton1.Visible = false;
-                        break;
-                    case 1:
-                        LadyCheckButton2.Visible = false;
-                        break;
-                    case 2:
-                        LadyCheckButton3.Visible = false;
-                        break;
-                    case 3:
-                        LadyCheckButton4.Visible = false;
-                        break;
-                    case 4:
-                        LadyCheckButton5.Visible = false;
-                        break;
-                    case 5:
-                        LadyCheckButton6.Visible = false;
-                        break;
-                    case 6:
-                        LadyCheckButton7.Visible = false;
-                        break;
-                    case 7:
-                        LadyCheckButton8.Visible = false;
-                        break;
-                    case 8:
-                        LadyCheckButton9.Visible = false;
-                        break;
-                    case 9:
-                        LadyCheckButton10.Visible = false;
-                        break;
                 }
             }
         }
@@ -911,7 +979,7 @@ namespace Avalon
                         }
                         else
                         {
-                            Mission1Table.ForeColor = Color.Red;
+                            Mission1Table.ForeColor = Color.OrangeRed;
                             MissionResultPic1.BackgroundImage = Avalon.Properties.Resources.VotePorazka;
                         }
                         MissionResultPic1.Image = null;
@@ -928,7 +996,7 @@ namespace Avalon
                         }
                         else
                         {
-                            Mission2Table.ForeColor = Color.Red;
+                            Mission2Table.ForeColor = Color.OrangeRed;
                             MissionResultPic2.BackgroundImage = Avalon.Properties.Resources.VotePorazka;
                         }
                         MissionResultPic2.Image = null;
@@ -945,7 +1013,7 @@ namespace Avalon
                         }
                         else
                         {
-                            Mission3Table.ForeColor = Color.Red;
+                            Mission3Table.ForeColor = Color.OrangeRed;
                             MissionResultPic3.BackgroundImage = Avalon.Properties.Resources.VotePorazka;
                         }
                         MissionResultPic3.Image = null;
@@ -962,7 +1030,7 @@ namespace Avalon
                         }
                         else
                         {
-                            Mission4Table.ForeColor = Color.Red;
+                            Mission4Table.ForeColor = Color.OrangeRed;
                             MissionResultPic4.BackgroundImage = Avalon.Properties.Resources.VotePorazka;
                         }
                         MissionResultPic4.Image = null;
@@ -979,7 +1047,7 @@ namespace Avalon
                         }
                         else
                         {
-                            Mission5Table.ForeColor = Color.Red;
+                            Mission5Table.ForeColor = Color.OrangeRed;
                             MissionResultPic5.BackgroundImage = Avalon.Properties.Resources.VotePorazka;
                         }
                         MissionResultPic5.Image = null;
@@ -1434,6 +1502,7 @@ namespace Avalon
             }
             else
             {
+                WhoVotedLabel.Text = "";
                 switch (mySeat)
                 {
                     case 0:
@@ -1721,6 +1790,10 @@ namespace Avalon
                 NumberForMission3.Text = "Skład : " + info[2];
                 NumberForMission4.Visible = true;
                 NumberForMission4.Text = "Skład : " + info[3];
+                if (info[3] > 3)
+                {
+                    NumberForMission4.Text += " **";
+                }
                 NumberForMission5.Visible = true;
                 NumberForMission5.Text = "Skład : " + info[4];
                 Mission1Table.Visible = true;
@@ -1781,6 +1854,7 @@ namespace Avalon
                 {
                     lady = false;
                 }
+                wasLady[seat] = true;
                 switch (seat)
                 {
                     case 0:
@@ -1927,49 +2001,138 @@ namespace Avalon
             }
         }
 
-        delegate void HighlightCharacterDelegate(int seat);
+        delegate void HighlightCharacterDelegate(string myRole, int seat, string character);
 
-        private void HighlightCharacter(int seat)
+        private void HighlightCharacter(string myRole, int seat, string character)
         {
             if (CharacterPicture1.InvokeRequired || CharacterPicture2.InvokeRequired || CharacterPicture3.InvokeRequired || CharacterPicture4.InvokeRequired || CharacterPicture5.InvokeRequired || CharacterPicture6.InvokeRequired || CharacterPicture7.InvokeRequired || CharacterPicture8.InvokeRequired || CharacterPicture9.InvokeRequired || CharacterPicture10.InvokeRequired)
             {
                 HighlightCharacterDelegate f = new HighlightCharacterDelegate(HighlightCharacter);
-                this.Invoke(f, new object[] { seat });
+                this.Invoke(f, new object[] { myRole, seat, character });
             }
             else
             {
-                switch (seat)
+                if (merlin)
                 {
-                    case 0:
-                        CharacterPicture1.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 1:
-                        CharacterPicture2.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 2:
-                        CharacterPicture3.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 3:
-                        CharacterPicture4.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 4:
-                        CharacterPicture5.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 5:
-                        CharacterPicture6.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 6:
-                        CharacterPicture7.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 7:
-                        CharacterPicture8.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 8:
-                        CharacterPicture9.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
-                    case 9:
-                        CharacterPicture10.Image = Avalon.Properties.Resources.HighlightedCard;
-                        break;
+                    switch (seat)
+                    {
+                        case 0:
+                            CharacterPicture1.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 1:
+                            CharacterPicture2.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 2:
+                            CharacterPicture3.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 3:
+                            CharacterPicture4.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 4:
+                            CharacterPicture5.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 5:
+                            CharacterPicture6.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 6:
+                            CharacterPicture7.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 7:
+                            CharacterPicture8.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 8:
+                            CharacterPicture9.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                        case 9:
+                            CharacterPicture10.Image = Avalon.Properties.Resources.HighlightedMerlinCard;
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (seat)
+                    {
+                        case 0:
+                            CharacterPicture1.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if(myRole!="Persifal")
+                            {
+                                RoleLabel1.Visible = true;
+                                RoleLabel1.Text = character;
+                            }
+                            break;
+                        case 1:
+                            CharacterPicture2.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel2.Visible = true;
+                                RoleLabel2.Text = character;
+                            }
+                            break;
+                        case 2:
+                            CharacterPicture3.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel3.Visible = true;
+                                RoleLabel3.Text = character;
+                            }
+                            break;
+                        case 3:
+                            CharacterPicture4.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel4.Visible = true;
+                                RoleLabel4.Text = character;
+                            }
+                            break;
+                        case 4:
+                            CharacterPicture5.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel5.Visible = true;
+                                RoleLabel5.Text = character;
+                            }
+                            break;
+                        case 5:
+                            CharacterPicture6.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel6.Visible = true;
+                                RoleLabel6.Text = character;
+                            }
+                            break;
+                        case 6:
+                            CharacterPicture7.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel7.Visible = true;
+                                RoleLabel7.Text = character;
+                            }
+                            break;
+                        case 7:
+                            CharacterPicture8.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel8.Visible = true;
+                                RoleLabel8.Text = character;
+                            }
+                            break;
+                        case 8:
+                            CharacterPicture9.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel9.Visible = true;
+                                RoleLabel9.Text = character;
+                            }
+                            break;
+                        case 9:
+                            CharacterPicture10.Image = Avalon.Properties.Resources.HighlightedCard;
+                            if (myRole != "Persifal")
+                            {
+                                RoleLabel10.Visible = true;
+                                RoleLabel10.Text = character;
+                            }
+                            break;
+                    }
                 }
             }
         }
@@ -2030,6 +2193,7 @@ namespace Avalon
                 case "Merlin":
                     role = Avalon.Properties.Resources.Merlin;
                     tag = 1;
+                    merlin = true;
                     break;
                 case "Persifal":
                     role = Avalon.Properties.Resources.Parsifal;
@@ -2048,7 +2212,7 @@ namespace Avalon
                     tag = 2;
                     assassin = true;
                     break;
-                case "Evil":
+                case "Zły":
                     role = Avalon.Properties.Resources.PoplecznikMordreda3;
                     tag = 2;
                     break;
@@ -2135,13 +2299,23 @@ namespace Avalon
 
         private void ChooseStarted()
         {
-            if (AwayButton1.InvokeRequired || AwayButton2.InvokeRequired || AwayButton3.InvokeRequired || AwayButton4.InvokeRequired || AwayButton5.InvokeRequired || AwayButton6.InvokeRequired || AwayButton7.InvokeRequired || AwayButton8.InvokeRequired || AwayButton9.InvokeRequired || AwayButton10.InvokeRequired || SitButton1.InvokeRequired || SitButton2.InvokeRequired || SitButton3.InvokeRequired || SitButton4.InvokeRequired || SitButton5.InvokeRequired || SitButton6.InvokeRequired || SitButton7.InvokeRequired || SitButton8.InvokeRequired || SitButton9.InvokeRequired || SitButton10.InvokeRequired || NumberForMission1.InvokeRequired || NumberForMission2.InvokeRequired || NumberForMission3.InvokeRequired || NumberForMission4.InvokeRequired || NumberForMission5.InvokeRequired || PlayersInfoLabel.InvokeRequired || MaxSpecialEvilLabel.InvokeRequired || LadyChoiceImg.InvokeRequired || MordredChoiceImg.InvokeRequired || MorganaChoiceImg.InvokeRequired || OberonChoiceImg.InvokeRequired || ParsifalChoiceImg.InvokeRequired)
+            if (RoleLabel1.InvokeRequired || RoleLabel2.InvokeRequired || RoleLabel3.InvokeRequired || RoleLabel4.InvokeRequired || RoleLabel5.InvokeRequired || RoleLabel6.InvokeRequired || RoleLabel7.InvokeRequired || RoleLabel8.InvokeRequired || RoleLabel8.InvokeRequired || RoleLabel10.InvokeRequired || AwayButton1.InvokeRequired || AwayButton2.InvokeRequired || AwayButton3.InvokeRequired || AwayButton4.InvokeRequired || AwayButton5.InvokeRequired || AwayButton6.InvokeRequired || AwayButton7.InvokeRequired || AwayButton8.InvokeRequired || AwayButton9.InvokeRequired || AwayButton10.InvokeRequired || SitButton1.InvokeRequired || SitButton2.InvokeRequired || SitButton3.InvokeRequired || SitButton4.InvokeRequired || SitButton5.InvokeRequired || SitButton6.InvokeRequired || SitButton7.InvokeRequired || SitButton8.InvokeRequired || SitButton9.InvokeRequired || SitButton10.InvokeRequired || NumberForMission1.InvokeRequired || NumberForMission2.InvokeRequired || NumberForMission3.InvokeRequired || NumberForMission4.InvokeRequired || NumberForMission5.InvokeRequired || PlayersInfoLabel.InvokeRequired || MaxSpecialEvilLabel.InvokeRequired || LadyChoiceImg.InvokeRequired || MordredChoiceImg.InvokeRequired || MorganaChoiceImg.InvokeRequired || OberonChoiceImg.InvokeRequired || ParsifalChoiceImg.InvokeRequired)
             {
                 ChooseStartedDelegate f = new ChooseStartedDelegate(ChooseStarted);
                 this.Invoke(f, new object[] { });
             }
             else
             {
+                RoleLabel1.Visible = false;
+                RoleLabel2.Visible = false;
+                RoleLabel3.Visible = false;
+                RoleLabel4.Visible = false;
+                RoleLabel5.Visible = false;
+                RoleLabel6.Visible = false;
+                RoleLabel7.Visible = false;
+                RoleLabel8.Visible = false;
+                RoleLabel8.Visible = false;
+                RoleLabel10.Visible = false;
                 NumberForMission1.Text = "Skład : " + info[0];
                 NumberForMission2.Text = "Skład : " + info[1];
                 NumberForMission3.Text = "Skład : " + info[2];
@@ -3597,6 +3771,14 @@ namespace Avalon
             {
                 bw.Write("checkRole");
                 bw.Write("9");
+            }
+        }
+
+        private void NickTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode==Keys.Enter)
+            {
+                ConnectButton_Click(sender, e);
             }
         }
     }
